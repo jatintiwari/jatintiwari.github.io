@@ -4,8 +4,7 @@ const webpack = require('webpack');
 module.exports = {
   mode: process.env.NODE_ENV ? "production" : "development",
   entry: {
-    app: "./src/index.js",
-    vendor: ['hyperapp']
+    app: "./src/index.js"
   },
   devServer: {
     historyApiFallback: true,
@@ -13,19 +12,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
-    chunkFilename: "vendor.js"
-  },
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        commons: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendor',
-          chunks: 'all'
-        }
-      }
-    }
+    filename: "bundle.js"
   },
   module: {
     rules: [
@@ -39,7 +26,7 @@ module.exports = {
         ],
         loader: "babel-loader",
         options: {
-          presets: ["env"]
+          presets: ["env", "es2015"]
         }
       }, {
         test: /\.css$/,
