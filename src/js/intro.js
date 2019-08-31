@@ -8,7 +8,7 @@ export default _ => ({
       <div class="section">
         <div class="introduction">
           <div>
-            <span style="font-size: 40px; color: black">hello,</span>
+            <span style="font-size: 40px; color: #0EB7F6">hello,</span>
             <span>i'm Jatin Tiwari</span>, <span>Full Stack Developer.</span>
           </div>
           <div class="about-me">

@@ -3,6 +3,7 @@ import { h, app } from "hyperapp";
 import Skills from './js/skills';
 import Intro from './js/intro';
 import Footer from './js/footer';
+import './js/particles';
 
 import styles from './css/index.css';
 
