@@ -2,7 +2,7 @@ import { h, app } from "hyperapp";
 
 import Skills from './js/skills';
 import Intro from './js/intro';
-import Footer from './js/footer';
+import Contact from './js/contact';
 import './js/particles';
 
 import styles from './css/index.css';
@@ -10,31 +10,31 @@ import styles from './css/index.css';
 const modules = {
   Skills: Skills(),
   Intro: Intro(),
-  Footer: Footer()
+  Contact: Contact()
 };
 
 const Root = {
   state: {
     skills: modules.Skills.state,
     intro: modules.Intro.state,
-    footer: modules.Footer.state
+    contact: modules.Contact.state
   },
   actions: {
     skills: modules.Skills.actions,
     intro: modules.Intro.actions,
-    footer: modules.Footer.actions
+    contact: modules.Contact.actions
   },
   view: (state, actions) => {
-    const { intro, skills, footer } = {
+    const { intro, skills, contact } = {
       skills: modules.Skills.view(state.skills, actions.skills),
       intro: modules.Intro.view(state.intro, actions.intro),
-      footer: modules.Footer.view(state.footer, actions.footer)
+      contact: modules.Contact.view(state.contact, actions.contact)
     }
     return (
       <main>
         {intro}
         {skills}
-        {footer}
+        {contact}
       </main>
     )
   }

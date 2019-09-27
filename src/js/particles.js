@@ -1,12 +1,12 @@
-var canvas = document.getElementById("canvas"),
+let canvas = document.getElementById("canvas"),
     ctx = canvas.getContext("2d");
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-var stars = [], // Array that contains the stars
+let stars = [], // Array that contains the stars
     FPS = 200, // Frames per second
-    x = 50, // Number of stars
+    x = window.innerWidth > 500 ? 100 : 50, // Number of stars
     mouse = {
         x: 0,
         y: 0
@@ -14,7 +14,7 @@ var stars = [], // Array that contains the stars
 
 // Push stars to array
 
-for (var i = 0; i < x; i++) {
+for (let i = 0; i < x; i++) {
     stars.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -31,8 +31,8 @@ function draw() {
 
     ctx.globalCompositeOperation = "lighter";
 
-    for (var i = 0, x = stars.length; i < x; i++) {
-        var s = stars[i];
+    for (let i = 0, x = stars.length; i < x; i++) {
+        let s = stars[i];
 
         ctx.fillStyle = "red";
         ctx.beginPath();
@@ -43,12 +43,12 @@ function draw() {
     }
 
     ctx.beginPath();
-    for (var i = 0, x = stars.length; i < x; i++) {
-        var starI = stars[i];
+    for (let i = 0, x = stars.length; i < x; i++) {
+        let starI = stars[i];
         ctx.moveTo(starI.x, starI.y);
         if (distance(mouse, starI) < 150) ctx.lineTo(mouse.x, mouse.y);
-        for (var j = 0, x = stars.length; j < x; j++) {
-            var starII = stars[j];
+        for (let j = 0, x = stars.length; j < x; j++) {
+            let starII = stars[j];
             if (distance(starI, starII) < 150) {
                 //ctx.globalAlpha = (1 / 150 * distance(starI, starII).toFixed(1));
                 ctx.lineTo(starII.x, starII.y);
@@ -61,8 +61,8 @@ function draw() {
 }
 
 function distance(point1, point2) {
-    var xs = 0;
-    var ys = 0;
+    let xs = 0;
+    let ys = 0;
 
     xs = point2.x - point1.x;
     xs = xs * xs;
@@ -76,8 +76,8 @@ function distance(point1, point2) {
 // Update star locations
 
 function update() {
-    for (var i = 0, x = stars.length; i < x; i++) {
-        var s = stars[i];
+    for (let i = 0, x = stars.length; i < x; i++) {
+        let s = stars[i];
 
         s.x += s.vx / FPS;
         s.y += s.vy / FPS;
@@ -95,7 +95,6 @@ canvas.addEventListener("mousemove", function(e) {
 // Update and draw
 
 function tick() {
-    console.log("painting");
     draw();
     update();
     requestAnimationFrame(tick);
