@@ -100,9 +100,6 @@ body {
         .contacts-container {
             font-size: 12px;
         }
-        .introduction {
-            text-align: left;
-        }
         .hidden-mobile {
             display: none;
         }

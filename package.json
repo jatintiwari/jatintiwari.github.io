@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
+  "pre-commit": ["clean", "build"],
   "scripts": {
     "build": "webpack -p",
     "clean": "rm -rf dist",
@@ -35,5 +36,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "pre-commit": "^1.2.2"
+  }
 }
