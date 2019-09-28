@@ -17,7 +17,7 @@ export default _ => ({
                 <div class="contacts">
                     <div class="ctas">
                         {ctaKeys.map(cta => (
-                            <a href={ctas[cta]} target={cta === "EMAIL" ? "_self" : "_blank"} class="cta">
+                            <a href={ctas[cta]} title={cta} target={cta === "EMAIL" ? "_self" : "_blank"} class="cta">
                                 {cta}
                             </a>
                         ))}

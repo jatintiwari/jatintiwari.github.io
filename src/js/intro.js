@@ -7,14 +7,20 @@ export default _ => ({
         return (
             <div class="section">
                 <div class="introduction">
-                    <div>
+                    <div class="about-me">
                         <span style="font-size: 40px; color: #fc9c09">hello, </span>
-                        <span class="about-me white">
+                        <span>
                             <span>i'm Jatin Tiwari</span>, <span>Full Stack Developer.</span>
                         </span>
-                    </div>
-                    <div class="about-me white">
-                        <div>Currently working in India for Flipkart.</div>
+                        &nbsp;
+                        <br class="hidden-mobile" />
+                        <span>
+                            Currently working in India for{" "}
+                            <a target="_blank" href="https://en.wikipedia.org/wiki/Flipkart">
+                                Flipkart
+                            </a>
+                            .
+                        </span>
                     </div>
                 </div>
             </div>

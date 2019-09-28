@@ -26,8 +26,9 @@ export default _ => ({
         const expertise = state.expertise || [];
         const skillsLength = skillKeys.length - 1;
         return (
-            <div>
-                <div class="section" style="justify-content: space-around;">
+            <div class="section skills-container">
+                <div className="json-container">
+                    <div>{"{"}</div>
                     <div class="sub-section">
                         <div>
                             <span class="red">skills:</span> {"{"}
@@ -75,6 +76,7 @@ export default _ => ({
                         </div>
                         <div>]</div>
                     </div>
+                    <div>{"}"}</div>
                 </div>
             </div>
         );

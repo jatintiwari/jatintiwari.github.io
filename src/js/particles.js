@@ -1,12 +1,12 @@
 let canvas = document.getElementById("canvas"),
     ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = window.innerWidth - 20;
+canvas.height = window.innerHeight-20;
 
 let stars = [], // Array that contains the stars
     FPS = 200, // Frames per second
-    x = window.innerWidth > 500 ? 100 : 50, // Number of stars
+    x = canvas.width > 960 ? 100 : 20, // Number of stars
     mouse = {
         x: 0,
         y: 0
