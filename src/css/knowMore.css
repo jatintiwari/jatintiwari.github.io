@@ -1,0 +1,126 @@
+#canvas {
+    position: absolute;
+    z-index: -1;
+}
+body {
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.02rem;
+    font-size: 0.9rem;
+    position: relative;
+}
+.strong {
+    font-weight: bold;
+}
+.know-more-app {
+    margin: 2% 15%;
+    .heading-container {
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 1%;
+        margin-bottom: 1%;
+        .heading {
+            font-size: 3rem;
+            text-align: center;
+            padding-bottom: 2%;
+        }
+        .subheading-container {
+            display: flex;
+            justify-content: space-between;
+            .subheading {
+                font-size: 1rem;
+            }
+        }
+    }
+    .content-container {
+        display: flex;
+        flex-direction: row;
+        .content-left {
+            width: 70%;
+            padding-right: 2%;
+        }
+        .content-right {
+            width: 30%;
+        }
+        .type {
+            font-size: 16px;
+        }
+        .section {
+            .section-heading {
+                font-size: 1.5rem;
+            }
+            .section-subheading {
+                font-size: 0.8rem;
+            }
+            ul {
+                padding-left: 1.5rem;
+                li {
+                    margin-bottom: 0.5rem;
+                }
+            }
+        }
+
+        .skills {
+            .skill {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .know-more-app {
+      margin: 2%;
+        .heading-container {
+            text-align: center;
+            .heading {
+                font-size: 2rem;
+            }
+            .subheading-container {
+                // justify-content: space-between;
+                .subheading {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+        .content-container {
+            flex-direction: column;
+            .content-left {
+                width: 100%;
+                padding: 0;
+            }
+            .content-right {
+                width: 100%;
+            }
+            .section {
+                .section-heading {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
+
+@media print {
+    .know-more-app {
+      margin: 1%;
+      a{
+        text-decoration: none;
+        color: black;
+      }
+        .heading-container {
+            text-align: center;
+            .heading {
+                font-size: 2rem;
+            }
+        }
+        .content-container {
+            flex-direction: row;
+            .content-left {
+                width: 70%;
+                padding-right: 5%;
+            }
+            .content-right {
+                width: 30%;
+            }
+        }
+    }
+}

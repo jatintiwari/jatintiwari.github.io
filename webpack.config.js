@@ -4,7 +4,8 @@ const webpack = require('webpack');
 module.exports = {
   mode: process.env.NODE_ENV ? "production" : "development",
   entry: {
-    app: "./src/index.js"
+    app: "./src/index.js",
+    knowMore: "./src/knowMore.js"
   },
   devServer: {
     historyApiFallback: true,
@@ -12,7 +13,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js"
+    filename: "[name].bundle.js"
   },
   module: {
     rules: [
