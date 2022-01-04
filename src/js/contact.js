@@ -5,7 +5,8 @@ export default _ => ({
         ctas: {
             LINKEDIN: "https://www.linkedin.com/in/jatin-tiwari-3783aa50",
             GITHUB: "https://www.github.com/jatintiwari",
-            EMAIL: "mailto:mail@jatintiwari.com"
+            EMAIL: "mailto:mail@jatintiwari.com",
+            RESUME: "https://www.jatintiwari.com/knowmore"
         }
     },
     actions: {},

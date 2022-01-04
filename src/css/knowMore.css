@@ -2,6 +2,12 @@
     position: absolute;
     z-index: -1;
 }
+
+#updated{
+    position: absolute;
+    top: 25px;
+    right: 25px;
+}
 body {
     font-family: "Roboto", sans-serif;
     letter-spacing: 0.02rem;
@@ -109,6 +115,9 @@ body {
 @media print {
     .know-more-app {
         margin: 1%;
+        #updated{
+            display: none;
+        }
         a {
             text-decoration: none;
             color: black;
