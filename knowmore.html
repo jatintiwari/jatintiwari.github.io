@@ -28,7 +28,7 @@
 <body>
     <canvas id="canvas"></canvas>
     <div class="know-more-app">
-		<div id="updated">Last updated in Jan 2022</div>
+        <div id="updated">Last updated in Jan 2022</div>
         <div class="heading-container">
             <div class="heading">JATIN TIWARI</div>
             <div class="subheading-container">
@@ -47,9 +47,9 @@
             <div class="content-left">
                 <div class="section">
                     <p class="type medium">EXPERIENCE - <span id="years"></span>+ Years</p>
-					<div class="section-heading">Atlassian, Software Engineer 2</div>
-					<div class="section-subheading">DECEMBER, 2021 - Present</div>
-					<br>
+                    <div class="section-heading">Atlassian, Software Engineer 2</div>
+                    <div class="section-subheading">DECEMBER, 2021 - Present</div>
+                    <br>
                     <div class="section-heading">Flipkart, UI ENGINEER 2</div>
                     <div class="section-subheading">JULY, 2019 — NOVEMBER, 2021</div>
                     <ul>
@@ -263,8 +263,9 @@
     <script>
         var years = document.getElementById('years');
         var currentDate = new Date();
-        var yearWhenIStartedWorking = 2014;
-        years.innerText = currentDate.getFullYear() - yearWhenIStartedWorking - 1;
+        var dateIStartedWorking = new Date("July 21, 2014");
+        years.innerText = currentDate.getFullYear() - dateIStartedWorking.getFullYear() - (currentDate.getMonth() >
+            dateIStartedWorking.getMonth() ? 0 : 1);
     </script>
 </body>
 
