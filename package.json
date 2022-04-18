@@ -1,48 +1,26 @@
 {
-  "name": "jatintiwari.github.io",
+  "name": "svelte-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "webpack.config.js",
-  "pre-commit": [
-    "clean",
-    "build"
-  ],
+  "private": true,
   "scripts": {
-    "build": "webpack -p",
-    "clean": "rm -rf dist",
-    "start": "webpack-dev-server"
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv . --no-clear"
   },
   "devDependencies": {
-    "autoprefixer": "^8.5.1",
-    "babel-core": "^6.26.3",
-    "babel-jest": "^22.4.3",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "css-loader": "^0.28.11",
-    "cssnano": "^3.10.0",
-    "hyperapp": "^1.2.5",
-    "postcss-import": "^11.1.0",
-    "postcss-loader": "^2.1.5",
-    "postcss-preset-env": "^5.1.0",
-    "precss": "^3.1.2",
-    "style-loader": "^0.21.0",
-    "sugarss": "^1.0.1",
-    "webpack": "^4.12.0",
-    "webpack-cli": "3.1.1",
-    "webpack-dev-server": "^3.1.4"
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "svelte": "^3.0.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@www.github.com:jatintiwari/jatintiwari.github.io"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "pre-commit": "^1.2.2"
+    "node-sass": "^7.0.1",
+    "rollup-plugin-scss": "^3.0.0",
+    "sirv-cli": "^2.0.0",
+    "svelte-preprocess": "^4.10.5"
   }
 }

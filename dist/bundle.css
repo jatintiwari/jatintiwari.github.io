@@ -1,0 +1,131 @@
+html, body {
+  position: relative; }
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #34435eff;
+  letter-spacing: 0.05em;
+  background-color: #f9f4f5ff;
+  position: relative;
+  font-weight: 300; }
+
+input, button, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-padding: 0.4em 0;
+  padding: 0.4em;
+  margin: 0 0 0.5em 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 2px; }
+
+#jatintiwari {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; }
+  #jatintiwari #app {
+    width: 35vw; }
+  #jatintiwari a {
+    text-decoration: none;
+    color: #0a74bb; }
+  #jatintiwari a.cta {
+    transition: 0.4s linear;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 5px;
+    text-align: center; }
+    #jatintiwari a.cta:hover {
+      color: #ffb100ff;
+      transform: scale(1.01); }
+  #jatintiwari p {
+    margin-bottom: 0; }
+  #jatintiwari .text-center {
+    text-align: center; }
+  #jatintiwari .text-bold {
+    font-weight: bold; }
+  #jatintiwari .text-small {
+    font-size: 12px; }
+  #jatintiwari .text-italic {
+    font-style: italic; }
+  #jatintiwari .highlight {
+    font-weight: 400;
+    color: #fe654fff; }
+  #jatintiwari .company-logo-container {
+    display: inline-block;
+    vertical-align: middle; }
+    #jatintiwari .company-logo-container .logo {
+      width: 30px; }
+  #jatintiwari .section .container {
+    padding: 1em;
+    vertical-align: top;
+    align-self: baseline; }
+  #jatintiwari .honey-yellow {
+    color: #ffb100ff; }
+  #jatintiwari .tomato {
+    color: #fe654fff; }
+  #jatintiwari .white {
+    color: #f9f4f5ff; }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #jatintiwari #app {
+    width: 80vw; } }
+
+@media (max-width: 767px) {
+  #jatintiwari {
+    padding: 1em;
+    display: block;
+    height: auto; }
+    #jatintiwari #app {
+      width: 100%;
+      padding: 0;
+      box-shadow: none;
+      background: inherit; }
+      #jatintiwari #app .contacts-container {
+        font-size: 12px;
+        background: #f9f4f5ff;
+        padding-bottom: 0; }
+      #jatintiwari #app .hidden-mobile {
+        display: none; } }
+
+@media (min-width: 320px) and (max-width: 480px) {
+  #jatintiwari #app {
+    width: 100%; }
+    #jatintiwari #app .introduction {
+      font-size: 16px;
+      text-align: left; } }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #34435eff;
+    color: #f9f4f5ff; }
+  #jatintiwari #app a {
+    color: #ffb100ff; }
+  #jatintiwari #app a.cta:hover {
+    color: #0a74bb; } }
+
+main.svelte-blhg4c {
+  padding: 1em;
+  margin: 0 auto; }
+
+@media (min-width: 640px) {
+  main.svelte-blhg4c {
+    max-width: none; } }
+
+.contacts.svelte-1lqwcht {
+  display: flex;
+  justify-content: space-between; }
+
+.introduction.svelte-4dfgv2.svelte-4dfgv2 {
+  font-size: 18px; }
+
+.introduction.svelte-4dfgv2 .about-me.svelte-4dfgv2 {
+  display: flex;
+  align-items: center; }
+
+.introduction.svelte-4dfgv2 .about-me .hello-hand.svelte-4dfgv2 {
+  padding: 0 0.2em;
+  font-size: 4em; }
+
+.introduction.svelte-4dfgv2 .hello-text.svelte-4dfgv2 {
+  font-size: 24px; }

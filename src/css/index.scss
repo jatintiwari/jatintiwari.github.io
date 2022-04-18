@@ -1,0 +1,162 @@
+$snow: #f9f4f5ff;
+$honey-yellow: #ffb100ff;
+$carolina-blue: rgb(10, 116, 187);
+$independence: #34435eff;
+$tomato: #fe654fff;
+
+html, body {
+	position: relative;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    color: $independence;
+    letter-spacing: 0.05em;
+    // color: #fcfcf4;
+    background-color: $snow;
+    position: relative;
+    font-weight: 300;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	-webkit-padding: 0.4em 0;
+	padding: 0.4em;
+	margin: 0 0 0.5em 0;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+
+#jatintiwari {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    #app {
+        width: 35vw;
+    }
+    
+    a {
+        text-decoration: none;
+        color: $carolina-blue;
+    }
+    
+    a.cta {
+        transition: 0.4s linear;
+        text-decoration: none;
+        display: inline-block;
+        margin: 0 5px;
+        text-align: center;
+        &:hover {
+            color: $honey-yellow;
+            transform: scale(1.01);
+        }
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+    .text-bold{
+        font-weight: bold;
+    }
+    .text-small {
+        font-size: 12px;
+    }
+    .text-italic {
+        font-style: italic;
+    }
+
+    .highlight {
+        font-weight: 400;
+        color: $tomato;
+    }
+
+    .company-logo-container {
+        display: inline-block;
+        vertical-align: middle;
+        .logo{
+            width: 30px
+        }
+    }
+    .section {
+        // padding-bottom: 1em;
+        .container {
+            padding: 1em;
+            vertical-align: top;
+            align-self: baseline;
+        }
+    }
+    .honey-yellow {
+        color: $honey-yellow;
+    }
+    .tomato {
+        color: $tomato;
+    }
+    .white {
+        color: $snow;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    #jatintiwari {
+        #app {
+            width: 80vw;
+        }
+    }
+}
+@media(max-width: 767px) {
+    #jatintiwari {
+        padding: 1em;
+        display: block;
+        height: auto;
+        #app {
+            width: 100%;
+            padding: 0;
+            box-shadow: none;
+            background: inherit;
+            .contacts-container {
+                font-size: 12px;
+                background: $snow;
+                padding-bottom: 0;
+            }
+            .hidden-mobile {
+                display: none;
+            }
+        }
+    }
+}
+@media (min-width: 320px) and (max-width: 480px) {
+    #jatintiwari {
+        #app {
+            width: 100%;
+            .introduction {
+                font-size: 16px;
+                text-align: left;
+            }
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body{
+        background-color: $independence;
+        color: $snow;
+    }
+    #jatintiwari {
+        #app{
+            a {
+                color: $honey-yellow;
+            }
+        
+            a.cta:hover {
+                color: $carolina-blue;
+            }
+        }
+    }
+}
