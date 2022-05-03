@@ -6,6 +6,7 @@ $tomato: #fe654fff;
 
 html, body {
 	position: relative;
+    margin: 0;
 }
 
 body {
@@ -101,6 +102,9 @@ input, button, select, textarea {
     .white {
         color: $snow;
     }
+    .bg-blue {
+        background-color: $independence;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -138,6 +142,16 @@ input, button, select, textarea {
             .introduction {
                 font-size: 16px;
                 text-align: left;
+            }
+        }
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    #jatintiwari {
+        #app{
+            .bg-blue {
+                background-color: $snow;
             }
         }
     }

@@ -1,5 +1,6 @@
 html, body {
-  position: relative; }
+  position: relative;
+  margin: 0; }
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -66,6 +67,8 @@ input, button, select, textarea {
     color: #fe654fff; }
   #jatintiwari .white {
     color: #f9f4f5ff; }
+  #jatintiwari .bg-blue {
+    background-color: #34435eff; }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   #jatintiwari #app {
@@ -95,6 +98,10 @@ input, button, select, textarea {
       font-size: 16px;
       text-align: left; } }
 
+@media (prefers-color-scheme: light) {
+  #jatintiwari #app .bg-blue {
+    background-color: #f9f4f5ff; } }
+
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #34435eff;
@@ -112,20 +119,24 @@ main.svelte-blhg4c {
   main.svelte-blhg4c {
     max-width: none; } }
 
-.contacts.svelte-1lqwcht {
+.sticky-bottom.svelte-sktqyu {
+  position: sticky;
+  bottom: 0px; }
+
+.contacts.svelte-sktqyu {
   display: flex;
   justify-content: space-between; }
 
-.introduction.svelte-4dfgv2.svelte-4dfgv2 {
+.introduction.svelte-1330qt5.svelte-1330qt5 {
   font-size: 18px; }
 
-.introduction.svelte-4dfgv2 .about-me.svelte-4dfgv2 {
+.introduction.svelte-1330qt5 .about-me.svelte-1330qt5 {
   display: flex;
   align-items: center; }
 
-.introduction.svelte-4dfgv2 .about-me .hello-hand.svelte-4dfgv2 {
-  padding: 0 0.2em;
+.introduction.svelte-1330qt5 .about-me .hello-hand.svelte-1330qt5 {
+  padding-right: 0.2em;
   font-size: 4em; }
 
-.introduction.svelte-4dfgv2 .hello-text.svelte-4dfgv2 {
+.introduction.svelte-1330qt5 .hello-text.svelte-1330qt5 {
   font-size: 24px; }

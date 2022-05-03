@@ -11,6 +11,7 @@
         <!-- <p class="text-italic text-small"> I have myself struggled to understand Data structures and Algorithms.
           I wish to help folks like me.
         </p> -->
+        <p class="text-center">I will be happy to connect for new opportunities or consultation✌🏽</p>
     </section>
 </section>
 
