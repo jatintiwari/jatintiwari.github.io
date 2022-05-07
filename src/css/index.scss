@@ -153,6 +153,9 @@ input, button, select, textarea {
             .bg-blue {
                 background-color: $snow;
             }
+            .border-dark {
+                border-color: $independence;
+            }
         }
     }
 }
@@ -164,6 +167,9 @@ input, button, select, textarea {
     }
     #jatintiwari {
         #app{
+            .border-dark {
+                border-color: $snow;
+            }
             a {
                 color: $honey-yellow;
             }

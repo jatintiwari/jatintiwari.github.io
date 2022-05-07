@@ -8,7 +8,7 @@
     const socialMediaKeys = Object.keys(socialMedia);
 </script>
 
-<div class="section sticky-bottom">
+<div class="section sticky-bottom border-dark">
     <div class="container contacts bg-blue">
         {#each socialMediaKeys as key}
             <span>
@@ -22,6 +22,7 @@
     .sticky-bottom {
         position: sticky;
         bottom: 0px;
+        border-top: 1px solid
     }
     .contacts {
         display: flex;

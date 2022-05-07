@@ -100,12 +100,16 @@ input, button, select, textarea {
 
 @media (prefers-color-scheme: light) {
   #jatintiwari #app .bg-blue {
-    background-color: #f9f4f5ff; } }
+    background-color: #f9f4f5ff; }
+  #jatintiwari #app .border-dark {
+    border-color: #34435eff; } }
 
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #34435eff;
     color: #f9f4f5ff; }
+  #jatintiwari #app .border-dark {
+    border-color: #f9f4f5ff; }
   #jatintiwari #app a {
     color: #ffb100ff; }
   #jatintiwari #app a.cta:hover {
@@ -119,11 +123,12 @@ main.svelte-blhg4c {
   main.svelte-blhg4c {
     max-width: none; } }
 
-.sticky-bottom.svelte-sktqyu {
+.sticky-bottom.svelte-1sph3ou {
   position: sticky;
-  bottom: 0px; }
+  bottom: 0px;
+  border-top: 1px solid; }
 
-.contacts.svelte-sktqyu {
+.contacts.svelte-1sph3ou {
   display: flex;
   justify-content: space-between; }
 
