@@ -32,7 +32,7 @@
             display: flex;
             align-items: center;
             .hello-hand {
-                padding: 0 0.2em;
+                padding-right: 0.2em;
                 font-size: 4em;
             }
         }
