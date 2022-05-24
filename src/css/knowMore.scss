@@ -3,13 +3,22 @@
     z-index: -1;
 }
 
-#updated{
+#updated {
     position: absolute;
     top: 25px;
     right: 25px;
 }
+
+button {
+    border: none;
+    background-color: orange;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    box-shadow: 1px 3px 5px #7c7c7c;
+}
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif;
     letter-spacing: 0.02rem;
     font-weight: 300;
     font-size: 0.9rem;
@@ -46,6 +55,11 @@ body {
     .content-container {
         display: flex;
         flex-direction: row;
+        &.page-two {
+            flex-wrap: nowrap;
+            flex-direction: column;
+            width: 70%;
+        }
         .content-left {
             width: 70%;
             padding-right: 2%;
@@ -96,6 +110,10 @@ body {
         }
         .content-container {
             flex-direction: column;
+            &.page-two {
+                flex-wrap: nowrap;
+                width: 100%;
+            }
             .content-left {
                 width: 100%;
                 padding: 0;
@@ -109,14 +127,26 @@ body {
                 }
             }
         }
+        #updated {
+            display: none;
+        }
     }
+}
+
+@page {
+    margin: 1cm;
 }
 
 @media print {
     .know-more-app {
-        margin: 1%;
-        #updated{
+        margin: 0;
+        #updated,
+        #print {
             display: none;
+        }
+        .pagebreak {
+            clear: both;
+            page-break-before: always;
         }
         a {
             text-decoration: none;
@@ -130,12 +160,23 @@ body {
         }
         .content-container {
             flex-direction: row;
+            justify-content: space-between;
             .content-left {
                 width: 70%;
                 padding-right: 5%;
             }
             .content-right {
                 width: 30%;
+                align-self: baseline;
+            }
+            &.page-two {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                width: 100%;
+                .section {
+                    width: 48%;
+                }
             }
         }
     }
