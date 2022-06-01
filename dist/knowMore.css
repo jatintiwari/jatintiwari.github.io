@@ -46,13 +46,15 @@ body {
       justify-content: space-between; }
   .know-more-app .content-container {
     display: flex;
-    flex-direction: row; }
+    flex-direction: row;
+    flex-wrap: wrap; }
     .know-more-app .content-container.page-two {
       flex-wrap: nowrap;
       flex-direction: column;
-      width: 70%; }
+      width: 68%;
+      margin-top: -3%; }
     .know-more-app .content-container .content-left {
-      width: 70%;
+      width: 68%;
       padding-right: 2%; }
     .know-more-app .content-container .content-right {
       width: 30%; }
@@ -64,6 +66,8 @@ body {
       padding-left: 1.5rem; }
       .know-more-app .content-container .section ul li {
         margin-bottom: 0.5rem; }
+    .know-more-app .content-container .section section.heading {
+      padding-bottom: 0.5em; }
     .know-more-app .content-container .skills .skill {
       margin-bottom: 1rem; }
 
@@ -114,7 +118,7 @@ body {
       flex-direction: row;
       justify-content: space-between; }
       .know-more-app .content-container .content-left {
-        width: 70%;
+        width: 65%;
         padding-right: 5%; }
       .know-more-app .content-container .content-right {
         width: 30%;
@@ -123,6 +127,7 @@ body {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-        width: 100%; }
+        width: 100%;
+        margin-top: 0; }
         .know-more-app .content-container.page-two .section {
           width: 48%; } }
