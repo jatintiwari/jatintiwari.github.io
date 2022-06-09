@@ -76,6 +76,7 @@ if (process.env.NODE_ENV === 'thoughts') {
             scss({
                 sass: require('node-sass'),
                 output: 'thoughts/dist/css/thoughts.css',
+                outputStyle: "compressed",
             }),
         ],
         watch,
@@ -95,6 +96,7 @@ if (process.env.NODE_ENV === 'thoughts') {
                 scss({
                     sass: require('node-sass'),
                     output: 'dist/bundle.css',
+                    outputStyle: "compressed",
                 }),
             ],
             watch,
@@ -109,6 +111,7 @@ if (process.env.NODE_ENV === 'thoughts') {
                 scss({
                     sass: require('node-sass'),
                     output: 'dist/knowMore.css',
+                    outputStyle: "compressed",
                 }),
             ],
             watch,
