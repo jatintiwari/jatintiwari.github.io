@@ -1,0 +1,21 @@
+html,
+body {
+  position: relative;
+  margin: 0; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #34435eff;
+  letter-spacing: 0.05em;
+  background-color: #f9f4f5ff;
+  position: relative;
+  font-weight: 300; }
+
+.center {
+  text-align: center; }
+
+#blog {
+  display: flex;
+  justify-content: center; }
+  #blog #app {
+    width: 35vw; }

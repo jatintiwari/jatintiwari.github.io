@@ -4,30 +4,81 @@ $carolina-blue: rgb(10, 116, 187);
 $independence: #34435eff;
 $tomato: #fe654fff;
 
-html, body {
-	position: relative;
+.dark {
+    body {
+        background-color: $independence;
+        color: $snow;
+    }
+    #jatintiwari {
+        #app {
+            .border-dark {
+                border-color: $snow;
+            }
+            a {
+                color: $honey-yellow;
+            }
+
+            a.cta:hover {
+                color: $carolina-blue;
+            }
+            .moon {
+                visibility: hidden;
+            }
+            .mark {
+                background-image: linear-gradient(
+                    to right,
+                    rgba(102, 255, 0, 0.1),
+                    rgba(102, 255, 0, 0.7) 4%,
+                    rgba(102, 255, 0, 0.3)
+                );
+            }
+        }
+    }
+}
+
+.light {
+    #jatintiwari {
+        #app {
+            .bg-blue {
+                background-color: $snow;
+            }
+            .border-dark {
+                border-color: $independence;
+            }
+            .sun {
+                visibility: hidden;
+            }
+        }
+    }
+}
+html,
+body {
+    position: relative;
     margin: 0;
 }
 
 body {
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans', sans-serif;
     color: $independence;
     letter-spacing: 0.05em;
-    // color: #fcfcf4;
     background-color: $snow;
     position: relative;
     font-weight: 300;
+    transition: 0.1s linear background-color;
 }
 
-input, button, select, textarea {
-	font-family: inherit;
-	font-size: inherit;
-	-webkit-padding: 0.4em 0;
-	padding: 0.4em;
-	margin: 0 0 0.5em 0;
-	box-sizing: border-box;
-	border: 1px solid #ccc;
-	border-radius: 2px;
+input,
+button,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    -webkit-padding: 0.4em 0;
+    padding: 0.4em;
+    margin: 0 0 0.5em 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 2px;
 }
 
 #jatintiwari {
@@ -37,22 +88,22 @@ input, button, select, textarea {
     height: 100%;
     #app {
         width: 35vw;
+        position: relative;
     }
-    
+
     a {
         text-decoration: none;
         color: $carolina-blue;
     }
-    
+
     a.cta {
-        transition: 0.4s linear;
+        transition: 0.1s linear color;
         text-decoration: none;
         display: inline-block;
         margin: 0 5px;
         text-align: center;
         &:hover {
             color: $honey-yellow;
-            transform: scale(1.01);
         }
     }
 
@@ -63,7 +114,7 @@ input, button, select, textarea {
     .text-center {
         text-align: center;
     }
-    .text-bold{
+    .text-bold {
         font-weight: bold;
     }
     .text-small {
@@ -78,11 +129,26 @@ input, button, select, textarea {
         color: $tomato;
     }
 
+    .mark {
+        margin: 0 -0.4em;
+        padding: 0.1em 0.4em;
+        border-radius: 0.8em 0.3em;
+        background: transparent;
+        background-image: linear-gradient(
+            to right,
+            rgba(255, 225, 0, 0.1),
+            rgba(255, 225, 0, 0.7) 4%,
+            rgba(255, 225, 0, 0.3)
+        );
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+    }
+
     .company-logo-container {
         display: inline-block;
         vertical-align: middle;
-        .logo{
-            width: 30px
+        .logo {
+            width: 30px;
         }
     }
     .section {
@@ -104,6 +170,7 @@ input, button, select, textarea {
     }
     .bg-blue {
         background-color: $independence;
+        transition: 0.1s linear background-color;
     }
 }
 
@@ -114,7 +181,7 @@ input, button, select, textarea {
         }
     }
 }
-@media(max-width: 767px) {
+@media (max-width: 767px) {
     #jatintiwari {
         padding: 1em;
         display: block;
@@ -147,36 +214,36 @@ input, button, select, textarea {
     }
 }
 
-@media (prefers-color-scheme: light) {
-    #jatintiwari {
-        #app{
-            .bg-blue {
-                background-color: $snow;
-            }
-            .border-dark {
-                border-color: $independence;
-            }
-        }
-    }
-}
+// @media (prefers-color-scheme: light) {
+//     #jatintiwari {
+//         #app {
+//             .bg-blue {
+//                 background-color: $snow;
+//             }
+//             .border-dark {
+//                 border-color: $independence;
+//             }
+//         }
+//     }
+// }
 
-@media (prefers-color-scheme: dark) {
-    body{
-        background-color: $independence;
-        color: $snow;
-    }
-    #jatintiwari {
-        #app{
-            .border-dark {
-                border-color: $snow;
-            }
-            a {
-                color: $honey-yellow;
-            }
-        
-            a.cta:hover {
-                color: $carolina-blue;
-            }
-        }
-    }
-}
+// @media (prefers-color-scheme: dark) {
+//     body {
+//         background-color: $independence;
+//         color: $snow;
+//     }
+//     #jatintiwari {
+//         #app {
+//             .border-dark {
+//                 border-color: $snow;
+//             }
+//             a {
+//                 color: $honey-yellow;
+//             }
+
+//             a.cta:hover {
+//                 color: $carolina-blue;
+//             }
+//         }
+//     }
+// }

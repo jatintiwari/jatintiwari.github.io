@@ -1,16 +1,49 @@
-html, body {
+.dark body {
+  background-color: #34435eff;
+  color: #f9f4f5ff; }
+
+.dark #jatintiwari #app .border-dark {
+  border-color: #f9f4f5ff; }
+
+.dark #jatintiwari #app a {
+  color: #ffb100ff; }
+
+.dark #jatintiwari #app a.cta:hover {
+  color: #0a74bb; }
+
+.dark #jatintiwari #app .moon {
+  visibility: hidden; }
+
+.dark #jatintiwari #app .mark {
+  background-image: linear-gradient(to right, rgba(102, 255, 0, 0.1), rgba(102, 255, 0, 0.7) 4%, rgba(102, 255, 0, 0.3)); }
+
+.light #jatintiwari #app .bg-blue {
+  background-color: #f9f4f5ff; }
+
+.light #jatintiwari #app .border-dark {
+  border-color: #34435eff; }
+
+.light #jatintiwari #app .sun {
+  visibility: hidden; }
+
+html,
+body {
   position: relative;
   margin: 0; }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #34435eff;
   letter-spacing: 0.05em;
   background-color: #f9f4f5ff;
   position: relative;
-  font-weight: 300; }
+  font-weight: 300;
+  transition: 0.1s linear background-color; }
 
-input, button, select, textarea {
+input,
+button,
+select,
+textarea {
   font-family: inherit;
   font-size: inherit;
   -webkit-padding: 0.4em 0;
@@ -26,19 +59,19 @@ input, button, select, textarea {
   align-items: center;
   height: 100%; }
   #jatintiwari #app {
-    width: 35vw; }
+    width: 35vw;
+    position: relative; }
   #jatintiwari a {
     text-decoration: none;
     color: #0a74bb; }
   #jatintiwari a.cta {
-    transition: 0.4s linear;
+    transition: 0.1s linear color;
     text-decoration: none;
     display: inline-block;
     margin: 0 5px;
     text-align: center; }
     #jatintiwari a.cta:hover {
-      color: #ffb100ff;
-      transform: scale(1.01); }
+      color: #ffb100ff; }
   #jatintiwari p {
     margin-bottom: 0; }
   #jatintiwari .text-center {
@@ -52,6 +85,14 @@ input, button, select, textarea {
   #jatintiwari .highlight {
     font-weight: 400;
     color: #fe654fff; }
+  #jatintiwari .mark {
+    margin: 0 -0.4em;
+    padding: 0.1em 0.4em;
+    border-radius: 0.8em 0.3em;
+    background: transparent;
+    background-image: linear-gradient(to right, rgba(255, 225, 0, 0.1), rgba(255, 225, 0, 0.7) 4%, rgba(255, 225, 0, 0.3));
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone; }
   #jatintiwari .company-logo-container {
     display: inline-block;
     vertical-align: middle; }
@@ -68,7 +109,8 @@ input, button, select, textarea {
   #jatintiwari .white {
     color: #f9f4f5ff; }
   #jatintiwari .bg-blue {
-    background-color: #34435eff; }
+    background-color: #34435eff;
+    transition: 0.1s linear background-color; }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   #jatintiwari #app {
@@ -98,23 +140,6 @@ input, button, select, textarea {
       font-size: 16px;
       text-align: left; } }
 
-@media (prefers-color-scheme: light) {
-  #jatintiwari #app .bg-blue {
-    background-color: #f9f4f5ff; }
-  #jatintiwari #app .border-dark {
-    border-color: #34435eff; } }
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #34435eff;
-    color: #f9f4f5ff; }
-  #jatintiwari #app .border-dark {
-    border-color: #f9f4f5ff; }
-  #jatintiwari #app a {
-    color: #ffb100ff; }
-  #jatintiwari #app a.cta:hover {
-    color: #0a74bb; } }
-
 main.svelte-blhg4c {
   padding: 1em;
   margin: 0 auto; }
@@ -123,25 +148,49 @@ main.svelte-blhg4c {
   main.svelte-blhg4c {
     max-width: none; } }
 
-.sticky-bottom.svelte-1sph3ou {
+.sticky-bottom.svelte-d3lop6 {
   position: sticky;
   bottom: 0px;
   border-top: 1px solid; }
 
-.contacts.svelte-1sph3ou {
+.contacts.svelte-d3lop6 {
   display: flex;
   justify-content: space-between; }
 
-.introduction.svelte-1330qt5.svelte-1330qt5 {
+@media (max-width: 767px) {
+  .contacts.svelte-d3lop6 {
+    font-size: .8em; } }
+
+.introduction.svelte-1o3onme.svelte-1o3onme {
   font-size: 18px; }
 
-.introduction.svelte-1330qt5 .about-me.svelte-1330qt5 {
+.introduction.svelte-1o3onme .about-me.svelte-1o3onme {
   display: flex;
   align-items: center; }
 
-.introduction.svelte-1330qt5 .about-me .hello-hand.svelte-1330qt5 {
+.introduction.svelte-1o3onme .about-me .hello-hand.svelte-1o3onme {
   padding-right: 0.2em;
   font-size: 4em; }
 
-.introduction.svelte-1330qt5 .hello-text.svelte-1330qt5 {
+.introduction.svelte-1o3onme .hello-text.svelte-1o3onme {
   font-size: 24px; }
+
+@media (max-width: 767px) {
+  .introduction.svelte-1o3onme .about-me .hello-hand.svelte-1o3onme {
+    padding-right: 0.2em;
+    font-size: 2em; } }
+
+.theme-container.svelte-1derer7.svelte-1derer7 {
+  position: absolute;
+  right: 5%; }
+
+.theme-container.svelte-1derer7 .theme-button.svelte-1derer7 {
+  font-size: 32px;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.1s linear visibility;
+  position: absolute; }
+
+@media (max-width: 767px) {
+  .theme-container.svelte-1derer7.svelte-1derer7 {
+    visibility: hidden; } }

@@ -1,11 +1,13 @@
 <script>
-    import Intro from "./js/Intro.svelte";
-    import Passion from "./js/Passion.svelte";
-    import Skills from "./js/Skills.svelte";
-    import Contact from "./js/Contact.svelte";
+    import Intro from './js/Intro.svelte';
+    import Passion from './js/Passion.svelte';
+    import Skills from './js/Skills.svelte';
+    import Contact from './js/Contact.svelte';
+    import Theme from './js/Theme.svelte';
 </script>
 
 <main id="app">
+    <Theme/>
     <Intro />
     <Skills />
     <Passion />

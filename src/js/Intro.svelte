@@ -1,9 +1,9 @@
 <script>
-    const name = "Jatin Tiwari";
-    const currentInterest = "Software Engineer";
-    const currentCompany = "Atlassian";
-    const currentCompanyLink = "https://www.google.com/search?q=atlassian";
-    let currentCountry = "India";
+    const name = 'Jatin Tiwari';
+    const currentInterest = 'Software Engineer';
+    const currentCompany = 'Atlassian';
+    const currentCompanyLink = 'https://www.google.com/search?q=atlassian';
+    let currentCountry = 'India';
 </script>
 
 <div class="section">
@@ -38,6 +38,12 @@
         }
         .hello-text {
             font-size: 24px;
+        }
+    }
+    @media (max-width: 767px) {
+        .introduction .about-me .hello-hand {
+            padding-right: 0.2em;
+            font-size: 2em;
         }
     }
 </style>

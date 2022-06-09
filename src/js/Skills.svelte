@@ -22,7 +22,7 @@
             was able to take screenshots of all the app workflows and then assert baseline with checkpoint images. This tool solved problems involved with manual testing.
         </p>
         <p>
-            I ❤️ <span class="text-italic">building apps from scratch</span> and then scale them to serve millions of cusomters. I also believe
+            I ❤️ <span class="text-italic">building apps from scratch</span> and then scale them to serve millions of customers. I also believe
             that it takes time to build such apps and use of technology is as per need basis.
         </p>
         <p>
