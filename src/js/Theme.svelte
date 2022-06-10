@@ -9,7 +9,8 @@
         if (!mode) {
             mode = isDarkMode ? DARK : LIGHT;
         }
-        document.documentElement.classList.add(mode);
+        console.log({ mode });
+        document.documentElement.className = mode;
         localStorage.setItem('mode', mode);
     });
 
@@ -23,8 +24,8 @@
 </script>
 
 <div class="theme-container">
-    <span class="theme-button sun" on:click={handleThemeChange}> ☀️ </span>
-    <span class="theme-button moon" on:click={handleThemeChange}> 🌚 </span>
+    <span class="theme-button sun" on:click={handleThemeChange}>☀️</span>
+    <span class="theme-button moon" on:click={handleThemeChange}>🌚</span>
 </div>
 
 <style lang="scss">
