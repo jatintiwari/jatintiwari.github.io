@@ -6,6 +6,8 @@ import { terser } from 'rollup-plugin-terser';
 import preprocess from 'svelte-preprocess';
 import scss from 'rollup-plugin-scss';
 
+import { mdsvex } from 'mdsvex';
+
 const production = !process.env.ROLLUP_WATCH;
 
 function serve() {
@@ -35,7 +37,10 @@ const plugins = [
             // enable run-time checks when not in production
             dev: !production,
         },
-        preprocess: preprocess(),
+        extensions: ['.svelte', '.md'],
+        preprocess: mdsvex({
+            extensions: ['.svelte', '.md'],
+        }),
     }),
     // If you have external dependencies installed from
     // npm, you'll most likely need these plugins. In
@@ -65,7 +70,7 @@ let configs = [];
 
 if (process.env.NODE_ENV === 'thoughts') {
     configs.push({
-        input: 'thoughts/main.js',
+        input: 'thoughts/src/main.js',
         output: {
             format: 'iife',
             name: 'thoughts',
@@ -76,7 +81,7 @@ if (process.env.NODE_ENV === 'thoughts') {
             scss({
                 sass: require('node-sass'),
                 output: 'thoughts/dist/css/thoughts.css',
-                outputStyle: "compressed",
+                outputStyle: 'compressed',
             }),
         ],
         watch,
@@ -96,7 +101,7 @@ if (process.env.NODE_ENV === 'thoughts') {
                 scss({
                     sass: require('node-sass'),
                     output: 'dist/bundle.css',
-                    outputStyle: "compressed",
+                    outputStyle: 'compressed',
                 }),
             ],
             watch,
@@ -111,7 +116,7 @@ if (process.env.NODE_ENV === 'thoughts') {
                 scss({
                     sass: require('node-sass'),
                     output: 'dist/knowMore.css',
-                    outputStyle: "compressed",
+                    outputStyle: 'compressed',
                 }),
             ],
             watch,
