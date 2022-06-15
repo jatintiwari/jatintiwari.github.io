@@ -1,1 +1,1 @@
-<p class="center">I am writing about things that make me curious.</p>
+<p class="center">I am writing about the things which makes me curious.</p>

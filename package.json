@@ -9,7 +9,9 @@
     "start-thoughts": "sirv thoughts --dev --single",
     "dev-thoughts": "NODE_ENV=thoughts rollup -c -w",
     "compile-home": "export templateName=index && export jsFileName=bundle && export cssFileName=bundle && node compile-handlebars",
-    "watch-home": "yarn nodemon -w dist --exec \"yarn compile-home\""
+    "watch-home": "yarn nodemon -w dist --exec \"yarn compile-home\"",
+    "build-thoughts": "NODE_ENV=thoughts rollup -c",
+    "deploy-thoughts": "yarn build-thoughts && firebase deploy --only hosting"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
