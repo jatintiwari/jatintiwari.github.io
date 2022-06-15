@@ -16,6 +16,10 @@ p {
     overflow-x: hidden;
 }
 
+*:focus-visible {
+    user-select: none;
+}
+
 .box-shadow {
     box-shadow: 1px 3px 5px #aaa;
 }
@@ -71,5 +75,37 @@ body {
     justify-content: center;
     #app {
         width: 45vw;
+        position: relative;
+    }
+
+    .route {
+        text-decoration: none;
+        color: $carolina-blue;
+    }
+
+    .responsive-image {
+        width: 100%;
+        // max-width: 420px;
+    }
+
+    footer {
+        background-color: $snow;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    #thoughts {
+        #app {
+            width: 95vw;
+        }
+    }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    #thoughts {
+        #app {
+            width: 100%;
+            padding: 1em;
+        }
     }
 }

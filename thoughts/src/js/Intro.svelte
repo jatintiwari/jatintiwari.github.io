@@ -1,4 +1,1 @@
-<p>
-    I talk a lot and I like gathering knowledge. Most of the times I have surface level of knowledge but I still indulge
-    in dialogue.
-</p>
+<p class="center">I am writing about things that make me curious.</p>

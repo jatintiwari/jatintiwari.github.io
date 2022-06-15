@@ -1,5 +1,9 @@
+#### 15 June 2022
+
 ## Visual diffing for End to End Testing
+
 ---
+
 For end-to-end UI testing there are a few case which can go untested with any amount of automated testing unless they are compared manually every time.
 
 There are many cases where details like
@@ -14,17 +18,17 @@ Automated scripts can assure existence of element but cannot easily assert eleme
 
 <div align="center">
   <p style="font-size: 14px">   Baseline image</p>
-<img alt="diff-images" height="420" src="https://user-images.githubusercontent.com/10477804/173744949-8d029afc-c61e-4bcd-8801-c57aab049b8a.png">
+<img alt="diff-images" class="responsive-image" src="https://user-images.githubusercontent.com/10477804/173744949-8d029afc-c61e-4bcd-8801-c57aab049b8a.png">
 </div>
 
 <div align="center">
   <p style="font-size: 14px">   Checkpoint image - taken during test runs</p>
-<img alt="diff-images" height="420" src="https://user-images.githubusercontent.com/10477804/173744940-c93d452b-fcbe-4c57-af35-b0f9f2bb9de3.png">
+<img alt="diff-images" class="responsive-image" src="https://user-images.githubusercontent.com/10477804/173744940-c93d452b-fcbe-4c57-af35-b0f9f2bb9de3.png">
 </div>
 
 <div align="center">
   <p style="font-size: 14px">   Comparison between baseline and checkpoint image</p>
-<img alt="diff-images" height="420" src="https://user-images.githubusercontent.com/10477804/173744923-377e9b21-5849-4a97-bb0d-cfe7efa3d4bc.png">
+<img alt="diff-images" class="responsive-image" src="https://user-images.githubusercontent.com/10477804/173744923-377e9b21-5849-4a97-bb0d-cfe7efa3d4bc.png">
 </div>
 
 ### What is happening here?
