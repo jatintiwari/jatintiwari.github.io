@@ -1,3 +1,7 @@
+<script>
+  import Image from '../js/Image.svelte';
+</script>
+
 #### 15 June 2022
 
 ## Visual diffing for End to End Testing
@@ -16,20 +20,11 @@ These a few of many cases in the view port requires manual intervention as they 
 
 Automated scripts can assure existence of element but cannot easily assert elements correct position.
 
-<div align="center">
-  <p style="font-size: 14px">   Baseline image</p>
-<img alt="diff-images" class="responsive-image" src="https://user-images.githubusercontent.com/10477804/173744949-8d029afc-c61e-4bcd-8801-c57aab049b8a.png">
-</div>
+<Image desc="Base Image" src="https://user-images.githubusercontent.com/10477804/173744949-8d029afc-c61e-4bcd-8801-c57aab049b8a.png"/>
 
-<div align="center">
-  <p style="font-size: 14px">   Checkpoint image - taken during test runs</p>
-<img alt="diff-images" class="responsive-image" src="https://user-images.githubusercontent.com/10477804/173744940-c93d452b-fcbe-4c57-af35-b0f9f2bb9de3.png">
-</div>
+<Image desc="Checkpoint image - taken during test runs" src="https://user-images.githubusercontent.com/10477804/173744940-c93d452b-fcbe-4c57-af35-b0f9f2bb9de3.png"/>
 
-<div align="center">
-  <p style="font-size: 14px">   Comparison between baseline and checkpoint image</p>
-<img alt="diff-images" class="responsive-image" src="https://user-images.githubusercontent.com/10477804/173744923-377e9b21-5849-4a97-bb0d-cfe7efa3d4bc.png">
-</div>
+<Image desc="Comparison between baseline and checkpoint image" src="https://user-images.githubusercontent.com/10477804/173744923-377e9b21-5849-4a97-bb0d-cfe7efa3d4bc.png"/>
 
 ### What is happening here?
 
@@ -99,7 +94,7 @@ If there is a change in API response then update the snapshots and baseline scre
 -   Helps in
     -   Validating components integration.
     -   Presence of component in the righteous manner.
--   <b>Cross browser integration can be easily tested.</b>
+-   **Cross browser integration can be easily tested**
     -   Chromium, Webkit, Firefox can be easily tested across all the platforms.
 -   Puppeteer, Selenium, Playwright can be used for executing JSON test suites.
--   <b>Can be used by any web app and can also be extended to other teams.</b>
+-   **Can be used by any web app and can also be extended to other teams.**

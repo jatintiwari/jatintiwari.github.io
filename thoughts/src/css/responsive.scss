@@ -1,0 +1,34 @@
+@media (min-width: 992px) {
+    #thoughts {
+        #app {
+            .intro {
+                width: 65vw;
+            }
+            .articles {
+                width: 45vw;
+            }
+        }
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    #thoughts {
+        #app {
+            .intro {
+                width: 80vw;
+            }
+            .articles {
+                width: 65vw;
+            }
+        }
+    }
+}
+
+/* If the screen size is 600px or less, set the font-size of <div> to 30px */
+@media (min-width: 120px) and (max-width: 767px) {
+    .intro {
+        width: 95vw;
+    }
+    .articles {
+        width: 80vw;
+    }
+}

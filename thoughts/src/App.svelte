@@ -6,26 +6,40 @@
 
     import VisualRegression from './markdown/visual-regression.md';
 
-    const routes = [
-        {
-            path: '/visual-regression',
-            name: 'Visual Regression',
-            component: VisualRegression,
-        },
-    ];
+    const routes = {
+        June: [
+            {
+                path: '/visual-regression',
+                name: 'Visual Regression',
+                component: VisualRegression,
+            },
+        ],
+    };
+    const months = Object.entries(routes);
 </script>
 
 <div id="app">
     <Router>
         <Route path="/">
-            <Intro />
-            {#each routes as route}
-                <Link class="route" to={route.path}>{route.name}</Link>
-            {/each}
-            <Footer />
+            <div class="intro">
+                <Intro />
+            </div>
+            <div class="routes">
+                {#each months as [month, articles]}
+                    <p>{month}</p>
+                    {#each articles as article}
+                        <Link class="route" to={article.path}>{article.name}</Link>
+                    {/each}
+                {/each}
+            </div>
         </Route>
-        {#each routes as route}
-            <Route path={route.path} component={route.component} />
-        {/each}
+        <div class="articles">
+            {#each months as [_, articles]}
+                {#each articles as article}
+                    <Route path={article.path} component={article.component} />
+                {/each}
+            {/each}
+        </div>
     </Router>
+    <Footer />
 </div>

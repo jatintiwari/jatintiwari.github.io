@@ -33,14 +33,17 @@ function serve() {
 
 const plugins = [
     svelte({
+        dev: !production,
         compilerOptions: {
-            // enable run-time checks when not in production
             dev: !production,
         },
         extensions: ['.svelte', '.md'],
-        preprocess: mdsvex({
-            extensions: ['.svelte', '.md'],
-        }),
+        preprocess: [
+            mdsvex({
+                extensions: ['.svelte', '.md'],
+            }),
+            preprocess(),
+        ],
     }),
     // If you have external dependencies installed from
     // npm, you'll most likely need these plugins. In
@@ -49,13 +52,13 @@ const plugins = [
     // https://github.com/rollup/plugins/tree/master/packages/commonjs
     resolve({
         browser: true,
-        dedupe: ['svelte'],
+        dedupe: ['svelte', 'md'],
     }),
     commonjs(),
 
     // In dev mode, call `npm run start` once
     // the bundle has been generated
-    !production && serve(),
+    // !production && serve(),
 
     // If we're building for production (npm run build
     // instead of npm run dev), minify

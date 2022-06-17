@@ -1,15 +1,25 @@
-$snow: #f9f4f5ff;
-$honey-yellow: #ffb100ff;
-$carolina-blue: rgb(10, 116, 187);
-$independence: #34435eff;
-$tomato: #fe654fff;
-$grass-green: #87c840;
-$purple: #c478f3;
+@import './responsive.scss';
+@import './colors.scss';
+@import './utils.scss';
+@import './theme.scss';
 
+html {
+    position: relative;
+}
 html,
 body {
-    position: relative;
+    min-height: 90vh;
     margin: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Noto Sans', 'Ubuntu', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
+    // color: $independence;
+    // background-color: $snow;
+    letter-spacing: 0.01em;
+    font-size: 1em;
+    padding-bottom: 2em;
 }
 
 p {
@@ -18,19 +28,6 @@ p {
 
 *:focus-visible {
     user-select: none;
-}
-
-.box-shadow {
-    box-shadow: 1px 3px 5px #aaa;
-}
-
-.br-radius {
-    border-radius: 5px;
-}
-
-img {
-    @extend .box-shadow;
-    border-radius: 5px;
 }
 
 pre code {
@@ -58,54 +55,19 @@ pre code {
     }
 }
 
-body {
-    font-family: 'Open Sans', sans-serif;
-    color: $independence;
-    letter-spacing: 0.05em;
-    background-color: $snow;
-    position: relative;
-    font-weight: 300;
-}
-.center {
-    text-align: center;
-}
-
 #thoughts {
-    display: flex;
-    justify-content: center;
     #app {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .routes {
         width: 45vw;
-        position: relative;
-    }
-
-    .route {
-        text-decoration: none;
-        color: $carolina-blue;
-    }
-
-    .responsive-image {
-        width: 100%;
-        // max-width: 420px;
-    }
-
-    footer {
-        background-color: $snow;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-    #thoughts {
-        #app {
-            width: 95vw;
-        }
-    }
-}
-
-@media (min-width: 320px) and (max-width: 480px) {
-    #thoughts {
-        #app {
-            width: 100%;
-            padding: 1em;
+        .route {
+            text-decoration: none;
+            color: $carolina-blue;
         }
     }
 }

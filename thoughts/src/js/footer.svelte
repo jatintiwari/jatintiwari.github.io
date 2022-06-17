@@ -2,8 +2,10 @@
 
 <style lang="scss">
   footer {
-    position: fixed;
+    position: absolute;
     bottom: 10px;
-    left: 45%;
+    left: 0;
+    right: 0;
+    text-align: center;
   }
 </style>
