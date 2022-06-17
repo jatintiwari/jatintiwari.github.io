@@ -11,7 +11,8 @@
     "compile-home": "export templateName=index && export jsFileName=bundle && export cssFileName=bundle && node compile-handlebars",
     "watch-home": "yarn nodemon -w dist --exec \"yarn compile-home\"",
     "build-thoughts": "NODE_ENV=thoughts rollup -c",
-    "deploy-thoughts": "yarn build-thoughts && firebase deploy --only hosting"
+    "deploy-thoughts": "yarn build-thoughts && firebase deploy --only hosting",
+    "postinstall": "husky install"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
@@ -25,6 +26,7 @@
   },
   "dependencies": {
     "handlebars": "^4.7.7",
+    "husky": "^8.0.1",
     "mdsvex": "^0.10.6",
     "node-sass": "^7.0.1",
     "nodemon": "^2.0.16",
