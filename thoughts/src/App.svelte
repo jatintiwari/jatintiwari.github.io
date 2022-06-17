@@ -26,7 +26,7 @@
             </div>
             <div class="routes">
                 {#each months as [month, articles]}
-                    <p>{month}</p>
+                    <p><b>{month}</b></p>
                     {#each articles as article}
                         <Link class="route" to={article.path}>{article.name}</Link>
                     {/each}
