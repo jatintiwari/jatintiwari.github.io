@@ -6,6 +6,8 @@ import { terser } from 'rollup-plugin-terser';
 import preprocess from 'svelte-preprocess';
 import scss from 'rollup-plugin-scss';
 
+import { mdsvex } from 'mdsvex';
+
 const production = !process.env.ROLLUP_WATCH;
 
 function serve() {
@@ -31,11 +33,17 @@ function serve() {
 
 const plugins = [
     svelte({
+        dev: !production,
         compilerOptions: {
-            // enable run-time checks when not in production
             dev: !production,
         },
-        preprocess: preprocess(),
+        extensions: ['.svelte', '.md'],
+        preprocess: [
+            mdsvex({
+                extensions: ['.svelte', '.md'],
+            }),
+            preprocess(),
+        ],
     }),
     // If you have external dependencies installed from
     // npm, you'll most likely need these plugins. In
@@ -44,13 +52,13 @@ const plugins = [
     // https://github.com/rollup/plugins/tree/master/packages/commonjs
     resolve({
         browser: true,
-        dedupe: ['svelte'],
+        dedupe: ['svelte', 'md'],
     }),
     commonjs(),
 
     // In dev mode, call `npm run start` once
     // the bundle has been generated
-    !production && serve(),
+    // !production && serve(),
 
     // If we're building for production (npm run build
     // instead of npm run dev), minify
@@ -65,7 +73,7 @@ let configs = [];
 
 if (process.env.NODE_ENV === 'thoughts') {
     configs.push({
-        input: 'thoughts/main.js',
+        input: 'thoughts/src/main.js',
         output: {
             format: 'iife',
             name: 'thoughts',
@@ -76,7 +84,7 @@ if (process.env.NODE_ENV === 'thoughts') {
             scss({
                 sass: require('node-sass'),
                 output: 'thoughts/dist/css/thoughts.css',
-                outputStyle: "compressed",
+                outputStyle: 'compressed',
             }),
         ],
         watch,
@@ -96,7 +104,7 @@ if (process.env.NODE_ENV === 'thoughts') {
                 scss({
                     sass: require('node-sass'),
                     output: 'dist/bundle.css',
-                    outputStyle: "compressed",
+                    outputStyle: 'compressed',
                 }),
             ],
             watch,
@@ -111,7 +119,7 @@ if (process.env.NODE_ENV === 'thoughts') {
                 scss({
                     sass: require('node-sass'),
                     output: 'dist/knowMore.css',
-                    outputStyle: "compressed",
+                    outputStyle: 'compressed',
                 }),
             ],
             watch,

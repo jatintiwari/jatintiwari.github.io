@@ -1,0 +1,73 @@
+@import './responsive.scss';
+@import './colors.scss';
+@import './utils.scss';
+@import './theme.scss';
+
+html {
+    position: relative;
+}
+html,
+body {
+    min-height: 90vh;
+    margin: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Noto Sans', 'Ubuntu', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
+    // color: $independence;
+    // background-color: $snow;
+    letter-spacing: 0.01em;
+    font-size: 1em;
+    padding-bottom: 2em;
+}
+
+p {
+    overflow-x: hidden;
+}
+
+*:focus-visible {
+    user-select: none;
+}
+
+pre code {
+    font-family: monospace;
+    display: block;
+    white-space: pre-wrap;
+    background-color: #040404;
+    color: $snow;
+    padding: 24px;
+
+    @extend .box-shadow, .br-radius;
+    .token {
+        &.punctuation {
+            color: $purple;
+        }
+        &.operator {
+            color: $honey-yellow;
+        }
+        &.property {
+            color: $tomato;
+        }
+        &.string {
+            color: $grass-green;
+        }
+    }
+}
+
+#thoughts {
+    #app {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .routes {
+        width: 45vw;
+        .route {
+            text-decoration: none;
+            color: $carolina-blue;
+        }
+    }
+}

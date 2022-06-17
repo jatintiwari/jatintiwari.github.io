@@ -1,0 +1,74 @@
+@import './colors.scss';
+@import './utils.scss';
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: $snow;
+        color: $independence;
+        font-weight: normal;
+    }
+    footer {
+        background-color: $snow;
+    }
+    #thoughts {
+        #app {
+            .bg-blue {
+                background-color: $snow;
+            }
+            .border-dark {
+                border-color: $independence;
+            }
+        }
+    }
+
+    .quote-container {
+        .quotes {
+            color: $independence;
+            fill: $independence;
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: $independence;
+        color: $snow;
+        font-weight: lighter;
+    }
+    footer {
+        background-color: $independence;
+    }
+    pre code {
+        box-shadow: none;
+    }
+
+    .quote-container {
+        .quotes {
+            color: $snow;
+            fill: $snow;
+        }
+    }
+
+    #thoughts {
+        #app {
+            .border-dark {
+                border-color: $snow;
+            }
+            a {
+                color: $honey-yellow;
+            }
+
+            a.cta:hover {
+                color: $carolina-blue;
+            }
+
+            .box-shadow {
+                box-shadow: 0px;
+            }
+
+            .image-container .desc {
+                color: $independence;
+            }
+        }
+    }
+}

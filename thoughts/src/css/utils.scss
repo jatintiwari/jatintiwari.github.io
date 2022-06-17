@@ -1,0 +1,43 @@
+@import './colors.scss';
+
+.box-shadow {
+    -webkit-box-shadow: 7px 11px 5px -6px $grey;
+    -moz-box-shadow: 7px 11px 5px -6px $grey;
+    box-shadow: 7px 11px 5px -6px $grey;
+}
+
+.br-radius {
+    border-radius: 5px;
+}
+
+.br-rad-t {
+    border-radius: 5px 5px 0 0;
+}
+.br-rad-b {
+    border-radius: 0 0 5px 5px;
+}
+
+.center {
+    text-align: center;
+}
+
+.grey-grad {
+    background: linear-gradient(180deg, $grey 10%, $snow 50%);
+}
+
+@media (prefers-color-scheme: dark) {
+    .grey-grad {
+        background: linear-gradient(180deg, $grey 10%, $independence 50%)
+    }
+
+    .box-shadow {
+        -webkit-box-shadow: 7px 11px 5px -6px $royal-blue;
+        -moz-box-shadow: 7px 11px 5px -6px $royal-blue;
+        box-shadow: 7px 11px 5px -6px $royal-blue;
+    }
+}
+
+
+.font-xxl {
+    font-size: 2em;
+}
