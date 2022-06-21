@@ -27,16 +27,15 @@
 
 @media (prefers-color-scheme: dark) {
     .grey-grad {
-        background: linear-gradient(180deg, $grey 10%, $independence 50%)
+        background: linear-gradient(180deg, $grey 10%, $independence 50%);
     }
 
     .box-shadow {
-        -webkit-box-shadow: 7px 11px 5px -6px $royal-blue;
-        -moz-box-shadow: 7px 11px 5px -6px $royal-blue;
-        box-shadow: 7px 11px 5px -6px $royal-blue;
+        -webkit-box-shadow: 7px 11px 5px -6px $independence;
+        -moz-box-shadow: 7px 11px 5px -6px $independence;
+        box-shadow: 7px 11px 5px -6px $independence;
     }
 }
-
 
 .font-xxl {
     font-size: 2em;

@@ -5,7 +5,12 @@
         <meta name="viewport" content="width=device-width,initial-scale=1" />
 
         <title>More writing, Less talking</title>
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap"
+            rel="stylesheet"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta
             title="title"
@@ -18,6 +23,11 @@
         <link rel="icon" type="image/png" href="/favicon.png" />
         <link rel="stylesheet" href="/dist/css/thoughts.css" />
         <script defer src="/dist/js/thoughts.js" defer></script>
+        <script>
+            const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const initMode = isDarkMode ? 'dark' : 'light';
+            document.documentElement.classList.add(initMode);
+        </script>
     </head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148896904-1"></script>

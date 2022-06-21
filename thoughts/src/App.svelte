@@ -1,8 +1,9 @@
 <script>
-    import { Router, Route, Link } from 'svelte-navigator';
+    import { Router, Route, Link, useLocation } from 'svelte-navigator';
 
     import Intro from './js/Intro.svelte';
     import Footer from './js/footer.svelte';
+    import Header from './js/Header.svelte';
 
     import VisualRegression from './markdown/visual-regression.md';
 
@@ -16,6 +17,7 @@
         ],
     };
     const months = Object.entries(routes);
+    
 </script>
 
 <div id="app">
@@ -34,6 +36,7 @@
             </div>
         </Route>
         <div class="articles">
+            <Header />
             {#each months as [_, articles]}
                 {#each articles as article}
                     <Route path={article.path} component={article.component} />
