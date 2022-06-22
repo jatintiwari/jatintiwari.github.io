@@ -69,6 +69,10 @@ html.dark {
     blockquote {
         border-color: $snow;
     }
+    
+    a[target='_blank'] {
+        color: $honey-yellow;
+    }
 
     .quote-container {
         .quotes {
