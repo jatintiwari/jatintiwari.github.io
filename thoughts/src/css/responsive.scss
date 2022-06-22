@@ -1,10 +1,11 @@
 @media (min-width: 992px) {
     #thoughts {
         #app {
-            .intro {
-                width: 65vw;
+            .intro-container {
+                width: 45vw;
             }
-            .articles {
+            .articles,
+            .routes {
                 width: 45vw;
                 font-size: 1.1em;
             }
@@ -14,7 +15,7 @@
 @media (min-width: 768px) and (max-width: 991px) {
     #thoughts {
         #app {
-            .intro {
+            .intro-container {
                 width: 80vw;
             }
             .articles,
@@ -28,7 +29,7 @@
 
 /* If the screen size is 600px or less, set the font-size of <div> to 30px */
 @media (min-width: 120px) and (max-width: 767px) {
-    .intro {
+    .intro-container {
         width: 95vw;
     }
     .articles,

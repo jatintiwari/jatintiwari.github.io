@@ -21,6 +21,9 @@ html.light {
     footer {
         background-color: $snow;
     }
+    blockquote {
+        border-color: $independence;
+    }
     #thoughts {
         #app {
             .bg-blue {
@@ -29,8 +32,11 @@ html.light {
             .border-dark {
                 border-color: $independence;
             }
-            .image-container {
-                background: linear-gradient(180deg, $grey 10%, $snow 50%);;
+            .border-image-container {
+                background: linear-gradient(180deg, $grey 10%, $snow 50%);
+            }
+            .route {
+                color: $carolina-blue;
             }
         }
     }
@@ -60,6 +66,10 @@ html.dark {
         box-shadow: none;
     }
 
+    blockquote {
+        border-color: $snow;
+    }
+
     .quote-container {
         .quotes {
             color: $snow;
@@ -81,7 +91,7 @@ html.dark {
                 box-shadow: 0px;
             }
 
-            .image-container .desc {
+            .border-image-container .desc {
                 color: $independence;
             }
         }

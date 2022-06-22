@@ -6,7 +6,7 @@
 
 {#if $location.pathname !== '/'}
     <div class="header">
-        <h3><a href="/">Thoughts</a></h3>
+        <h2><a href="/">Thoughts</a></h2>
         <Theme />
     </div>
 {/if}

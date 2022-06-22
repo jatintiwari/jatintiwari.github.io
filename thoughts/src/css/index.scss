@@ -2,6 +2,7 @@
 @import './colors.scss';
 @import './utils.scss';
 @import './theme.scss';
+@import './highlights.scss';
 
 html {
     position: relative;
@@ -31,31 +32,23 @@ p {
 a {
     color: $honey-yellow;
     text-decoration: none;
-}
-
-pre code {
-    font-family: monospace;
-    display: block;
-    white-space: pre-wrap;
-    background-color: #040404;
-    color: $snow;
-    padding: 24px;
-
-    @extend .box-shadow, .br-radius;
-    .token {
-        &.punctuation {
-            color: $purple;
-        }
-        &.operator {
-            color: $honey-yellow;
-        }
-        &.property {
-            color: $tomato;
-        }
-        &.string {
-            color: $grass-green;
+    &[target='_blank'] {
+        text-decoration: underline;
+        color: $independence;
+        &:after {
+            content: '⇗';
+            font-size: 0.5em;
+            vertical-align: super;
         }
     }
+}
+
+blockquote {
+    margin-left: 0;
+    border-left: 5px solid;
+    padding: 0 0.5em;
+    font-size: 1.5em;
+    font-style: italic;
 }
 
 #thoughts {
@@ -70,10 +63,11 @@ pre code {
     }
 
     .routes {
-        width: 45vw;
         .route {
             text-decoration: none;
-            color: $carolina-blue;
+            display: block;
+            margin: 1em 0;
+            padding-left: 1em;
         }
     }
 }

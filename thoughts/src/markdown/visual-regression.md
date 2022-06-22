@@ -1,30 +1,28 @@
 <script>
-  import Image from '../js/Image.svelte';
+  import Image from '../js/common/Image.svelte';
+  import Quotes from '../js/Quotes.svelte';
+  import BlogHeader from './common/blog-header.md';
 </script>
 
-#### 15 June 2022
-
-## Visual diffing for End to End Testing
-
----
+<BlogHeader date="15 June 2022" title="Visual diffing for End to End Testing"/>
 
 For end-to-end UI testing there are a few case which can go untested with any amount of automated testing unless they are compared manually every time.
 
 There are many cases where details like
 
 -   Color of text
--   Background elements,
+-   Background elements
 -   Placement of element
 
 These a few of many cases in the view port requires manual intervention as they cannot be detected with automated scripts.
 
 Automated scripts can assure existence of element but cannot easily assert elements correct position.
 
-<Image desc="Base Image" src="https://user-images.githubusercontent.com/10477804/173744949-8d029afc-c61e-4bcd-8801-c57aab049b8a.png"/>
+<Image withBorder height="500" desc="Base Image" src="https://user-images.githubusercontent.com/10477804/173744949-8d029afc-c61e-4bcd-8801-c57aab049b8a.png"/>
 
-<Image desc="Checkpoint image - taken during test runs" src="https://user-images.githubusercontent.com/10477804/173744940-c93d452b-fcbe-4c57-af35-b0f9f2bb9de3.png"/>
+<Image withBorder height="500" desc="Checkpoint image - taken during test runs" src="https://user-images.githubusercontent.com/10477804/173744940-c93d452b-fcbe-4c57-af35-b0f9f2bb9de3.png"/>
 
-<Image desc="Comparison between baseline and checkpoint image" src="https://user-images.githubusercontent.com/10477804/173744923-377e9b21-5849-4a97-bb0d-cfe7efa3d4bc.png"/>
+<Image withBorder height="500" desc="Comparison between baseline and checkpoint image" src="https://user-images.githubusercontent.com/10477804/173744923-377e9b21-5849-4a97-bb0d-cfe7efa3d4bc.png"/>
 
 ### What is happening here?
 
@@ -38,6 +36,12 @@ Automated scripts can assure existence of element but cannot easily assert eleme
 -   Raise a request tab icon is missing.
 -   Right most cross has started appearing in checkpoint image.
 -   Filter drop down is missing in upper tab bar.
+<!-- <Quotes>
+Good testing is difficult. Perfect is unimaginable.
+</Quotes> -->
+
+> Good testing is difficult.
+> Perfect is unimaginable.
 
 ### Agenda
 

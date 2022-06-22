@@ -6,6 +6,7 @@
     import Header from './js/Header.svelte';
 
     import VisualRegression from './markdown/visual-regression.md';
+    import RoundedImages from './markdown/rounded-images.md';
 
     const routes = {
         June: [
@@ -13,6 +14,11 @@
                 path: '/visual-regression',
                 name: 'Visual Regression',
                 component: VisualRegression,
+            },
+            {
+                path: '/rounded-images',
+                name: 'Crop edges to create a round image',
+                component: RoundedImages,
             },
         ],
     };
@@ -23,9 +29,7 @@
 <div id="app">
     <Router>
         <Route path="/">
-            <div class="intro">
-                <Intro />
-            </div>
+            <Intro />
             <div class="routes">
                 {#each months as [month, articles]}
                     <p><b>{month}</b></p>

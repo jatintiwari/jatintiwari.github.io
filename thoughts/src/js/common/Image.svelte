@@ -1,0 +1,84 @@
+<script>
+    import { onMount } from 'svelte';
+
+    export let src,
+        desc,
+        rounded = false,
+        withBorder = false,
+        height = 150;
+    $: imageHeight = height;
+    const init = () => {
+        const viewPortWidth = document.body.scrollWidth;
+        if (viewPortWidth < 400 && height > 400) {
+            console.log('Init - image resize');
+            imageHeight = height * 0.5;
+        } else {
+            imageHeight = height;
+        }
+    };
+    window.addEventListener('resize', init);
+    onMount(init);
+</script>
+
+{#if withBorder}
+    <div class="border-image-container" style={`min-height:${imageHeight}px; min-width: ${imageHeight}px;`}>
+        {#if desc} <p class="desc">{desc}</p> {/if}
+        <img loading="lazy" alt={desc} class="responsive-image" {src} />
+    </div>
+{/if}
+
+{#if rounded}
+    <div class="rounded-image-container">
+        <div style={`height:${imageHeight}px; width: ${imageHeight}px;`}>
+            <img loading="lazy" alt={desc} class="responsive-image" {src} />
+        </div>
+    </div>
+{/if}
+
+{#if !rounded && !withBorder}
+    <div class="image-container">
+        <div style={`height:${imageHeight}px; width: ${imageHeight}px;`}>
+            <img height={`${imageHeight}px`} loading="lazy" alt={desc} class="responsive-image" {src} />
+        </div>
+        {#if desc} <p class="desc center">{desc}</p> {/if}
+    </div>
+{/if}
+
+<style lang="scss">
+    @import '../../css/index.scss';
+    @import '../../css/utils.scss';
+
+    .responsive-image {
+        height: 100%;
+    }
+
+    .desc {
+        font-size: 0.8em;
+    }
+
+    .rounded-image-container {
+        display: inline-block;
+        .responsive-image {
+            transition: 0.5s height cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+    }
+
+    .border-image-container {
+        margin-bottom: 1em;
+        padding: 0.5em;
+        @extend .br-radius;
+        @extend .grey-grad;
+        @extend .center;
+        .desc {
+            text-align: left;
+            margin: 0;
+            font-size: 12px;
+            padding: 0 0 0.5em 0;
+        }
+        .responsive-image {
+            @extend .box-shadow;
+            @extend .br-radius;
+            width: 100%;
+        }
+    }
+</style>
