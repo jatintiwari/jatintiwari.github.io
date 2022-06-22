@@ -1,17 +1,17 @@
 <script>
     import Theme from './Theme.svelte';
-    import { useLocation } from 'svelte-navigator';
-    const location = useLocation();
+    import { Link } from 'svelte-navigator';
+    // const location = useLocation();
 </script>
 
-{#if $location.pathname !== '/'}
-    <div class="header">
-        <h2><a href="/">Thoughts</a></h2>
-        <Theme />
-    </div>
-{/if}
+<div class="header">
+    <h2>
+        <Link to="/">Thoughts</Link>
+    </h2>
+    <Theme />
+</div>
 
-<style>
+<style lang="scss">
     .header {
         position: relative;
         display: block;

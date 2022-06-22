@@ -1,5 +1,5 @@
 <script>
-    import { Router, Route, Link, useLocation } from 'svelte-navigator';
+    import { Router, Route, Link } from 'svelte-navigator';
 
     import Intro from './js/Intro.svelte';
     import Footer from './js/footer.svelte';
@@ -23,11 +23,13 @@
         ],
     };
     const months = Object.entries(routes);
-    
 </script>
 
-<div id="app">
-    <Router>
+<Router>
+    <div id="app">
+        <div class="container">
+            <Header />
+        </div>
         <Route path="/">
             <Intro />
             <div class="routes">
@@ -40,13 +42,12 @@
             </div>
         </Route>
         <div class="articles">
-            <Header />
             {#each months as [_, articles]}
                 {#each articles as article}
                     <Route path={article.path} component={article.component} />
                 {/each}
             {/each}
         </div>
-    </Router>
-    <Footer />
-</div>
+        <Footer />
+    </div>
+</Router>
