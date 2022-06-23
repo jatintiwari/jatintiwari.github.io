@@ -68,7 +68,7 @@
         padding: 0.5em;
         @extend .br-radius;
         @extend .grey-grad;
-        @extend .center;
+        @extend .text-center;
         .desc {
             text-align: left;
             margin: 0;

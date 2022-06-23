@@ -1,43 +1,37 @@
 @media (min-width: 992px) {
+    body {
+        overflow-x: hidden;
+    }
     #thoughts {
-        #app {
-            .intro-container {
-                width: 45vw;
-            }
-            .articles,
-            .container,
-            .routes {
-                width: 45vw;
-                font-size: 1.1em;
-            }
+        .container {
+            width: 45vw;
+            font-size: 1.1em;
         }
     }
 }
 @media (min-width: 768px) and (max-width: 991px) {
+    body {
+        overflow-x: hidden;
+    }
     #thoughts {
-        #app {
-            .intro-container {
-                width: 80vw;
-            }
-            .articles,
-            .container,
-            .routes {
-                width: 65vw;
-                font-size: 1.1em;
-            }
+        .container {
+            width: 65vw;
+            font-size: 1.1em;
         }
     }
 }
 
 /* If the screen size is 600px or less, set the font-size of <div> to 30px */
 @media (min-width: 120px) and (max-width: 767px) {
-    .intro-container {
-        width: 95vw;
-    }
-    .articles,
-    .container,
-    .routes {
+    .container {
         font-size: 1.2em;
         width: 80vw;
     }
+}
+
+.invisible-scrollbar {
+    scrollbar-width: none;
+}
+.invisible-scrollbar::-webkit-scrollbar {
+    display: none;
 }

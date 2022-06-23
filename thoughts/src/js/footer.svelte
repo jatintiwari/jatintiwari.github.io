@@ -1,6 +1,6 @@
 <div class="footer-container">
-    <p class="center">* * *</p>
-    <footer class="center">Made with ❤️ in 🇮🇳</footer>
+    <p class="text-center">* * *</p>
+    <footer class="text-center">Made with ❤️ in 🇮🇳</footer>
 </div>
 
 <style lang="scss">

@@ -30,10 +30,9 @@
 
 <style lang="scss">
     .theme-container {
-        position: absolute;
-        right: 2%;
-        top: 0.5%;
-
+        height: 32px;
+        width: 32px;
+        position: relative;
         .theme-button {
             font-size: 32px;
             cursor: pointer;

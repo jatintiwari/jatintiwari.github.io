@@ -11,14 +11,14 @@
     const routes = {
         June: [
             {
-                path: '/visual-regression',
-                name: 'Visual Regression',
-                component: VisualRegression,
-            },
-            {
                 path: '/rounded-images',
                 name: 'Crop edges to create a round image',
                 component: RoundedImages,
+            },
+            {
+                path: '/visual-regression',
+                name: 'Visual Regression',
+                component: VisualRegression,
             },
         ],
     };
@@ -26,22 +26,20 @@
 </script>
 
 <Router>
+    <Header />
     <div id="app">
-        <div class="container">
-            <Header />
-        </div>
-        <Route path="/">
-            <Intro />
-            <div class="routes">
+        <div class="container routes">
+            <Route path="/">
+                <Intro />
                 {#each months as [month, articles]}
                     <p><b>{month}</b></p>
                     {#each articles as article}
                         <Link class="route" to={article.path}>{article.name}</Link>
                     {/each}
                 {/each}
-            </div>
-        </Route>
-        <div class="articles">
+            </Route>
+        </div>
+        <div class="container">
             {#each months as [_, articles]}
                 {#each articles as article}
                     <Route path={article.path} component={article.component} />

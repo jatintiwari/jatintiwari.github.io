@@ -1,19 +1,25 @@
 <script>
     import Theme from './Theme.svelte';
+    import Center from './../js/common/Center.svelte';
     import { Link } from 'svelte-navigator';
     // const location = useLocation();
 </script>
 
-<div class="header">
-    <h2>
-        <Link to="/">Thoughts</Link>
-    </h2>
-    <Theme />
-</div>
+<Center>
+    <div class="container">
+        <div class="header space-between">
+            <Link class="heading" to="/"><h2>Thoughts</h2></Link>
+            <Theme />
+        </div>
+    </div>
+</Center>
 
 <style lang="scss">
     .header {
-        position: relative;
-        display: block;
+        &.space-between {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
 </style>
