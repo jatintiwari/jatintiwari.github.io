@@ -38,21 +38,33 @@
 }
 
 @media (min-width: 1280px) {
+    .font-xl {
+        font-size: 1.25em;
+    }
     .font-xxl {
         font-size: 2em;
     }
 }
 @media (min-width: 991px) and (max-width: 1279px) {
+    .font-xl {
+        font-size: 1.25em;
+    }
     .font-xxl {
         font-size: 1.5em;
     }
 }
 @media (min-width: 768px) and (max-width: 991px) {
+    .font-xl {
+        font-size: 1.15em;
+    }
     .font-xxl {
         font-size: 1.3em;
     }
 }
 @media (min-width: 120px) and (max-width: 767px) {
+    .font-xl {
+        font-size: 1.05em;
+    }
     .font-xxl {
         font-size: 1.3em;
     }

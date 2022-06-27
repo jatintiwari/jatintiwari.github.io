@@ -13,8 +13,9 @@
                 width="145px;"
                 style="float: left; margin-right: 1em;"
             />
-            <span class="intro-text">Hello, I am Jatin.</span>
-            <p class="intro-text">Software Engineer, Gregarious, Ambivert.</p>
+            <span class="intro-text font-xl">Hello, I am Jatin.</span>
+            <br>
+            <span class="intro-text">Software Engineer, Gregarious, Ambivert.</span>
             <p class="intro-text">
                 More than 1000 thoughts cross my mind every day, I will be writing about a few which makes me curious.
             </p>

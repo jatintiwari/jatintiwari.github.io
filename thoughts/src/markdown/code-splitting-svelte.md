@@ -20,7 +20,7 @@ But, as the application grows the end users of any application has to pay the pr
 
 The _Actual Size_ is what the browser has to parse. This in itself is a bottle neck in old/low-end devices. <b>JS is everywhere</b> now and We must optimize the experience for everyone.
 
-_We can squeeze the air out of a pillow with a vacuum device. Even after that, there is still piece of mass that requires space in our storage._
+> We can squeeze the air out of a pillow with a vacuum device. Even after that, there is still a piece of mass that requires space in our storage.
 
 We can further reduce the amount of code with help of dynamic imports and keep our application as lean as possible.
 The idea behind the code splitting is simple - Load only the part of application code which is required to render the particular route the user is visiting.
