@@ -17,7 +17,7 @@ The idea behind the code splitting is simple - Load only the part of application
 
 The code splitting of the <b>route resources</b> can further be bifurcated into above the fold and below the fold content (there is no straight way of doing it).
 
-Enough talking, Here is the code!
+### <div align="center">Enough talking, Here is the code!</div>
 
 I have a route based application, where each route loads an async `Component`.
 
@@ -29,7 +29,7 @@ const routes = [{
 }]
 ```
 
-To load the component async and do something while it loads, I did write a util function while handles the loading and returns the default export of the `es` module.
+To load the component async and do something while it loads, I did write a util function which handles the loading and returns the default export of the `es` module.
 
 ```js
 const getComponent = async (module) => {
