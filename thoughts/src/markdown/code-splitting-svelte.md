@@ -7,9 +7,15 @@
 Svelte is gaining a lot of traction these days. It is easy to implement and learn. The main reason i have started using Svelte is that it is <b>_not opinionated_</b>.
 Mostly, I just have to write what actually is required - HTML, CSS and JS and do not worry about the optimizations.
 
-But, as the application grows the end users of any application has to pay the price. The hidden cost of downloading mega chunks of JS and CSS resources. We can optimize this via using extra efficient systems and techniques in place e.g. `CDN, Browser Cache, Uglify/Minify` are a few basic optimizations techniques. As you see, I does not reduce the actual amount of code that is being parsed on the browser.
+But, as the application grows the end users of any application has to pay the price. The hidden cost of downloading mega chunks of JS and CSS resources. We can optimize this via using extra efficient systems and techniques in place e.g. `CDN, Browser Cache, Uglify/Minify` are a few basic optimizations techniques. As you see, It does not reduce the actual amount of code that is being parsed on the browser.
 
-_We can squeeze the air out of our pillows with the vaccum devices. Even after that, there is still piece of mass that requires space in our storage._
+| Type | Transferred | Actual Size |
+| ---- | ----------- | ----------- |
+| js   | 39.59 KB    | 100.63KB    |
+
+The _Actual Size_ is what the browser has parse. This in itself is a bottle neck in old/low-end devices. <b>JS is everywhere</b> now and We must optimize the experience for everyone.
+
+_We can squeeze the air out of a pillow with a vaccum device. Even after that, there is still piece of mass that requires space in our storage._
 
 We can further reduce the amount of code with help of dynamic imports and keep our application as lean as possible.
 
@@ -22,11 +28,13 @@ The code splitting of the <b>route resources</b> can further be bifurcated into 
 I have a route based application, where each route loads an async `Component`.
 
 ```js
-const routes = [{
-    path: '/svelte-code-splitting',
-    name: 'Svelte Code splitting',
-    component: () => import('./markdown/code-splitting-svelte.md'),
-}]
+const routes = [
+    {
+        path: '/svelte-code-splitting',
+        name: 'Svelte Code splitting',
+        component: () => import('./markdown/code-splitting-svelte.md'),
+    },
+];
 ```
 
 To load the component async and do something while it loads, I did write a util function which handles the loading and returns the default export of the `es` module.
@@ -37,6 +45,7 @@ const getComponent = async (module) => {
     return component;
 };
 ```
+
 The above function is called for each route.
 
 ```svelte
@@ -48,49 +57,54 @@ The above function is called for each route.
   </Route>
 {/each}
 ```
-*Notice the `artilce.component` is a function which is evoked when the route is matched.*
+
+_Notice the `artilce.component` is a function which is evoked when the route is matched._
 
 This is the bare minimum code which is required for creating dynamic chunks during the build processes.
 
 #### Other changes
-* `rollup.config.js`
-  ```js 
-    output: {
-      format: 'es',
-      name: 'thoughts',
-      dir: 'thoughts/dist/js',
-    }
-  ```
-  `format` for dynamic chunks is _"es"_ instead of _iife_. A directory path to save the chunks is provided as `dir`.
 
+-   `rollup.config.js`
 
-* `index.html`
- ```html
-  <script src="/dist/js/thoughts.js" type="module"></script>
- ```
- The main chunk has to added as _type="module"_
+    ```js
+      output: {
+        format: 'es',
+        name: 'thoughts',
+        dir: 'thoughts/dist/js',
+      }
+    ```
 
-#### Final result 
+    `format` for dynamic chunks is _"es"_ instead of _iife_. A directory path to save the chunks is provided as `dir`.
+
+-   `index.html`
+
+```html
+<script src="/dist/js/thoughts.js" type="module"></script>
+```
+
+The main chunk has to added as _type="module"_
+
+#### Final result
+
 Chunks are create with `chunkName-[hash].js`
 
 ![chunks](https://user-images.githubusercontent.com/10477804/175859365-085a3232-d7ed-4b6c-ad97-1bc9f58d9cc6.png)
 
 This can be configured with `chunkFileNames` property in `rollup.config.js`
+
 ```js
 chunkFileNames: (chunkInfo) => {
   return `${chunkInfo.name}.js`;
 },
 ```
 
-
 #### Network requests
+
 Inside the `index.html` we need to add only the the main bundle i.e. `thought.js` in our case. It has all the information of the chunks that has been created. It loads them in sync to boot the application.
 
 ![network-calls](https://user-images.githubusercontent.com/10477804/175859805-b4b911cd-3152-4bfb-aeb1-ad22820dc0cc.png)
 
 #### Useful resources
-- [Github Repo by Rich Harris](https://github.com/Rich-Harris/rollup-svelte-code-splitting)
-- [ES6 modules](https://hacks.mozilla.org/2015/08/es6-in-depth-modules/)
 
-
-
+-   [Github Repo by Rich Harris](https://github.com/Rich-Harris/rollup-svelte-code-splitting)
+-   [ES6 modules](https://hacks.mozilla.org/2015/08/es6-in-depth-modules/)
