@@ -5,24 +5,26 @@
     import Footer from './js/footer.svelte';
     import Header from './js/Header.svelte';
 
-    import VisualRegression from './markdown/visual-regression.md';
-    import RoundedImages from './markdown/rounded-images.md';
-
     const routes = {
         June: [
             {
                 path: '/rounded-images',
                 name: 'Crop edges to create a round image',
-                component: RoundedImages,
+                component: () => import('./markdown/rounded-images.md'),
             },
             {
                 path: '/visual-regression',
                 name: 'Visual Regression',
-                component: VisualRegression,
+                component: () => import('./markdown/visual-regression.md'),
             },
         ],
     };
     const months = Object.entries(routes);
+
+    const getComponent = async (module) => {
+        const component = (await module).default;
+        return component;
+    };
 </script>
 
 <Router>
@@ -42,7 +44,13 @@
         <div class="container">
             {#each months as [_, articles]}
                 {#each articles as article}
-                    <Route path={article.path} component={article.component} />
+                    <Route path={article.path}>
+                        {#await getComponent(article.component())}
+                            Loading Component!!
+                        {:then Component}
+                            <Component />
+                        {/await}
+                    </Route>
                 {/each}
             {/each}
         </div>

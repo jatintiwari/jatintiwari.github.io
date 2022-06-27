@@ -7,10 +7,11 @@
     "dev": "rollup -c -w",
     "start": "sirv . --no-clear",
     "start-thoughts": "sirv thoughts --dev --single",
-    "dev-thoughts": "NODE_ENV=thoughts rollup -c -w",
+    "clean-thoughts": "rm ./thoughts/dist/js/** && rm ./thoughts/dist/css/**",
+    "dev-thoughts": "yarn clean-thoughts; NODE_ENV=thoughts rollup -c -w",
     "compile-home": "export templateName=index && export jsFileName=bundle && export cssFileName=bundle && node compile-handlebars",
     "watch-home": "yarn nodemon -w dist --exec \"yarn compile-home\"",
-    "build-thoughts": "NODE_ENV=thoughts rollup -c",
+    "build-thoughts": "yarn clean-thoughts; NODE_ENV=thoughts rollup -c",
     "deploy-thoughts": "yarn build-thoughts && firebase deploy --only hosting",
     "postinstall": "husky install"
   },

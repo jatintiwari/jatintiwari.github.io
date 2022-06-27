@@ -2,12 +2,12 @@
 @import './utils.scss';
 
 html.dark {
-    .sun {
+    .moon {
         visibility: hidden;
     }
 }
 html.light {
-    .moon {
+    .sun {
         visibility: hidden;
     }
 }
