@@ -8,6 +8,11 @@
     const routes = {
         June: [
             {
+                path: '/svelte-code-splitting',
+                name: 'Svelte Code splitting',
+                component: () => import('./markdown/code-splitting-svelte.md'),
+            },
+            {
                 path: '/rounded-images',
                 name: 'Crop edges to create a round image',
                 component: () => import('./markdown/rounded-images.md'),
@@ -41,13 +46,11 @@
                 {/each}
             </Route>
         </div>
-        <div class="container">
+        <div class="container articles">
             {#each months as [_, articles]}
                 {#each articles as article}
                     <Route path={article.path}>
-                        {#await getComponent(article.component())}
-                            Loading Component!!
-                        {:then Component}
+                        {#await getComponent(article.component()) then Component}
                             <Component />
                         {/await}
                     </Route>
