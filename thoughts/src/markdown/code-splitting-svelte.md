@@ -1,5 +1,6 @@
 <script>
   import BlogHeader from './common/blog-header.md';
+  import Image from './../js/common/Image.svelte';
 </script>
 
 <BlogHeader date="27 June 2022" title="Code splitting With Svelte"/>
@@ -9,16 +10,19 @@ Mostly, I just have to write what actually is required - HTML, CSS and JS and do
 
 But, as the application grows the end users of any application has to pay the price. The hidden cost of downloading mega chunks of JS and CSS resources. We can optimize this via using extra efficient systems and techniques in place e.g. `CDN, Browser Cache, Uglify/Minify` are a few basic optimizations techniques. As you see, It does not reduce the actual amount of code that is being parsed on the browser.
 
+<center>
+
 | Type | Transferred | Actual Size |
-| ---- | ----------- | ----------- |
-| js   | 39.59 KB    | 100.63KB    |
+| :----: | :---------: | :---------: |
+| js   |  39.59 KB   |  100.63KB   |
 
-The _Actual Size_ is what the browser has parse. This in itself is a bottle neck in old/low-end devices. <b>JS is everywhere</b> now and We must optimize the experience for everyone.
+</center>
 
-_We can squeeze the air out of a pillow with a vaccum device. Even after that, there is still piece of mass that requires space in our storage._
+The _Actual Size_ is what the browser has to parse. This in itself is a bottle neck in old/low-end devices. <b>JS is everywhere</b> now and We must optimize the experience for everyone.
+
+_We can squeeze the air out of a pillow with a vacuum device. Even after that, there is still piece of mass that requires space in our storage._
 
 We can further reduce the amount of code with help of dynamic imports and keep our application as lean as possible.
-
 The idea behind the code splitting is simple - Load only the part of application code which is required to render the particular route the user is visiting.
 
 The code splitting of the <b>route resources</b> can further be bifurcated into above the fold and below the fold content (there is no straight way of doing it).
@@ -78,13 +82,13 @@ This is the bare minimum code which is required for creating dynamic chunks duri
 
 -   `index.html`
 
-```html
-<script src="/dist/js/thoughts.js" type="module"></script>
-```
+  ```html
+    <script src="/dist/js/thoughts.js" type="module"></script>
+  ```
 
 The main chunk has to added as _type="module"_
 
-#### Final result
+### Final result
 
 Chunks are create with `chunkName-[hash].js`
 
@@ -102,8 +106,9 @@ chunkFileNames: (chunkInfo) => {
 
 Inside the `index.html` we need to add only the the main bundle i.e. `thought.js` in our case. It has all the information of the chunks that has been created. It loads them in sync to boot the application.
 
-![network-calls](https://user-images.githubusercontent.com/10477804/175859805-b4b911cd-3152-4bfb-aeb1-ad22820dc0cc.png)
+<Image src="https://user-images.githubusercontent.com/10477804/175859805-b4b911cd-3152-4bfb-aeb1-ad22820dc0cc.png"/>
 
+---
 #### Useful resources
 
 -   [Github Repo by Rich Harris](https://github.com/Rich-Harris/rollup-svelte-code-splitting)

@@ -62,7 +62,12 @@ blockquote {
     }
 
     .articles {
-        line-height: 1.25em;
+        p {
+            line-height: 1.25em;
+        }
+        h3, h4, h5 {
+            margin: 2em 0 0em 0
+        }
     }
 
     .routes {
