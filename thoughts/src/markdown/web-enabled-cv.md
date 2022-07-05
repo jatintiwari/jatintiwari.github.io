@@ -32,17 +32,19 @@ My {resume} is available [here](https://www.jatintiwari.com/knowmore). The web v
 I am using `flex-box` as a basic layout of my resume. Left column which has my experience and right column has skills. As the experience is much more verbose than the skills 😜, I have divided the page layout in 7:3 widths.
 
 <div align="center">
-  <Image width="70" alt="Web View" src="https://user-images.githubusercontent.com/10477804/177324990-e6feacf4-54c2-4c00-9b1c-a1d6bf79e76d.png"/>
+  <Image desc="Page 1 view." width="70" alt="Web View" src="https://user-images.githubusercontent.com/10477804/177324990-e6feacf4-54c2-4c00-9b1c-a1d6bf79e76d.png"/>
 </div>
 
 ### Two column split view for Print Media
 
-To keep my {resume} relevant and precise I wanted to maximize the use of this page.
+`page - 1` Left and right containers with 7:3 widths.
+
+`page - 2` To keep my {resume} relevant and precise I wanted to maximize the use of the page 2.
 I wanted the print view to have equally-spaced two columns to fill them with my experience information.
 
-To achieve this I had to break the content into two different pages. For this I have fallen back to age old strategy to enclose the content into two different containers.
+To achieve this I had to break the content into two different pages. Age old strategy - Enclose the content into two different containers.
 
--   `knowmore.html`
+`knowmore.html`
 
 ```html
 <div class="container">
@@ -55,22 +57,23 @@ To achieve this I had to break the content into two different pages. For this I 
 </div>
 ```
 
--   `index.css`
-    ```css
-    .pagebreak {
-        clear: both;
-        page-break-before: always;
-    }
-    ```
+`index.css`
 
-The view of the content in `page 2` differs a bit.
+```css
+.pagebreak {
+    clear: both;
+    page-break-before: always;
+}
+```
 
 <div align="center">
-  <Image width="70" alt="Print View" src="https://user-images.githubusercontent.com/10477804/177327690-f6428b71-dfbe-4068-8885-16519ea01657.png"/>
+  <Image desc="Page 2 view has two equally spaced columns." width="70" alt="Print View" src="https://user-images.githubusercontent.com/10477804/177327690-f6428b71-dfbe-4068-8885-16519ea01657.png"/>
 </div>
 
 #### Export as PDF
-I have added a button to trigger the print view of the html page. This method initiates the browsers interface for print view.
+
+I have added a button to trigger the print view of the html page. This method initiates the browser's interface for the print view.
+
 ```html
 <button id="print" onclick="window.print()">Print</button>
 ```
