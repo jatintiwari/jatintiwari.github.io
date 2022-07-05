@@ -13,7 +13,7 @@ In short updating a {resume} was a tedious task for me. And It is!
 
 > Most of the times we have to edit our {resume} in a very short period.
 
-For all the impromptu and most awaited opportunities, I wanted to make it easy to keep my {resume} updated and make it accessible for me <span class="mark">ALL THE TIME</span>. So, I thought of hosting it on my website.
+For all the impromptu and most awaited opportunities, I wanted to make it easy to keep my {resume} updated and make it <span class="mark">accessible to me <b>all the time</b></span>. So, I thought of hosting it on my website.
 
 My {resume} is available [here](https://www.jatintiwari.com/knowmore). The web version gives me a lot of flexibility.
 
