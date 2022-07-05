@@ -9,7 +9,7 @@
 
 I have been constantly applying for jobs since 2014. And every time I had to update my {resume} I had to locate the source file. Most of the times might have misplaced it due to saving it at different locations or I was not able to find the latest version.
 
-I short updating a {resume} was a tedious task for me. And It is!
+In short updating a {resume} was a tedious task for me. And It is!
 
 > Most of the times we have to edit our {resume} in a very short period.
 
