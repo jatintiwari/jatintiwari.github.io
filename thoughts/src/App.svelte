@@ -6,6 +6,13 @@
     import Header from './js/Header.svelte';
 
     const routes = {
+        July: [
+            {
+                path: '/web-enabled-cv',
+                name: 'Build Web CV (curriculum vitae)',
+                component: () => import('./markdown/web-enabled-cv.md'),
+            },
+        ],
         June: [
             {
                 path: '/svelte-code-splitting',

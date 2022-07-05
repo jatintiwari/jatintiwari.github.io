@@ -1,0 +1,82 @@
+<script>
+  import BlogHeader from './common/blog-header.md';
+  import Image from './../js/common/Image.svelte';
+  
+  const resume = `résumé`;
+</script>
+
+<BlogHeader date="5 July 2022" title="Build web enabled CV"/>
+
+I have been constantly applying for jobs since 2014. And every time I had to update my {resume} I had to locate the source file. Most of the times might have misplaced it due to saving it at different locations or I was not able to find the latest version.
+
+I short updating a {resume} was a tedious task for me. And It is!
+
+> Most of the times we have to edit our {resume} in a very short period.
+
+For all the impromptu and most awaited opportunities, I wanted to make it easy to keep my {resume} updated and make it accessible for me _ALL THE TIME_. So, I thought of hosting it on my website.
+
+My {resume} is available [here](https://www.jatintiwari.com/knowmore). The web version gives me a lot of flexibility.
+
+-   <span class="mark">Edit</span> it on the fly.
+-   <span class="mark">Pass</span> it to anyone as a link.
+-   <span class="mark">Print it anywhere</span> without having to access your drive on an insecure network.
+-   I <span class="mark">don't have to remember</span> to update the right file which has all the latest changes.
+-   I can have a separate layout for printing and viewing.
+
+### Inspiration
+
+[Mac App Pages](https://www.apple.com/in/pages/) has been my source of my inspiration. I have used it extensively to create my {resume}. It seamlessly adds the content to the document. We can use the GUI for the placement of the content (Everything including text is a movable object. It hold all the content in form a `box-layout` and these boxes can be moved with a drag and drop). It was less explored but far better than its other alternatives.
+
+### Two column layout for Screen Media
+
+I am using `flex-box` as a basic layout of my resume. Left column which has my experience and right column has skills. As the experience is much more verbose than the skills 😜, I have divided the page layout in 7:3 widths.
+
+<div align="center">
+  <Image width="70" alt="Web View" src="https://user-images.githubusercontent.com/10477804/177324990-e6feacf4-54c2-4c00-9b1c-a1d6bf79e76d.png"/>
+</div>
+
+### Two column split view for Print Media
+
+To keep my {resume} relevant and precise I wanted to maximize the use of this page.
+I wanted the print view to have equally-spaced two columns to fill them with my experience information.
+
+To achieve this I had to break the content into two different pages. For this I have fallen back to age old strategy to enclose the content into two different containers.
+
+-   `knowmore.html`
+
+```html
+<div class="container">
+    <div class="left-container">...</div>
+    <div class="right-container">...</div>
+</div>
+<div class="container pagebreak page-two">
+    <div class="half-width-container">...</div>
+    <div class="half-width-container">...</div>
+</div>
+```
+
+-   `index.css`
+    ```css
+    .pagebreak {
+        clear: both;
+        page-break-before: always;
+    }
+    ```
+
+The view of the content in `page 2` differs a bit.
+
+<div align="center">
+  <Image width="70" alt="Print View" src="https://user-images.githubusercontent.com/10477804/177327690-f6428b71-dfbe-4068-8885-16519ea01657.png"/>
+</div>
+
+#### Export as PDF
+I have added a button to trigger the print view of the html page. This method initiates the browsers interface for print view.
+```html
+<button id="print" onclick="window.print()">Print</button>
+```
+
+---
+
+#### Resources
+
+-   CSS [page-break-before](https://developer.mozilla.org/en-US/docs/Web/CSS/page-break-before) property

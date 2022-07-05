@@ -21,6 +21,12 @@ html.light {
     footer {
         background-color: $snow;
     }
+
+    code,
+    code :not(span) {
+        color: $tomato;
+    }
+
     blockquote {
         border-color: $independence;
     }
@@ -37,6 +43,15 @@ html.light {
             }
             .route {
                 color: $carolina-blue;
+            }
+
+            .mark {
+                background-image: linear-gradient(
+                    to right,
+                    rgba(255, 225, 0, 0.1),
+                    rgba(255, 225, 0, 0.7) 4%,
+                    rgba(255, 225, 0, 0.3)
+                );
             }
         }
     }
@@ -66,10 +81,14 @@ html.dark {
         box-shadow: none;
     }
 
+    code {
+        color: $tomato;
+    }
+
     blockquote {
         border-color: $snow;
     }
-    
+
     a[target='_blank'] {
         color: $honey-yellow;
     }
@@ -97,6 +116,15 @@ html.dark {
 
             .border-image-container .desc {
                 color: $independence;
+            }
+
+            .mark {
+                background-image: linear-gradient(
+                    to right,
+                    rgba(102, 255, 0, 0.1),
+                    rgba(102, 255, 0, 0.7) 4%,
+                    rgba(102, 255, 0, 0.3)
+                );
             }
         }
     }

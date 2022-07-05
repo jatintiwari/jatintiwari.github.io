@@ -5,7 +5,8 @@
         desc,
         rounded = false,
         withBorder = false,
-        height = 150;
+        height = 150,
+        width;
     $: imageHeight = height;
     const init = () => {
         const viewPortWidth = document.body.scrollWidth;
@@ -38,7 +39,7 @@
 {#if !rounded && !withBorder}
     <div class="image-container">
         <div style={`min-height:${imageHeight}px;`}>
-            <img loading="lazy" alt={desc} class="responsive-image" {src} />
+            <img style={width ? `width:${width}%`: ``} loading="lazy" alt={desc} class="responsive-image" {src} />
         </div>
         {#if desc} <p class="desc center">{desc}</p> {/if}
     </div>
