@@ -9,7 +9,7 @@
         July: [
             {
                 path: '/web-enabled-cv',
-                name: 'Build Web CV (curriculum vitae)',
+                name: 'Build Web hosted CV (Curriculum Vitae)',
                 component: () => import('./markdown/web-enabled-cv.md'),
             },
         ],

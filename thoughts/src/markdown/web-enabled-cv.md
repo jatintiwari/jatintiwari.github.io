@@ -32,10 +32,10 @@ My {resume} is available [here](https://www.jatintiwari.com/knowmore). The web v
 I am using `flex-box` as a basic layout of my resume. Left column which has my experience and right column has skills. As the experience is much more verbose than the skills 😜, I have divided the page layout in 7:3 widths.
 
 <div align="center">
-  <Image desc="Page 1 view." width="70" alt="Web View" src="https://user-images.githubusercontent.com/10477804/177324990-e6feacf4-54c2-4c00-9b1c-a1d6bf79e76d.png"/>
+  <Image desc="Web view" width="70" alt="Web View" src="https://user-images.githubusercontent.com/10477804/177324990-e6feacf4-54c2-4c00-9b1c-a1d6bf79e76d.png"/>
 </div>
 
-### Two column split view for Print Media
+### Two column split view layout for Print Media
 
 `page - 1` Left and right containers with 7:3 widths.
 
@@ -67,7 +67,7 @@ To achieve this I had to break the content into two different pages. Age old str
 ```
 
 <div align="center">
-  <Image desc="Page 2 view has two equally spaced columns." width="70" alt="Print View" src="https://user-images.githubusercontent.com/10477804/177327690-f6428b71-dfbe-4068-8885-16519ea01657.png"/>
+  <Image desc="Page 1 and Page 2 of print view" width="70" alt="Print View" src="https://user-images.githubusercontent.com/10477804/177327690-f6428b71-dfbe-4068-8885-16519ea01657.png"/>
 </div>
 
 #### Export as PDF
@@ -77,6 +77,10 @@ I have added a button to trigger the print view of the html page. This method in
 ```html
 <button id="print" onclick="window.print()">Print</button>
 ```
+
+### How and Where to host this app
+
+Github pages are a very easy and free options. [Follow these steps](https://pages.github.com/) to host a website. I am using using Github for hosting my [domain's](https://www.jatintiwari.com) landing page and [Firebase](https://firebase.google.com/products/hosting) for hosting this blog.
 
 ---
 
