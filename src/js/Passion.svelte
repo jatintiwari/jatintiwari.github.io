@@ -2,7 +2,7 @@
     <section class="container">
         <section>
             <span class="mark">I am passionately curious!</span>
-            <span>These days I am making lamps during my free time. I ❤️ dogs and like to train them 🦮.</span>
+            <span>These days I am tinkering with ESP32 and I have automated a few peripherals in my home. I ❤️ dogs and like to train them 🦮.</span>
             <span>I have learnt cooking from youtube and now I sometimes feel like a Chef. I do cardio on Ted talks.</span>
             <span>I sometimes play video games over weekend.</span>
         </section>
