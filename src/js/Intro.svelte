@@ -1,8 +1,8 @@
 <script>
     const name = 'Jatin Tiwari';
     const currentInterest = 'Software Engineer';
-    const currentCompany = 'Atlassian';
-    const currentCompanyLink = 'https://www.google.com/search?q=atlassian';
+    const currentCompany = 'Amazon';
+    const currentCompanyLink = 'https://www.google.com/search?q=amazon';
     let currentCountry = 'India';
 </script>
 
