@@ -9,6 +9,10 @@
     right: 25px;
 }
 
+.image{
+    visibility: hidden;
+}
+
 button {
     border: none;
     background-color: orange;
@@ -166,6 +170,7 @@ body {
             }
         }
         .content-container {
+            position: relative;
             flex-direction: row;
             justify-content: space-between;
             .content-left {
@@ -177,6 +182,9 @@ body {
                 align-self: baseline;
             }
             &.page-two {
+                .image{
+                    visibility: visible;
+                }
                 display: flex;
                 flex-wrap: wrap;
                 flex-direction: row;
