@@ -23,7 +23,7 @@
         </p>
         <p>
             I ❤️ <span class="text-italic">building apps from scratch</span> and then scaling them to serve millions of customers. I also believe
-            that it takes time to build such apps and use of technology is on as per need basis.
+            that it takes time to build such apps and use of technology is on a need basis.
         </p>
         <p>
             I helped a few friends to kick off their startup dream with native apps in <span class="highlight">Flutter</span>
