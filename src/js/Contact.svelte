@@ -3,7 +3,7 @@
         LINKEDIN: 'https://www.linkedin.com/in/jatin-tiwari-3783aa50',
         GITHUB: 'https://www.github.com/jatintiwari',
         EMAIL: 'mailto:mail@jatintiwari.com',
-        RESUME: 'https://www.jatintiwari.com/knowmore',
+        RESUME: 'https://www.jatintiwari.com/jt',
     };
     const socialMediaKeys = Object.keys(socialMedia);
     $: mount = false;
@@ -37,7 +37,7 @@
 
     @media (max-width: 767px) {
         .contacts {
-            font-size: .8em;
+            font-size: 0.8em;
         }
     }
 </style>
