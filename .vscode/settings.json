@@ -11,5 +11,12 @@
     "svelte": {
       "parser": "plain"
     }
-  }
+  },
+  "grammarly.selectors": [
+    {
+      "language": "html",
+      "scheme": "file",
+      "pattern": "jt.html"
+    }
+  ]
 }
