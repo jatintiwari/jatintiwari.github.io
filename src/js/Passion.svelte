@@ -1,16 +1,17 @@
 <section class="section passion-container">
     <section class="container">
-        <section>
-            <span class="mark">I am passionately curious!</span>
-            <span>These days I am tinkering with ESP32 and have automated a few peripherals in my home. I ❤️ dogs and like to train them 🦮.</span>
-            <span>I have learnt cooking from youtube and now I sometimes feel like a Chef. I do cardio on Ted talks.</span>
-            <span>I sometimes play video games over weekend.</span>
-        </section>
+        <p class="mark">I have an insatiable curiosity and a passion for learning.</p>
+        <p>
+            Currently, I am tinkering with ESP32 and have successfully automated several peripherals in my home. My love
+            for dogs is endless, and I take pleasure in training them whenever I can. Cooking is another hobby of mine,
+            which I have mastered through YouTube videos.
+        </p>
         <p>I am also avidly looking out for building projects on <span class="highlight">Raspberry Pi</span>.</p>
-        <p>I like reading tech books and articles. I aspire to write a blog to simplify the technology.</p>
-        <!-- <p class="text-italic text-small"> I have myself struggled to understand Data structures and Algorithms.
-          I wish to help folks like me.
-        </p> -->
+        <p>
+            For my daily cardio routine, I enjoy listening podcasts on a variety of topics. During weekends, I take a
+            break from work and play video games to unwind and relax. My interests are varied, and I am always seeking
+            out new opportunities to expand my knowledge and skills.
+        </p>
         <p class="text-center">I will be happy to connect for new opportunities or consultation✌🏽</p>
     </section>
 </section>
