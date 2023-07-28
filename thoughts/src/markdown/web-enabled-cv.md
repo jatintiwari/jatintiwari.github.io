@@ -7,7 +7,7 @@
 
 <BlogHeader date="5 July 2022" title="Build web enabled CV"/>
 
-I have been constantly applying for jobs since 2014. And every time I had to update my {resume} I had to locate the source file. Most of the times might have misplaced it due to saving it at different locations or I was not able to find the latest version.
+I have been constantly applying for jobs since 2014. And every time I had to update my {resume} I had to locate the source file. Most of the times, I might loose it due to saving it at different locations or I might not be able to find the latest version.
 
 In short updating a {resume} was a tedious task for me. And It is!
 
@@ -15,7 +15,7 @@ In short updating a {resume} was a tedious task for me. And It is!
 
 For all the impromptu and most awaited opportunities, I wanted to make it easy to keep my {resume} updated and make it <span class="mark">accessible to me <b>all the time</b></span>. So, I thought of hosting it on my website.
 
-My {resume} is available [here](https://www.jatintiwari.com/knowmore). The web version gives me a lot of flexibility.
+My {resume} is available [here](https://www.jatintiwari.com/jt). The web version gives me a lot of flexibility.
 
 -   <b>Edit</b> it on the fly.
 -   <b>Pass</b> it to anyone as a link.
@@ -29,7 +29,7 @@ My {resume} is available [here](https://www.jatintiwari.com/knowmore). The web v
 
 ### Two column layout for Screen Media
 
-I am using `flex-box` as a basic layout of my resume. Left column which has my experience and right column has skills. As the experience is much more verbose than the skills 😜, I have divided the page layout in 7:3 widths.
+I am using `flex-box` as a basic layout of my resume. The left column has my experience and right column has skills. As my experience is much more verbose than the skills 😜, I have divided the page layout in 7:3 widths.
 
 <div align="center">
   <Image desc="Web view" width="70" alt="Web View" src="https://user-images.githubusercontent.com/10477804/177324990-e6feacf4-54c2-4c00-9b1c-a1d6bf79e76d.png"/>
@@ -40,11 +40,11 @@ I am using `flex-box` as a basic layout of my resume. Left column which has my e
 `page - 1` Left and right containers with 7:3 widths.
 
 `page - 2` To keep my {resume} relevant and precise I wanted to maximize the use of the page 2.
-I wanted the print view to have equally-spaced two columns to fill them with my experience information.
+The print view has equally-spaced two columns filled with my experience information.
 
 To achieve this I had to break the content into two different pages. Age old strategy - Enclose the content into two different containers.
 
-`knowmore.html`
+`jt.html`
 
 ```html
 <div class="container">
