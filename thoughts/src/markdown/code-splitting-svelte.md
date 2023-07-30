@@ -3,6 +3,12 @@
   import Image from './../js/common/Image.svelte';
 </script>
 
+<svelte:head>
+
+<title>Svelte Code splitting</title>
+<date>27 June 2022</date>
+</svelte:head>
+
 <BlogHeader date="27 June 2022" title="Code splitting With Svelte"/>
 
 Svelte is gaining a lot of traction these days. It is easy to implement and learn. The main reason i have started using Svelte is that it is <b>_not opinionated_</b>.
@@ -13,8 +19,8 @@ But, as the application grows the end users of any application has to pay the pr
 <center>
 
 | Type | Transferred | Actual Size |
-| :----: | :---------: | :---------: |
-| js   |  39.59 KB   |  100.63KB   |
+| :--: | :---------: | :---------: |
+|  js  |  39.59 KB   |  100.63KB   |
 
 </center>
 
@@ -82,9 +88,9 @@ This is the bare minimum code which is required for creating dynamic chunks duri
 
 -   `index.html`
 
-  ```html
-    <script src="/dist/js/thoughts.js" type="module"></script>
-  ```
+```html
+<script src="/dist/js/thoughts.js" type="module"></script>
+```
 
 The main chunk has to added as _type="module"_
 
@@ -109,6 +115,7 @@ Inside the `index.html` we need to add only the the main bundle i.e. `thought.js
 <Image src="https://user-images.githubusercontent.com/10477804/175859805-b4b911cd-3152-4bfb-aeb1-ad22820dc0cc.png"/>
 
 ---
+
 #### Useful resources
 
 -   [Github Repo by Rich Harris](https://github.com/Rich-Harris/rollup-svelte-code-splitting)

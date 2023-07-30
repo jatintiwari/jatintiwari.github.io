@@ -1,37 +1,10 @@
 <script>
     import { Router, Route, Link } from 'svelte-navigator';
+    import routes from './routes';
 
     import Intro from './js/Intro.svelte';
     import Footer from './js/footer.svelte';
     import Header from './js/Header.svelte';
-
-    const routes = {
-        July: [
-            {
-                path: '/web-enabled-cv',
-                name: 'Build Web hosted CV (Curriculum Vitae)',
-                component: () => import('./markdown/web-enabled-cv.md'),
-            },
-        ],
-        June: [
-            {
-                path: '/svelte-code-splitting',
-                name: 'Svelte Code splitting',
-                component: () => import('./markdown/code-splitting-svelte.md'),
-            },
-            {
-                path: '/rounded-images',
-                name: 'Crop edges to create a round image',
-                component: () => import('./markdown/rounded-images.md'),
-            },
-            {
-                path: '/visual-regression',
-                name: 'Visual Regression',
-                component: () => import('./markdown/visual-regression.md'),
-            },
-        ],
-    };
-    const months = Object.entries(routes);
 
     const getComponent = async (module) => {
         const component = (await module).default;
@@ -45,23 +18,21 @@
         <div class="container routes">
             <Route path="/">
                 <Intro />
-                {#each months as [month, articles]}
-                    <p><b>{month}</b></p>
-                    {#each articles as article}
-                        <Link class="route" to={article.path}>{article.name}</Link>
-                    {/each}
+                {#each routes as route}
+                    <Link class="route" to={route.path}>
+                        <span class="list-bullet">{route.date} </span>
+                        <span>{route.name}</span>
+                    </Link>
                 {/each}
             </Route>
         </div>
         <div class="container articles">
-            {#each months as [_, articles]}
-                {#each articles as article}
-                    <Route path={article.path}>
-                        {#await getComponent(article.component()) then Component}
-                            <Component />
-                        {/await}
-                    </Route>
-                {/each}
+            {#each routes as route}
+                <Route path={route.path}>
+                    {#await getComponent(route.component()) then Component}
+                        <Component />
+                    {/await}
+                </Route>
             {/each}
         </div>
         <Footer />

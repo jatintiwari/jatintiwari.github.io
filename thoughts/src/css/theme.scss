@@ -45,6 +45,10 @@ html.light {
                 color: $carolina-blue;
             }
 
+            .list-bullet{
+                color: $independence;
+            }
+
             .mark {
                 background-image: linear-gradient(
                     to right,
@@ -116,6 +120,10 @@ html.dark {
 
             .border-image-container .desc {
                 color: $independence;
+            }
+
+            .list-bullet{
+                color: $white;
             }
 
             .mark {

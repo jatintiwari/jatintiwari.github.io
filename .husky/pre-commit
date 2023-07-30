@@ -2,6 +2,7 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 yarn build &&
+yarn build-thoughts-routes &&
 yarn build-thoughts &&
 git add ./dist &&
 git add ./thoughts/dist

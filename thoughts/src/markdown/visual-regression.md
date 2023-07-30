@@ -4,6 +4,13 @@
   import BlogHeader from './common/blog-header.md';
 </script>
 
+<svelte:head>
+
+<title>Visual Regression</title>
+<meta name="description" content="End to End UI testing.">
+<date>15 June 2022</date>
+</svelte:head>
+
 <BlogHeader date="15 June 2022" title="Visual diffing for End to End Testing"/>
 
 For end-to-end UI testing there are a few case which can go untested with any amount of automated testing unless they are compared manually every time.

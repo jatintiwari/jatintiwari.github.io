@@ -5,6 +5,13 @@
   const resume = `résumé`;
 </script>
 
+<svelte:head>
+
+<title>Build web enabled CV</title>
+<meta name="description" content="Host your CV to access it online anytime.">
+<date>5 July 2022</date>
+</svelte:head>
+
 <BlogHeader date="5 July 2022" title="Build web enabled CV"/>
 
 I have been constantly applying for jobs since 2014. And every time I had to update my {resume} I had to locate the source file. Most of the times, I might loose it due to saving it at different locations or I might not be able to find the latest version.

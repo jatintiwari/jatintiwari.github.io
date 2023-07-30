@@ -4,6 +4,11 @@
   import Image from '../js/common/Image.svelte';
 </script>
 
+<svelte:head>
+<title>Crop edges to create a round image</title>
+<date>22 June 2022</date>
+</svelte:head>
+
 <BlogHeader date="22 June 2022">
 <h1>Create rounded images with <a target="_blank" href="https://imagemagick.org/script/download.php">Imagemagick</a></h1>
 </BlogHeader>

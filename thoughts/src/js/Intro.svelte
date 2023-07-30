@@ -4,7 +4,7 @@
 </script>
 
 <div class="intro-container">
-    <Quotes by="Phil Knight">The best way to reinforce your knowledge of subject is to share it.</Quotes>
+    <!-- <Quotes by="Phil Knight">The best way to reinforce your knowledge of subject is to share it.</Quotes> -->
     <div class="intro">
         <div class="intro-text-container">
             <img
@@ -13,8 +13,10 @@
                 width="145px;"
                 style="float: left; margin-right: 1em;"
             />
-            <span class="intro-text font-xl">Hello, I am Jatin.</span>
-            <br>
+            <span class="intro-text font-xl"
+                >Hello, I am <a href="https://www.jatintiwari.com" target="_blank">Jatin</a>.</span
+            >
+            <br />
             <span class="intro-text">Software Engineer, Gregarious, Ambivert.</span>
             <p class="intro-text">
                 More than 1000 thoughts cross my mind every day, I will be writing about a few which makes me curious.
