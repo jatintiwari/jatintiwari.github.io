@@ -2,6 +2,7 @@
     import { onMount } from 'svelte';
 
     export let src,
+        inline = false,
         desc,
         rounded = false,
         withBorder = false,
@@ -11,7 +12,6 @@
     const init = () => {
         const viewPortWidth = document.body.scrollWidth;
         if (viewPortWidth < 400 && height > 400) {
-            console.log('Init - image resize');
             imageHeight = height * 0.5;
         } else {
             imageHeight = height;
@@ -22,14 +22,17 @@
 </script>
 
 {#if withBorder}
-    <div class="border-image-container" style={`min-height:${imageHeight}px; min-width: ${imageHeight}px;`}>
+    <div
+        class="border-image-container"
+        style={`min-height:${imageHeight}px; min-width: ${imageHeight}px; display: ${inline ? 'inline-block' : 'block'}`}
+    >
         {#if desc} <p class="desc">{desc}</p> {/if}
         <img loading="lazy" alt={desc} class="responsive-image" {src} />
     </div>
 {/if}
 
 {#if rounded}
-    <div class="rounded-image-container">
+    <div class="rounded-image-container" style={`display: ${inline ? 'inline-block' : 'block'}`}>
         <div style={`height:${imageHeight}px; width: ${imageHeight}px;`}>
             <img loading="lazy" alt={desc} class="responsive-image" {src} />
         </div>
@@ -37,9 +40,9 @@
 {/if}
 
 {#if !rounded && !withBorder}
-    <div class="image-container">
+    <div class="image-container" style={`display: ${inline ? 'inline-block' : 'block'}`}>
         <div style={`min-height:${imageHeight}px;`}>
-            <img style={width ? `width:${width}%`: ``} loading="lazy" alt={desc} class="responsive-image" {src} />
+            <img style={width ? `width:${width}%` : ``} loading="lazy" alt={desc} class="responsive-image" {src} />
         </div>
         {#if desc} <p class="desc center">{desc}</p> {/if}
     </div>

@@ -1,4 +1,9 @@
 export default [{
+    "path": "/personal-jukebox",
+    "name": "Personal Jukebox",
+    "date": "30 July 2023",
+    "component": () => import('./markdown/personal-jukebox.md'),
+},{
     "path": "/web-enabled-cv",
     "name": "Build web enabled CV",
     "date": "5 July 2022",

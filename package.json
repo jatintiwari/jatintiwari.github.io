@@ -12,7 +12,7 @@
     "clean-thoughts": "rm ./thoughts/dist/js/** && rm ./thoughts/dist/css/**",
     "dev-thoughts": "yarn build-thoughts-routes && yarn clean-thoughts; NODE_ENV=thoughts rollup -c -w",
     "build-thoughts-routes": "yarn clean-thoughts; node build-thoughts-routes",
-    "build-thoughts": "yarn clean-thoughts; NODE_ENV=thoughts rollup -c",
+    "build-thoughts": "yarn clean-thoughts; yarn build-thoughts-routes; NODE_ENV=thoughts rollup -c",
     "deploy-thoughts": "yarn build-thoughts && firebase deploy --only hosting",
     "postinstall": "husky install"
   },
