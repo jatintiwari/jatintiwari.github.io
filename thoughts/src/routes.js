@@ -1,6 +1,6 @@
 export default [{
     "path": "/romo",
-    "name": "FOMO is good",
+    "name": "Reality of missing out",
     "date": "1 August 2023",
     "component": () => import('./markdown/romo.md'),
 },{
