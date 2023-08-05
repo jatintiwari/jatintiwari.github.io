@@ -13,9 +13,11 @@
 
 ---
 
+I stumbled on to this term ROMO and then pondered on it. I have gone back to my childhood, teenage and to recent years to explore my missing out feelings.
+
 ### Fear of missing out
 
-For me, FOMO is a feeling that I get when I feel anxious about not being able to do something.
+For me, FOMO is a feeling that I get when I feel anxious about not being able to do or get something.
 
 My FOMOs that stayed for long time -
 
