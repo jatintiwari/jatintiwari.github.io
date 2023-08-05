@@ -4,7 +4,7 @@
 
 <svelte:head>
 
-<title>FOMO is good</title>
+<title>Reality of missing out</title>
 <date>1 August 2023</date>
 <meta name="description" content="I have not missed anything in societal presence but only in intangile forms.">
 </svelte:head>
