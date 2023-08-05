@@ -49,7 +49,9 @@ html.light {
                 color: $independence;
             }
 
-            .mark {
+            .mark, mark {
+                color: $independence;
+                background-color: transparent;
                 background-image: linear-gradient(
                     to right,
                     rgba(255, 225, 0, 0.1),
@@ -76,7 +78,7 @@ html.dark {
     }
     strong {
         font-weight: bold;
-        text-decoration: underline;
+        // text-decoration: underline;
     }
     footer {
         background-color: $independence;
@@ -126,7 +128,9 @@ html.dark {
                 color: $white;
             }
 
-            .mark {
+            .mark, mark {
+                color: $snow;
+                background-color: transparent !important;
                 background-image: linear-gradient(
                     to right,
                     rgba(102, 255, 0, 0.1),

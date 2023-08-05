@@ -6,7 +6,6 @@ import preprocess from 'svelte-preprocess';
 import scss from 'rollup-plugin-scss';
 import { mdsvex } from 'mdsvex';
 
-
 const production = !process.env.ROLLUP_WATCH;
 
 const plugins = [
@@ -28,7 +27,7 @@ const plugins = [
         dedupe: ['svelte', 'md'],
     }),
     commonjs(),
-    production && terser(),
+    production && terser()
 ];
 
 const watch = {
@@ -49,6 +48,7 @@ if (process.env.NODE_ENV === 'thoughts') {
             //     console.log(chunkInfo.name);
             //     return `${chunkInfo.name}.js`;
             // },
+            // entryFileNames: '[name]-[hash].js',
             manualChunks: (moduleName) => {
                 if (moduleName.includes('node_modules')) {
                     return 'vendor';

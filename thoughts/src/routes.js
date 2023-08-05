@@ -1,4 +1,9 @@
 export default [{
+    "path": "/romo",
+    "name": "FOMO is good",
+    "date": "1 August 2023",
+    "component": () => import('./markdown/romo.md'),
+},{
     "path": "/personal-jukebox",
     "name": "Personal Jukebox",
     "date": "30 July 2023",

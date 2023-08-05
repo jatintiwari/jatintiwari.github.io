@@ -24,7 +24,9 @@
 {#if withBorder}
     <div
         class="border-image-container"
-        style={`min-height:${imageHeight}px; min-width: ${imageHeight}px; display: ${inline ? 'inline-block' : 'block'}`}
+        style={`min-height:${imageHeight}px; min-width: ${imageHeight}px; display: ${
+            inline ? 'inline-block' : 'block'
+        }`}
     >
         {#if desc} <p class="desc">{desc}</p> {/if}
         <img loading="lazy" alt={desc} class="responsive-image" {src} />
@@ -40,12 +42,14 @@
 {/if}
 
 {#if !rounded && !withBorder}
-    <div class="image-container" style={`display: ${inline ? 'inline-block' : 'block'}`}>
-        <div style={`min-height:${imageHeight}px;`}>
-            <img style={width ? `width:${width}%` : ``} loading="lazy" alt={desc} class="responsive-image" {src} />
+    <figure>
+        <div class="image-container" style={`display: ${inline ? 'inline-block' : 'block'}`}>
+            <div style={`min-height:${imageHeight}px;`}>
+                <img style={width ? `width:${width}%` : ``} loading="lazy" alt={desc} class="responsive-image" {src} />
+            </div>
+            {#if desc} <figcaption class="desc">{desc}</figcaption> {/if}
         </div>
-        {#if desc} <p class="desc center">{desc}</p> {/if}
-    </div>
+    </figure>
 {/if}
 
 <style lang="scss">
