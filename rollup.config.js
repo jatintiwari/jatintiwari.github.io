@@ -4,7 +4,6 @@ import resolve from '@rollup/plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
 import preprocess from 'svelte-preprocess';
 import scss from 'rollup-plugin-scss';
-import { mdsvex } from 'mdsvex';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -15,12 +14,7 @@ const plugins = [
             dev: !production,
         },
         extensions: ['.svelte', '.md'],
-        preprocess: [
-            mdsvex({
-                extensions: ['.svelte', '.md'],
-            }),
-            preprocess(),
-        ],
+        preprocess: [preprocess()],
     }),
     resolve({
         browser: true,
