@@ -8,13 +8,6 @@
     "start": "sirv . --no-clear",
     "compile-home": "export templateName=index && export jsFileName=bundle && export cssFileName=bundle && node compile-handlebars",
     "watch-home": "yarn nodemon -w dist --exec \"yarn compile-home\"",
-    "start-thoughts": "sirv thoughts --dev --single",
-    "clean-thoughts": "rm ./thoughts/dist/js/**; rm ./thoughts/dist/css/**;rm ./thoughts/pages/**",
-    "create-thoughts-pages": "yarn start-thoughts& yarn build-thoughts && node svelte-to-html && killall node ",
-    "dev-thoughts": "yarn build-thoughts-routes && yarn clean-thoughts; NODE_ENV=thoughts rollup -c -w",
-    "build-thoughts-routes": "yarn clean-thoughts; node build-thoughts-routes",
-    "build-thoughts": "yarn clean-thoughts; yarn build-thoughts-routes; NODE_ENV=thoughts rollup -c",
-    "deploy-thoughts": "yarn build-thoughts && firebase deploy --only hosting",
     "postinstall": "husky install"
   },
   "devDependencies": {

@@ -27,83 +27,47 @@ const plugins = [
         dedupe: ['svelte', 'md'],
     }),
     commonjs(),
-    production && terser()
+    production && terser(),
 ];
 
 const watch = {
     clearScreen: false,
 };
 
-let configs = [];
-
-if (process.env.NODE_ENV === 'thoughts') {
-    configs.push({
-        input: 'thoughts/src/thoughts.js',
+let configs = [
+    {
+        input: 'src/main.js',
         output: {
-            interop: false,
-            format: 'es',
-            name: 'thoughts',
-            dir: 'thoughts/dist/js',
-            // chunkFileNames: (chunkInfo) => {
-            //     console.log(chunkInfo.name);
-            //     return `${chunkInfo.name}.js`;
-            // },
-            // entryFileNames: '[name]-[hash].js',
-            manualChunks: (moduleName) => {
-                if (moduleName.includes('node_modules')) {
-                    return 'vendor';
-                }
-                if (moduleName.includes('src/js') || moduleName.includes('src/markdown/common')) {
-                    return 'common';
-                }
-            },
+            sourcemap: true,
+            format: 'iife',
+            name: 'app',
+            file: 'dist/bundle.js',
         },
         plugins: [
             ...plugins,
             scss({
                 sass: require('node-sass'),
-                output: 'thoughts/dist/css/thoughts.css',
+                output: 'dist/bundle.css',
                 outputStyle: 'compressed',
             }),
         ],
         watch,
-    });
-} else {
-    configs.push(
-        {
-            input: 'src/main.js',
-            output: {
-                sourcemap: true,
-                format: 'iife',
-                name: 'app',
-                file: 'dist/bundle.js',
-            },
-            plugins: [
-                ...plugins,
-                scss({
-                    sass: require('node-sass'),
-                    output: 'dist/bundle.css',
-                    outputStyle: 'compressed',
-                }),
-            ],
-            watch,
+    },
+    {
+        input: 'src/knowMore.js',
+        output: {
+            dir: 'dist',
         },
-        {
-            input: 'src/knowMore.js',
-            output: {
-                dir: 'dist',
-            },
-            plugins: [
-                ...plugins,
-                scss({
-                    sass: require('node-sass'),
-                    output: 'dist/knowMore.css',
-                    outputStyle: 'compressed',
-                }),
-            ],
-            watch,
-        }
-    );
-}
+        plugins: [
+            ...plugins,
+            scss({
+                sass: require('node-sass'),
+                output: 'dist/knowMore.css',
+                outputStyle: 'compressed',
+            }),
+        ],
+        watch,
+    },
+];
 
 export default configs;
