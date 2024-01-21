@@ -123,16 +123,17 @@ body {
         }
         .content-container {
             flex-direction: column;
-            &.page-two {
-                flex-wrap: nowrap;
-                width: 100%;
-            }
-            .content-left {
-                width: 100%;
-                padding: 0;
+            &.page-one {
+                display: block;
             }
             .content-right {
-                width: 100%;
+                align-self: baseline;
+            }
+            &.page-two {
+                .image {
+                    visibility: visible;
+                }
+                display: block;
             }
             .section {
                 .section-heading {
