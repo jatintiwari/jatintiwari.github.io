@@ -1,8 +1,8 @@
 <script>
     const name = 'Jatin Tiwari';
-    const currentInterest = 'Software Engineer';
-    const currentCompany = 'Amazon';
-    const currentCompanyLink = 'https://www.google.com/search?q=amazon';
+    const currentInterest = 'Sr Staff Software Engineer';
+    const currentCompany = 'ServiceNow';
+    const currentCompanyLink = 'https://www.google.com/search?q=servicenow';
     let currentCountry = 'India';
 </script>
 
