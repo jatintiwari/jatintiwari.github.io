@@ -1,9 +1,9 @@
 <script>
     const socialMedia = {
         LINKEDIN: 'https://www.linkedin.com/in/jatin-tiwari-3783aa50/',
-        GITHUB: 'https://www.github.com/jatintiwari',
+        // GITHUB: 'https://www.github.com/jatintiwari',
         EMAIL: 'mailto:mail@jatintiwari.com',
-        RESUME: 'https://www.jatintiwari.com/jt',
+        // RESUME: 'https://www.jatintiwari.com/jt',
     };
     const socialMediaKeys = Object.keys(socialMedia);
     $: mount = false;
