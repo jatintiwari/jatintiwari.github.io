@@ -3,23 +3,13 @@
     "version": "1.0.0",
     "private": true,
     "scripts": {
-        "build": "rollup -c && npm run build-lit",
-        "dev": "rollup -c -w",
-        "start": "sirv . --no-clear",
-        "build-lit": "esbuild ./src/js/webcomponent/jt-lit.js --bundle --minify --tree-shaking=true --outdir=./dist --minify-whitespace",
-        "compile-home": "export templateName=index && export jsFileName=bundle && export cssFileName=bundle && node compile-handlebars",
-        "postinstall": "husky install"
-    },
-    "devDependencies": {
-        "rollup": "^2.3.4",
-        "rollup-plugin-terser": "^7.0.0",
-        "rollup-plugin-scss": "^3.0.0"
+        "build": "npm run build-knowmore && npm run build-lit",
+        "build-knowmore": "esbuild ./src/knowMore.js --bundle --minify --tree-shaking=true --outdir=./dist --minify-whitespace --loader:.scss=css",
+        "build-lit": "esbuild ./src/js/webcomponent/jt-lit.js --bundle --minify --tree-shaking=true --outdir=./dist --minify-whitespace"
     },
     "dependencies": {
-        "esbuild": "^0.25.0",
-        "handlebars": "^4.7.7",
-        "husky": "^8.0.1",
-        "lit": "^3.2.1",
-        "sass": "^1.85.1"
+        "esbuild": "0.25.0",
+        "lit": "3.2.1",
+        "sass": "1.85.1"
     }
 }
