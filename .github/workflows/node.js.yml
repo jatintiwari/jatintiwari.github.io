@@ -22,3 +22,18 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present
+    - name: Commit and push dist folder
+      # This step will only run on pushes to the master branch,
+      # not on pull requests to avoid issues.
+      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add dist # Or your specific build output folder
+        # Check if there are any changes to commit
+        if ! git diff --staged --quiet; then
+          git commit -m "Auto-build: Add/Update distribution assets [skip ci]"
+          git push
+        else
+          echo "No changes to commit in dist folder."
+        fi
