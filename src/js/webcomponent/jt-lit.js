@@ -235,13 +235,25 @@ document.addEventListener('DOMContentLoaded', function () {
             ],
             experience: [
                 {
+                    company: 'Google',
+                    position: 'Senior Software Engineer',
+                    period: 'March, 2025 - Present',
+                    projects: [
+                        {
+                            name: 'AI Platforms',
+                            responsibilities: ['Building responsible AI'],
+                        },
+                    ],
+                },
+                {
                     company: 'ServiceNow',
                     position: 'Sr. Staff Software Engineer',
-                    period: 'August, 2024 - Present',
+                    period: 'August, 2024 - March, 2025',
                     projects: [
                         {
                             name: 'Application platform',
-                            responsibilities: ['Building ServiceNow e-commerce store - https://store.servicenow.com.'],
+                            responsibilities: ['Revamped ServiceNow e-commerce store - https://store.servicenow.com.', 
+                                               'Drove substantial improvements in system efficiency by optimizing slow queries, which reduced average response time by approximately 60%.'],
                         },
                     ],
                 },
