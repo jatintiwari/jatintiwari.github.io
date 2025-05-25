@@ -15,8 +15,8 @@ class ResumeApp extends LitElement {
         this.data = {};
         this.columns = {
             startPageOne: 0,
-            endPageOne: 1,
-            startPageTwo: 2,
+            endPageOne: 2,
+            startPageTwo: 3,
         };
         this.singleColumn = false;
         this.singlePage = true;
@@ -83,7 +83,7 @@ class ResumeApp extends LitElement {
                                       <span id="years">${this.yearsExperience}</span>+ Years
                                   </p>
                                   ${this.data.experience
-                                      .slice(this.columns.startPageOne, this.columns.endPageOne + 2)
+                                      .slice(this.columns.startPageOne, this.columns.endPageOne + 1)
                                       .map((job) => this.renderJobMainColumn(job))}
                               </div>
                           </div>
