@@ -380,7 +380,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     company: 'Servicenow',
                     position: 'Sr. Staff Software Engineer',
                     period: 'Aug 2024 - Mar 2025',
-                    url: 'http://www.amazon.in',
+                    url: 'http://store.servicenow.com',
                 },
                 {
                     company: 'Amazon',
