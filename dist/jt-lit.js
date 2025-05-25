@@ -35,7 +35,7 @@
                                       EXPERIENCE -
                                       <span id="years">${this.yearsExperience}</span>+ Years
                                   </p>
-                                  ${this.data.experience.slice(this.columns.startPageOne,this.columns.endPageOne+1).map(e=>this.renderJobMainColumn(e))}
+                                  ${this.data.experience.slice(this.columns.startPageOne,this.columns.endPageOne+2).map(e=>this.renderJobMainColumn(e))}
                               </div>
                           </div>
 
