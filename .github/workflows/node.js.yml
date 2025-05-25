@@ -22,18 +22,32 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present
-    - name: Commit and push dist folder
+    - name: Create Pull Request with built assets
       # This step will only run on pushes to the master branch,
-      # not on pull requests to avoid issues.
+      # to avoid creating PRs from PR validation builds if you uncomment the pull_request trigger above.
       if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-      run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add dist # Or your specific build output folder
-        # Check if there are any changes to commit
-        if ! git diff --staged --quiet; then
-          git commit -m "Auto-build: Add/Update distribution assets [skip ci]"
-          git push
-        else
-          echo "No changes to commit in dist folder."
-        fi
+      uses: peter-evans/create-pull-request@v6
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }} # Uses the default GITHUB_TOKEN
+        commit-message: "Auto-build: Add/Update distribution assets"
+        committer: GitHub <actions@github.com> # Optional: customize committer
+        author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com> # Optional: customize author
+        signoff: false # Optional: set to true if you want to sign off commits
+        branch: "actions/update-dist-${{ github.run_id }}" # Creates a new branch for the PR
+        delete-branch: true # Deletes the branch once the PR is merged or closed
+        title: "chore: Update distribution assets"
+        body: |
+          Automatic build of distribution assets.
+          This PR was created by the 'Build using esbuild and Create PR' GitHub Actions workflow.
+        labels: |
+          automated-pr
+          build
+        assignees: ${{ github.actor }} # Optional: assign the PR to the user who triggered the workflow
+        # reviewers: user1,user2 # Optional: request reviews
+        # team-reviewers: team1,team2 # Optional: request reviews from teams
+        add-paths: | # Important: specify what to add to the commit
+          dist/
+        # If you have specific files and not a whole directory:
+        # add-paths: |
+        #   path/to/your/file.js
+        #   path/to/your/otherfile.css
