@@ -253,6 +253,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         {
                             name: 'Application platform',
                             responsibilities: ['Revamped ServiceNow e-commerce store - https://store.servicenow.com.', 
+                                               'The new website on React improved the UX and web vitals which directly improved the conversion and the drop rate. It also reduced the number of support tickets related to discovery & information gaps.'
                                                'Drove substantial improvements in system efficiency by optimizing slow queries, which reduced average response time by approximately 60%.'],
                         },
                     ],
