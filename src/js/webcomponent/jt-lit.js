@@ -266,13 +266,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         {
                             name: 'Fire TV Devices (Stealth mode)',
                             responsibilities: [
-                                'As the sole Frontend engineer, providing technical leadership and mentorship to cross-functional team members seeking JavaScript expertise.',
-                                "Spearheaded the development of a React Native TV application from scratch, utilizing Amazon's proprietary React Native fork (Vega Script), demonstrating adaptability to custom frameworks.",
-                                'Architected a high-impact Network application, which became the most utilized module during device onboarding and within Settings. Led the Onboarding application development, ensuring efficient code reuse across multiple modules (Language/TZ Selector, Network, Accessibility) in both Onboarding and Settings apps.',
-                                'Introduced and championed the MVVM (Model-View-ViewModel) design pattern, improving code maintainability and scalability. Authored comprehensive documentation to facilitate knowledge transfer across globally distributed team members.',
-                                'Developed turbomodules to leverage native device capabilities and optimize performance by offloading resource-intensive tasks from the JavaScript thread.',
-                                'Implemented proxy patterns for common libraries, enabling seamless compatibility between Kepler Script and Vanilla React Native, enhancing code flexibility and reusability.',
-                                'Demonstrated strong skills in performance optimization for resource-limited environments on memory-constrained TV devices (1GB RAM).',
+                                "Served as the sole frontend engineer, providing technical leadership and mentoring cross-functional teams in JavaScript and modern frontend practices.",
+                                "Led end-to-end development of a React Native TV application using Amazon’s Vega Script, and architected the Network and Onboarding apps—enabling efficient code reuse across key modules like Language, TZ Selector, Network, and Accessibility.",
+                                "Introduced the MVVM design pattern to improve scalability and maintainability, and documented best practices for globally distributed teams.",
+                                "Enhanced performance on memory-constrained(1 GB RAM) TV devices by developing turbomodules, implementing proxy patterns for library compatibility, and optimizing resource-heavy operations.",
                             ],
                         },
                     ],
