@@ -271,6 +271,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 "Introduced the MVVM design pattern to improve scalability and maintainability, and documented best practices for globally distributed teams.",
                                 "Developed turbomodules to leverage native device capabilities and optimize performance by offloading resource-intensive tasks from the JavaScript thread.  It was a critical performance optimization for resource-limited environments on memory-constrained TV devices (1GB RAM).",
                                 "Implemented proxy patterns for common libraries, enabling seamless compatibility between Kepler Script and Vanilla React Native, enhancing code flexibility and reusability.",
+                                "Developed monotonic timers to prevent time sync issues while using defered functions in JS."
                             ],
                         },
                     ],
