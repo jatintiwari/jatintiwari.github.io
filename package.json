@@ -3,9 +3,10 @@
     "version": "1.0.0",
     "private": true,
     "scripts": {
-        "build": "npm run build-knowmore && npm run build-lit",
+        "build": "npm run build-knowmore && npm run build-lit && npm run build-dpt",
         "build-knowmore": "esbuild ./src/knowMore.js --bundle --minify --tree-shaking=true --outdir=./dist --minify-whitespace --loader:.scss=css",
-        "build-lit": "esbuild ./src/js/webcomponent/jt-lit.js --bundle --minify --tree-shaking=true --outdir=./dist --minify-whitespace"
+        "build-lit": "esbuild ./src/js/webcomponent/jt-lit.js --bundle --minify --tree-shaking=true --outdir=./dist --minify-whitespace",
+        "build-dpt": "esbuild ./src/js/webcomponent/dpt-lit.js --bundle --minify --tree-shaking=true --outdir=./dist --minify-whitespace"
     },
     "dependencies": {
         "esbuild": "0.25.0",
