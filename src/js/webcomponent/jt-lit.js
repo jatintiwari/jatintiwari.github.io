@@ -3,23 +3,14 @@ import { html, LitElement } from 'lit';
 class ResumeApp extends LitElement {
     static properties = {
         data: { type: Object },
-        columns: { type: Object },
-        singleColumn: { type: Boolean },
-        singlePage: { type: Boolean },
+        isConcise: { type: Boolean },
         yearsExperience: { type: Number },
     };
 
     constructor() {
         super();
-        console.log('constructor called');
         this.data = {};
-        this.columns = {
-            startPageOne: 0,
-            endPageOne: 2,
-            startPageTwo: 3,
-        };
-        this.singleColumn = false;
-        this.singlePage = true;
+        this.isConcise = true;
         this.yearsExperience = this.calculateYearsExperience();
     }
 
@@ -32,12 +23,9 @@ class ResumeApp extends LitElement {
             (currentDate.getMonth() >= dateStartedWorking.getMonth() ? 0 : 1)
         );
     }
-    handleSingleColumn() {
-        this.singleColumn = !this.singleColumn;
-    }
-    handleSinglePage() {
-        this.singlePage = !this.singlePage;
-        console.log(this.singlePage);
+
+    toggleConcise() {
+        this.isConcise = !this.isConcise;
     }
 
     // Override to use external CSS instead of shadow DOM
@@ -48,157 +36,178 @@ class ResumeApp extends LitElement {
     render() {
         return this.data.personalInfo
             ? html`
-                  <div class="know-more-app">
+                  <div class="know-more-app" style="max-width: 800px; margin: 0 auto; padding-top: 20px;">
                       <div class="hide-print" id="updated">Last updated in ${this.data.personalInfo.lastUpdated}</div>
                       <button class="hide-print" id="print" @click=${() => window.print()}>Print</button>
-                      <button class="hide-print" @click=${this.handleSingleColumn}>
-                          ${this.singleColumn ? 'Double' : 'Single'} Column
-                      </button>
-                      <button class="hide-print" @click=${this.handleSinglePage}>
-                          ${this.singlePage ? 'Multi' : 'Single'} Page
+                      <button class="hide-print" @click=${() => this.toggleConcise()}>
+                          ${this.isConcise ? 'Show Full' : 'Concise Mode'}
                       </button>
 
-                      <div class="heading-container">
-                          <div class="heading">${this.data.personalInfo.name}</div>
-                          <div class="subheading-container">
+                      <div
+                          class="heading-container"
+                          style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #333; margin-bottom: 25px; padding-bottom: 15px;"
+                      >
+                          <div class="left-col" style="flex: 1; text-align: left;">
+                              <h2
+                                  class="heading"
+                                  style="font-size: 2rem; font-weight: 700; text-transform: uppercase; line-height: 1.1; margin: 0;text-align: left;"
+                              >
+                                  ${this.data.personalInfo.name}
+                              </h2>
+                          </div>
+                          <div
+                              class="right-col"
+                              style="flex: 1; display: flex; flex-direction: column; align-items: flex-end; justify-content: center; text-align: right; font-size: 1rem; line-height: 1.5;"
+                          >
                               <div class="subheading">
-                                  <a href="mailto:${this.data.personalInfo.email}">${this.data.personalInfo.email}</a>
+                                  <a
+                                      href="mailto:${this.data.personalInfo.email}"
+                                      style="text-decoration: none; color: inherit;"
+                                      >${this.data.personalInfo.email}</a
+                                  >
                               </div>
                               <div class="subheading">
-                                  <a href="tel:${this.data.personalInfo.phone}">${this.data.personalInfo.phone}</a>
+                                  <a
+                                      href="tel:${this.data.personalInfo.phone}"
+                                      style="text-decoration: none; color: inherit;"
+                                      >${this.data.personalInfo.phone}</a
+                                  >
                               </div>
                               <div class="subheading">
-                                  <a href="https://${this.data.personalInfo.website}" target="_blank"
+                                  <a
+                                      href="https://${this.data.personalInfo.website}"
+                                      target="_blank"
+                                      style="text-decoration: none; color: inherit;"
                                       >${this.data.personalInfo.website}</a
                                   >
                               </div>
                           </div>
                       </div>
 
-                      <div class="content-container page-one">
-                          <div class="content-left">
-                              <div class="section">
-                                  <p class="type medium">
-                                      EXPERIENCE -
-                                      <span id="years">${this.yearsExperience}</span>+ Years
-                                  </p>
-                                  ${this.data.experience
-                                      .slice(this.columns.startPageOne, this.columns.endPageOne + 1)
-                                      .map((job) => this.renderJobMainColumn(job))}
+                      <div class="content-container" style="display: block;">
+                          ${this.data.summary
+                              ? html`
+                                    <div class="section" style="margin-bottom: 20px;">
+                                        <p style="line-height: 1.6;">${this.data.summary}</p>
+                                    </div>
+                                `
+                              : ''}
+
+                          <div class="section" style="margin-bottom: 20px;">
+                              <div
+                                  class="section-heading"
+                                  style="border-bottom: 1px solid #ddd; margin-bottom: 15px; font-weight: bold; text-transform: uppercase;"
+                              >
+                                  Experience (${this.yearsExperience}+ Years)
                               </div>
+                              ${(this.isConcise ? this.data.experience.slice(0, 3) : this.data.experience).map((job) =>
+                                  this.renderJob(job)
+                              )}
                           </div>
 
-                          <div class="content-right">
-                              <div class="section skills">
-                                  <p class="type medium">SKILLS</p>
+                          <div class="section" style="margin-bottom: 20px;">
+                              <div
+                                  class="section-heading"
+                                  style="border-bottom: 1px solid #ddd; margin-bottom: 15px; font-weight: bold; text-transform: uppercase;"
+                              >
+                                  Education
+                              </div>
+                              <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                  <span style="font-weight: bold;">${this.data.education.degree}</span>
+                                  <span>${this.data.education.period}</span>
+                              </div>
+                              <div>${this.data.education.university}</div>
+                          </div>
+
+                          <div class="section" style="margin-bottom: 20px;">
+                              <div
+                                  class="section-heading"
+                                  style="border-bottom: 1px solid #ddd; margin-bottom: 15px; font-weight: bold; text-transform: uppercase;"
+                              >
+                                  Skills
+                              </div>
+                              <div
+                                  style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 10px;"
+                              >
                                   ${this.data.skills.map(
                                       (skill) => html`
-                                          <div class="skill">
-                                              <span class="medium">${skill.category}</span> - ${skill.items}
+                                          <div>
+                                              <span style="font-weight: bold;">${skill.category}:</span>
+                                              <span>${skill.items}</span>
                                           </div>
                                       `
                                   )}
                               </div>
+                          </div>
 
-                              <div class="section">
-                                  <p class="type medium">EDUCATION</p>
-                                  ${this.data.education.degree}, ${this.data.education.university},
-                                  ${this.data.education.period}
-                              </div>
-
-                              <div class="section">
-                                  <p class="type medium">PREVIOUS EXPERIENCE</p>
-                                  ${this.singlePage
-                                      ? html`<ul>
-                                            ${this.data.experience.slice(1).map(
-                                                (job) =>
-                                                    job.company &&
-                                                    html`<li>
-                                                        <span class="medium">${job.company}</span>,
-                                                        <span>${job.position}</span>.
-                                                        <br />
-                                                        <span>${job.period}</span>
-                                                    </li>`
-                                            )}
-                                        </ul>`
-                                      : html`<ul>
+                          ${this.data.previousExperience && this.data.previousExperience.length > 0
+                              ? html`
+                                    <div class="section" style="margin-bottom: 20px;">
+                                        <div
+                                            class="section-heading"
+                                            style="border-bottom: 1px solid #ddd; margin-bottom: 15px; font-weight: bold; text-transform: uppercase;"
+                                        >
+                                            Previous Experience
+                                        </div>
+                                        <ul style="padding-left: 20px; margin-top: 5px;">
                                             ${this.data.previousExperience.map(
                                                 (job) => html`
-                                                    <li>
-                                                        <a href="${job.url}" target="_blank" rel="noopener noreferrer"
+                                                    <li style="margin-bottom: 5px;">
+                                                        <a
+                                                            href="${job.url}"
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            style="font-weight: bold;"
                                                             >${job.company}</a
                                                         >, ${job.position}.
-                                                        <span class="small">${job.period}</span>
+                                                        <span style="font-style: italic;">${job.period}</span>
                                                     </li>
                                                 `
                                             )}
-                                        </ul>`}
-                              </div>
-                          </div>
+                                        </ul>
+                                    </div>
+                                `
+                              : ''}
                       </div>
-
-                      ${this.singlePage
-                          ? html``
-                          : html`<div
-                                class="content-container pagebreak page-two ${this.singleColumn ? 'single-column' : ''}"
-                            >
-                                <div class="section">
-                                    ${this.renderJob(this.data.experience[this.columns.startPageTwo])}${this.renderJob(
-                                        this.data.experience[this.columns.startPageTwo + 1]
-                                    )}
-                                </div>
-
-                                <div class="section">
-                                    ${this.data.experience
-                                        .slice(this.columns.startPageTwo + 2)
-                                        .map((job) => this.renderJob(job))}
-                                </div>
-                            </div>`}
                   </div>
               `
             : html``;
     }
 
-    renderJobMainColumn(job) {
-        return html`
-            ${job.company && html`<div class="section-heading">${job.company}, ${job.position}</div>`}
-            ${job.period && html`<div class="section-subheading">${job.period}</div>`}
-            <ul>
-                ${job.projects
-                    ? job.projects.map(
-                          (project) => html`
-                              <li>
-                                  <section class="medium heading">${project.name}</section>
-                                  <ul>
-                                      ${project.responsibilities.map((resp) => html`<li>${resp}</li>`)}
-                                  </ul>
-                              </li>
-                          `
-                      )
-                    : job.responsibilities.map((resp) => html`<li>${resp}</li>`)}
-            </ul>
-        `;
-    }
-
     renderJob(job) {
         return html`
-            ${job.company && html`<div class="section-heading">${job.company}, ${job.position}</div>`}
-            ${job.period && html`<div class="section-subheading">${job.period}</div>`}
-            <ul>
-                ${job.projects
-                    ? job.projects.map(
-                          (project) => html`
-                              <li>
-                                  ${project.name && html`<section class="heading">${project.name}</section>`}
-                                  <ul>
-                                      ${project.responsibilities &&
-                                      project.responsibilities.map((resp) => html`<li>${resp}</li>`)}
-                                  </ul>
-                              </li>
-                          `
-                      )
-                    : job.responsibilities && job.responsibilities.map((resp) => html`<li>${resp}</li>`)}
-            </ul>
+            <div style="margin-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                    ${job.company
+                        ? html`<h3 style="margin: 0; font-size: 1.3rem; font-weight: 700;">${job.company}</h3>`
+                        : html`<div></div>`}
+                    <div style="font-style: italic;">${job.period || ''}</div>
+                </div>
+                ${job.position ? html`<div style="font-weight: 500; margin-bottom: 5px;">${job.position}</div>` : ''}
+
+                <ul style="margin-top: 5px; padding-left: 20px;">
+                    ${job.projects
+                        ? job.projects.map(
+                              (project) => html`
+                                  ${project.name
+                                      ? html`<li
+                                            style="list-style-type: none; margin-left: -20px; font-weight: bold; margin-top: 10px; margin-bottom: 5px;"
+                                        >
+                                            ${project.name}
+                                        </li>`
+                                      : ''}
+                                  ${project.responsibilities
+                                      ? project.responsibilities.map(
+                                            (resp) => html`<li style="margin-bottom: 5px;">${resp}</li>`
+                                        )
+                                      : ''}
+                              `
+                          )
+                        : job.responsibilities
+                          ? job.responsibilities.map((resp) => html`<li style="margin-bottom: 5px;">${resp}</li>`)
+                          : ''}
+                </ul>
+            </div>
         `;
     }
 }
@@ -214,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 email: 'mail@jatintiwari.com',
                 phone: '+91-7675807450',
                 website: 'www.jatintiwari.com',
-                lastUpdated: 'Sept 2024',
+                lastUpdated: 'April 2026',
             },
             education: {
                 degree: 'B.E. - ECE',
@@ -223,13 +232,13 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             skills: [
                 { category: 'Languages', items: 'Javascript, TypeScipt' },
-                { category: 'JS', items: 'ES6, React Native, ReactJS, AngularJS, RelayJS' },
                 { category: 'Web services', items: 'REST, GraphQl, Websockets, Service Worker' },
+                { category: 'JS', items: 'ES6, React Native, ReactJS, AngularJS, RelayJS' },
+                { category: 'Build Tools', items: 'Webpack, Rollup' },
                 {
                     category: 'Frontend Technologies',
                     items: 'HTML 5, CSS 3, SASS, Bootstrap, Material Design',
                 },
-                { category: 'Build Tools', items: 'Webpack, Rollup' },
                 { category: 'Framework', items: 'Express JS, NextJS' },
                 { category: 'Automation', items: 'Appium, Puppeteer' },
             ],
@@ -242,9 +251,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         {
                             name: 'AI Data and Engines',
                             responsibilities: [
-                                'Architected dataset lineage frameworks for large-scale pre-training, ensuring all data utilized in Gemini models strictly adheres to global AI Act guidelines and safety protocols.', 
+                                'Architected dataset lineage frameworks for large-scale pre-training, ensuring all data utilized in Gemini models strictly adheres to global AI Act guidelines and safety protocols.',
                                 'Collaborated cross-functionally with Google DeepMind to engineer infrastructure for dataset registration and automated compliance auditing, streamlining the path from raw data to model ingestion.',
-                                'Developed a mission-critical internal platform that enables researchers to trace provenance and perform automated remediation of datasets, preventing non-compliant data from entering the training pipeline.'
+                                'Developed a mission-critical internal platform that enables researchers to trace provenance and perform automated remediation of datasets, preventing non-compliant data from entering the training pipeline.',
                             ],
                         },
                     ],
@@ -256,9 +265,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     projects: [
                         {
                             name: 'Application platform',
-                            responsibilities: ['Revamped ServiceNow e-commerce store - https://store.servicenow.com.', 
-                                               'The new React-based website enhanced the SEO, UX and web vitals, leading to higher conversions and lower drop rates. It also reduced the number of support tickets related to content discovery and information gaps.',
-                                               'Drove substantial improvements in system efficiency by optimizing slow queries, which reduced average response time by approximately 60%.'],
+                            responsibilities: [
+                                'Revamped ServiceNow e-commerce store - https://store.servicenow.com.',
+                                'The new React-based website enhanced the SEO, UX and web vitals, leading to higher conversions and lower drop rates. It also reduced the number of support tickets related to content discovery and information gaps.',
+                                'Drove substantial improvements in system efficiency by optimizing slow queries, which reduced average response time by approximately 60%.',
+                            ],
                         },
                     ],
                 },
@@ -270,12 +281,12 @@ document.addEventListener('DOMContentLoaded', function () {
                         {
                             name: 'Fire TV Devices (Stealth mode)',
                             responsibilities: [
-                                "Served as the sole frontend engineer, providing technical leadership and mentoring cross-functional teams in JavaScript and modern frontend practices.",
-                                "Led end-to-end development of a React Native TV application using Amazon’s Vega Script, and architected the Network and Onboarding apps—enabling efficient code reuse across key modules like Language, TZ Selector, Network, and Accessibility.",
-                                "Introduced the MVVM design pattern to improve scalability and maintainability, and documented best practices for globally distributed teams.",
-                                "Developed turbomodules to leverage native device capabilities and optimize performance by offloading resource-intensive tasks from the JavaScript thread.  It was a critical performance optimization for resource-limited environments on memory-constrained TV devices (1GB RAM).",
-                                "Implemented proxy patterns for common libraries, enabling seamless compatibility between Kepler Script and Vanilla React Native, enhancing code flexibility and reusability.",
-                                "Developed monotonic timers to prevent time sync issues while using defered functions in JS."
+                                'Served as the sole frontend engineer, providing technical leadership and mentoring cross-functional teams in JavaScript and modern frontend practices.',
+                                'Led end-to-end development of a React Native TV application using Amazon’s Vega Script, and architected the Network and Onboarding apps—enabling efficient code reuse across key modules like Language, TZ Selector, Network, and Accessibility.',
+                                'Introduced the MVVM design pattern to improve scalability and maintainability, and documented best practices for globally distributed teams.',
+                                'Developed turbomodules to leverage native device capabilities and optimize performance by offloading resource-intensive tasks from the JavaScript thread.  It was a critical performance optimization for resource-limited environments on memory-constrained TV devices (1GB RAM).',
+                                'Implemented proxy patterns for common libraries, enabling seamless compatibility between Kepler Script and Vanilla React Native, enhancing code flexibility and reusability.',
+                                'Developed monotonic timers to prevent time sync issues while using defered functions in JS.',
                             ],
                         },
                     ],
@@ -365,22 +376,22 @@ document.addEventListener('DOMContentLoaded', function () {
                     company: 'Furlenco',
                     position: 'Senior Software Engineer',
                     period: 'October, 2015 — April, 2018',
-                    hidden: [
+                    responsibilities: [
                         "I was responsible for developing and maintaining company's own e-commerce portal — www.furlenco.com.",
                     ],
                 },
                 {
                     company: 'Lexnimble Solutions',
-                    position: 'Programmer Analyst',
+                    position: 'Junior Programmer Analyst',
                     period: 'July, 2014 — October, 2015',
-                    hidden: [
+                    responsibilities: [
                         'Designed and Developed Full duplex chat mechanism using Spring Sockets, Sock.js, Stromp.js.',
                         'Developed and maintained www.simplelaw.com.',
                     ],
                 },
             ],
             previousExperience: [
-                 {
+                {
                     company: 'Servicenow',
                     position: 'Sr. Staff Software Engineer',
                     period: 'Aug 2024 - Mar 2025',
