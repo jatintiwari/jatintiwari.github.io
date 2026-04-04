@@ -240,8 +240,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     period: 'March, 2025 - Present',
                     projects: [
                         {
-                            name: 'AI Platforms',
-                            responsibilities: ['Building responsible AI'],
+                            name: 'AI Data and Engines',
+                            responsibilities: [
+                                'Architected dataset lineage frameworks for large-scale pre-training, ensuring all data utilized in Gemini models strictly adheres to global AI Act guidelines and safety protocols.', 
+                                'Collaborated cross-functionally with Google DeepMind to engineer infrastructure for dataset registration and automated compliance auditing, streamlining the path from raw data to model ingestion.',
+                                'Developed a mission-critical internal platform that enables researchers to trace provenance and perform automated remediation of datasets, preventing non-compliant data from entering the training pipeline.'
+                            ],
                         },
                     ],
                 },
