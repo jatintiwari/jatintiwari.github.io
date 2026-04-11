@@ -227,12 +227,12 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             education: {
                 degree: 'B.E. - ECE',
-                university: 'Chitkara university, Himachal Pradesh',
+                university: 'Chitkara University, Himachal Pradesh',
                 period: '2009 - 2013',
             },
             skills: [
-                { category: 'Languages', items: 'Javascript, TypeScipt' },
-                { category: 'Web services', items: 'REST, GraphQl, Websockets, Service Worker' },
+                { category: 'Languages', items: 'JavaScript, TypeScript' },
+                { category: 'Web services', items: 'REST, GraphQL, WebSockets, Service Worker' },
                 { category: 'JS', items: 'ES6, React Native, ReactJS, AngularJS, RelayJS' },
                 { category: 'Build Tools', items: 'Webpack, Rollup' },
                 {
@@ -286,7 +286,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 'Introduced the MVVM design pattern to improve scalability and maintainability, and documented best practices for globally distributed teams.',
                                 'Developed turbomodules to leverage native device capabilities and optimize performance by offloading resource-intensive tasks from the JavaScript thread.  It was a critical performance optimization for resource-limited environments on memory-constrained TV devices (1GB RAM).',
                                 'Implemented proxy patterns for common libraries, enabling seamless compatibility between Kepler Script and Vanilla React Native, enhancing code flexibility and reusability.',
-                                'Developed monotonic timers to prevent time sync issues while using defered functions in JS.',
+                                'Developed monotonic timers to prevent time sync issues while using deferred functions in JS.',
                             ],
                         },
                     ],
@@ -385,7 +385,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     position: 'Junior Programmer Analyst',
                     period: 'July, 2014 — October, 2015',
                     responsibilities: [
-                        'Designed and Developed Full duplex chat mechanism using Spring Sockets, Sock.js, Stromp.js.',
+                        'Designed and Developed Full duplex chat mechanism using Spring Sockets, Sock.js, Stomp.js.',
                         'Developed and maintained www.simplelaw.com.',
                     ],
                 },
