@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronos 2060 - IST Horizon</title>
+    <style>
+        :root {
+            --sun-color: #ffaa00;
+            --moon-color: #aaccff;
+            --accent: #00d4ff;
+            --bg-deep: #020205;
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: var(--bg-deep);
+            color: white;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        /* Breathing Glassmorphism Container */
+        .container {
+            position: relative;
+            z-index: 10;
+            background: rgba(10, 10, 15, 0.05);
+            padding: 4rem 5rem;
+            border-radius: 40px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+            min-width: 600px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+
+            animation: breathe 10s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 30px rgba(0, 212, 255, 0.05);
+                border-color: rgba(255, 255, 255, 0.08);
+            }
+
+            50% {
+                transform: scale(1.03);
+                box-shadow: 0 0 60px rgba(0, 212, 255, 0.15);
+                border-color: rgba(0, 212, 255, 0.2);
+            }
+        }
+
+        h1 {
+            font-size: 7rem;
+            margin: 0;
+            font-weight: 800;
+            letter-spacing: -2px;
+            font-variant-numeric: tabular-nums;
+            background: linear-gradient(180deg, #ffffff 30%, #555 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            letter-spacing: 6px;
+            color: var(--accent);
+            margin-top: 2rem;
+            text-transform: uppercase;
+            font-variant-numeric: tabular-nums;
+            opacity: 0.9;
+        }
+
+        .label {
+            font-size: 0.8rem;
+            color: #666;
+            letter-spacing: 8px;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 3.5rem;
+            margin: 2rem 0 0 0;
+            font-weight: 700;
+            background: linear-gradient(180deg, #00d4ff 0%, #0088ff 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-variant-numeric: tabular-nums;
+            line-height: 1;
+        }
+
+        .label-lived {
+            font-size: 0.7rem;
+            color: #444;
+            letter-spacing: 5px;
+            margin-top: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .timezone-tag {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.3);
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="bgCanvas"></canvas>
+    <div class="timezone-tag">LOCATION CONTEXT: IST (UTC+5:30)</div>
+
+    <div class="container">
+        <h1 id="daysMain">0000</h1>
+        <div class="label">DAYS UNTIL MARCH 2060</div>
+        <h2 id="fullCountdown">00Y 00M 00D 00H 00M 00S</h2>
+        <h3 id="daysLived">0000</h3>
+        <div class="label-lived">DAYS LIVED SINCE MARCH 1991</div>
+    </div>
+
+    <script>
+        const START_DATE = new Date('March 11, 1991 22:20:00');
+        const TARGET_DATE = new Date('March 11, 2060 00:00:00');
+        const canvas = document.getElementById('bgCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let stars = [];
+
+        function initStars() {
+            stars = [];
+            for (let i = 0; i < 1111; i++) {
+                stars.push({
+                    x: Math.random() * window.innerWidth,
+                    y: Math.random() * window.innerHeight,
+                    size: Math.random() * 1.5,
+                    opacity: Math.random()
+                });
+            }
+        }
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initStars();
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        function updateCountdown() {
+            const now = new Date();
+            const diff = TARGET_DATE - now;
+            const livedDiff = now - START_DATE;
+
+            if (diff <= 0) {
+                document.getElementById('daysMain').innerText = "0";
+                document.getElementById('fullCountdown').innerText = "00Y 00M 00D 00H 00M 00S";
+                // Even if diff is 0, we still want to show days lived
+            } else {
+                const totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
+                document.getElementById('daysMain').innerText = totalDays.toLocaleString();
+            }
+
+            const totalLived = Math.floor(livedDiff / (1000 * 60 * 60 * 24));
+            document.getElementById('daysLived').innerText = totalLived.toLocaleString();
+
+            let years = TARGET_DATE.getFullYear() - now.getFullYear();
+            let months = TARGET_DATE.getMonth() - now.getMonth();
+            let days = TARGET_DATE.getDate() - now.getDate();
+            let hours = TARGET_DATE.getHours() - now.getHours();
+            let minutes = TARGET_DATE.getMinutes() - now.getMinutes();
+            let seconds = TARGET_DATE.getSeconds() - now.getSeconds();
+
+            if (seconds < 0) {
+                minutes--;
+                seconds += 60;
+            }
+            if (minutes < 0) {
+                hours--;
+                minutes += 60;
+            }
+            if (hours < 0) {
+                days--;
+                hours += 24;
+            }
+            if (days < 0) {
+                months--;
+                // Get days in the month that was just passed
+                const lastMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+                days += lastMonth.getDate();
+            }
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+
+            const pad = (n) => n.toString().padStart(2, '0');
+            document.getElementById('fullCountdown').innerText =
+                `${pad(years)}Y ${pad(months)}M ${pad(days)}D ${pad(hours)}H ${pad(minutes)}M ${pad(seconds)}S`;
+        }
+
+        function drawBackground() {
+            ctx.fillStyle = '#020205';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            const now = new Date();
+            const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+            const istTime = new Date(utc + (3600000 * 5.5));
+
+            const totalSecondsDay = (istTime.getHours() * 3600) + (istTime.getMinutes() * 60) + istTime.getSeconds();
+            const dayProgress = totalSecondsDay / 86400; // 0 (midnight) to 1
+
+            const centerY = canvas.height / 2;
+            const amplitude = canvas.height * 0.25;
+
+            // 1. Draw Starfield (Visible only when sun is low/down)
+            const nightAlpha = Math.abs(Math.cos(dayProgress * Math.PI * 2));
+            stars.forEach(star => {
+                ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity * nightAlpha})`;
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+                ctx.fill();
+            });
+
+            // 2. The Sine Pathway (Horizon)
+            ctx.beginPath();
+            ctx.strokeStyle = 'rgba(0, 212, 255, 0.15)';
+            ctx.lineWidth = 3;
+            for (let x = 0; x < canvas.width; x++) {
+                const prog = x / canvas.width;
+                const y = centerY + Math.sin(prog * Math.PI * 2 - Math.PI / 2) * amplitude;
+                if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+
+            // 3. IST Daylight Shading
+            const gradient = ctx.createLinearGradient(0, centerY - amplitude, 0, centerY + amplitude);
+            gradient.addColorStop(0, 'rgba(0, 212, 255, 0.05)');
+            gradient.addColorStop(0.5, 'rgba(0, 0, 0, 0)');
+            gradient.addColorStop(1, 'rgba(255, 0, 122, 0.05)');
+            ctx.fillStyle = gradient;
+            ctx.fill();
+
+            // 4. Sun & Moon
+            const sunX = dayProgress * canvas.width;
+            const sunY = centerY + Math.sin(dayProgress * Math.PI * 2 - Math.PI / 2) * amplitude;
+
+            // Sun Glow
+            const sunGlow = ctx.createRadialGradient(sunX, sunY, 0, sunX, sunY, 150);
+            sunGlow.addColorStop(0, 'rgba(255, 170, 0, 0.2)');
+            sunGlow.addColorStop(1, 'rgba(255, 170, 0, 0)');
+            ctx.fillStyle = sunGlow;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Sun Disk
+            ctx.shadowBlur = 20;
+            ctx.shadowColor = "#ffaa00";
+            ctx.fillStyle = "#ffaa00";
+            ctx.beginPath();
+            ctx.arc(sunX, sunY, 12, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Moon Disk
+            const moonProgress = (dayProgress + 0.5) % 1;
+            const moonX = moonProgress * canvas.width;
+            const moonY = centerY + Math.sin(moonProgress * Math.PI * 2 - Math.PI / 2) * amplitude;
+            ctx.shadowColor = "#aaccff";
+            ctx.fillStyle = "#aaccff";
+            ctx.beginPath();
+            ctx.arc(moonX, moonY, 8, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.shadowBlur = 0;
+
+            requestAnimationFrame(drawBackground);
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        drawBackground();
+    </script>
+</body>
+
+</html>
