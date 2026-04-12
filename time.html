@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chronos 2060 - IST Horizon</title>
+    <title>Chronos 2060</title>
     <style>
         :root {
             --sun-color: #ffaa00;
@@ -39,14 +39,16 @@
         .container {
             position: relative;
             z-index: 10;
-            background: rgba(10, 10, 15, 0.05);
-            padding: 4rem 5rem;
+            background: rgba(10, 10, 15, 0.02);
+            padding: 4rem 3rem;
             border-radius: 40px;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(1px);
             border: 1px solid rgba(255, 255, 255, 0.08);
             text-align: center;
-            min-width: 600px;
+            width: 90%;
+            max-width: 600px;
+            box-sizing: border-box;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 
             animation: breathe 10s ease-in-out infinite;
@@ -129,6 +131,43 @@
             letter-spacing: 2px;
             color: rgba(255, 255, 255, 0.3);
             z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 2.5rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 4.5rem;
+            }
+
+            h2 {
+                font-size: 0.9rem;
+                letter-spacing: 3px;
+                margin-top: 1.5rem;
+            }
+
+            h3 {
+                font-size: 2.2rem;
+                margin: 1.5rem 0 0 0;
+            }
+
+            .label {
+                font-size: 0.6rem;
+                letter-spacing: 4px;
+            }
+
+            .label-lived {
+                font-size: 0.55rem;
+                letter-spacing: 2px;
+            }
+
+            .timezone-tag {
+                font-size: 0.55rem;
+                bottom: 15px;
+                right: 15px;
+            }
         }
     </style>
 </head>
