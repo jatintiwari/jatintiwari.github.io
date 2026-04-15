@@ -1,327 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-        <title>Jatin Tiwari - UI Engineer</title>
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <meta
-            title="title"
-            content="jatintiwari, jatin, tiwari, full stack developer, angularjs, freelancer, javscript, nodejs, backbonejs, beer, flipkart, furlenco, atlassian"
-        />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="icon" type="image/png" href="/favicon.png" />
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-        <meta property="og:site_name" content="Engineer - Jatin Tiwari" />
-        <meta property="og:title" content="Engineer - Jatin Tiwari" />
-        <meta
-            property="og:description"
-            content="With 10+ years of experience in front-end development, I have had the privilege to work with
+    <title>Jatin Tiwari - UI Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta title="title"
+        content="jatintiwari, jatin, tiwari, full stack developer, angularjs, freelancer, javscript, nodejs, backbonejs, beer, flipkart, furlenco, atlassian" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <meta property="og:site_name" content="Engineer - Jatin Tiwari" />
+    <meta property="og:title" content="Engineer - Jatin Tiwari" />
+    <meta property="og:description" content="With 10+ years of experience in front-end development, I have had the privilege to work with
             small to very large-scale e-commerce companies. Expert
-            in Web and App development with advanced knowledge in Javascript."
-        />
-        <meta property="og:image" itemprop="image" content="https://www.jatintiwari.com/dist/images/jt.JPG" />
+            in Web and App development with advanced knowledge in Javascript." />
+    <meta property="og:image" itemprop="image" content="https://www.jatintiwari.com/dist/images/jt.JPG" />
 
-        <style>
+    <style>
+        :root {
+            /* Corporate Light (Refined Blue) */
+            --bg: #fdfeff;
+            --surface: rgba(255, 255, 255, 0.7);
+            --text-primary: #1a1f2e;
+            --text-secondary: #475569;
+            --accent: #2563eb;
+            --accent-soft: rgba(37, 99, 235, 0.05);
+            --border: rgba(30, 41, 59, 0.08);
+            --grid: rgba(37, 99, 235, 0.03);
+            --font-head: 'Plus Jakarta Sans', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        @media (prefers-color-scheme: dark) {
             :root {
-                --text-color: #34435e;
-                --bg-color: #f9f4f5;
-                --highlight-color: #0a74bb;
-                --hover-color: #ffb100;
-                --mark-bg: linear-gradient(
-                    to right,
-                    rgba(255, 225, 0, 0.1),
-                    rgba(255, 225, 0, 0.7) 4%,
-                    rgba(255, 225, 0, 0.3)
-                );
+                /* Corporate Dark (Obsidian/Indigo) */
+                --bg: #090a0f;
+                --surface: rgba(15, 17, 26, 0.6);
+                --text-primary: #f1f5f9;
+                --text-secondary: #94a3b8;
+                --accent: #60a5fa;
+                --accent-soft: rgba(96, 165, 250, 0.08);
+                --border: rgba(255, 255, 255, 0.08);
+                --grid: rgba(96, 165, 250, 0.03);
             }
+        }
 
-            .dark-mode {
-                --text-color: #f9f4f5;
-                --bg-color: #34435e;
-                --highlight-color: #ffb100;
-                --hover-color: #0a74bb;
-                --mark-bg: linear-gradient(
-                    to right,
-                    rgba(102, 255, 0, 0.1),
-                    rgba(102, 255, 0, 0.7) 4%,
-                    rgba(102, 255, 0, 0.3)
-                );
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-body);
+            color: var(--text-secondary);
+            background-color: var(--bg);
+            background-image:
+                linear-gradient(var(--grid) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+            background-size: 32px 32px;
+            background-position: center;
+            background-attachment: fixed;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        #jatintiwari {
+            display: flex;
+            justify-content: center;
+            padding: 100px 24px;
+            min-height: 100vh;
+        }
+
+        #app {
+            width: 70%;
+            max-width: 1000px;
+            background: var(--surface);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 64px;
+            box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            margin-bottom: 64px;
+        }
+
+        .hello-text {
+            font-family: var(--font-head);
+            font-size: 2.75rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.03em;
+            margin: 0 0 12px 0;
+            line-height: 1.1;
+        }
+
+        .role-line {
+            font-family: var(--font-head);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .role-line::after {
+            content: "";
+            height: 1px;
+            width: 40px;
+            background: var(--accent);
+            opacity: 0.3;
+        }
+
+        .section {
+            margin-bottom: 48px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        strong,
+        .highlight {
+            color: var(--text-primary);
+            font-weight: 600;
+            background: var(--accent-soft);
+            padding: 0 4px;
+            border-radius: 4px;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        a.cta {
+            border-bottom: 1px solid transparent;
+            padding-bottom: 1px;
+        }
+
+        a.cta:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        .mark {
+            font-family: var(--font-head);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            border-left: 3px solid var(--accent);
+            padding-left: 32px;
+            margin: 64px 0;
+            line-height: 1.4;
+        }
+
+        .footer-line {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contacts {
+            display: flex;
+            gap: 32px;
+        }
+
+        .contacts a {
+            font-family: var(--font-head);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 700;
+            opacity: 0.7;
+        }
+
+        .contacts a:hover {
+            opacity: 1;
+        }
+
+        /* Mobile */
+        @media (max-width: 1024px) {
+            #app {
+                width: 90%;
             }
+        }
 
-            html,
-            body {
-                position: relative;
-                margin: 0;
-            }
-
-            body {
-                font-family: 'Open Sans', sans-serif;
-                color: var(--text-color);
-                letter-spacing: 0.05em;
-                background-color: var(--bg-color);
-                position: relative;
-                font-weight: 300;
-                font-size: 1.1rem;
-                transition: 0.1s linear background-color;
-            }
-
+        @media (max-width: 768px) {
             #jatintiwari {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100%;
-                padding: 20px;
+                padding: 40px 16px;
             }
 
             #app {
-                width: 45vw;
-                position: relative;
-            }
-
-            a {
-                text-decoration: none;
-                color: var(--highlight-color);
-            }
-
-            a.cta {
-                transition: 0.1s linear color;
-                text-decoration: none;
-                display: inline-block;
-                margin: 0 5px;
-                text-align: center;
-            }
-
-            a.cta:hover {
-                color: var(--hover-color);
-            }
-
-            p {
-                margin-bottom: 0;
-            }
-
-            .text-center {
-                text-align: center;
-            }
-
-            .text-bold {
-                font-weight: bold;
-            }
-
-            .text-small {
-                font-size: 12px;
-            }
-
-            .text-italic {
-                font-style: italic;
-            }
-
-            .highlight {
-                font-weight: 400;
-                color: #fe654f;
-            }
-
-            .mark {
-                margin: 0 -0.4em;
-                padding: 0.1em 0.4em;
-                border-radius: 0.8em 0.3em;
-                background: transparent;
-                background-image: var(--mark-bg);
-                -webkit-box-decoration-break: clone;
-                box-decoration-break: clone;
-            }
-
-            .section {
-                margin-bottom: 20px;
-            }
-
-            .container {
-                padding: 1em;
-                vertical-align: top;
-                align-self: baseline;
-            }
-
-            .hello-hand {
-                padding-right: 0.2em;
-                font-size: 4em;
+                padding: 40px 24px;
+                width: 100%;
+                border-radius: 12px;
             }
 
             .hello-text {
-                font-size: 24px;
+                font-size: 2rem;
             }
 
-            .about-me {
-                display: flex;
-                align-items: center;
+            .footer-line {
+                flex-direction: column;
+                gap: 32px;
+                text-align: center;
             }
+        }
+    </style>
+</head>
 
-            .introduction {
-                font-size: 18px;
-            }
+<body>
 
-            .sticky-bottom {
-                border-top: 1px solid var(--text-color);
-                color: var(--bg-color);
-                padding: 15px;
-                margin-top: 30px;
-            }
+    <div id="jatintiwari">
+        <main id="app">
+            <header>
+                <div class="role-line">Software Engineer</div>
+                <h1 class="hello-text">Jatin Tiwari</h1>
+                <p style="margin-top: 12px; font-weight: 500;">
+                    Currently at <a class="cta" target="_blank"
+                        href="https://www.google.com/search?q=google">Google</a>, India.
+                </p>
+            </header>
 
-            .contacts {
-                display: flex;
-                justify-content: space-between;
-            }
+            <div class="section">
+                <section class="container">
+                    <p>
+                        With over <span id="experience-years">11</span> years of experience in front-end engineering, I
+                        have led technical initiatives
+                        across high-scale systems at global tech leaders including <strong>Google</strong>,
+                        <strong>Amazon</strong>, and <strong>ServiceNow</strong>.
+                        My expertise lies in architecting complex web and mobile applications with a core focus on
+                        scalability, performance, and user experience.
+                    </p>
+                    <p>
+                        Since joining <strong>Google</strong>, I have worked with cross-functional teams to architect
+                        dataset lineage frameworks. My work focuses on ensuring that data utilized in large-scale model
+                        training adheres to safety protocols and global AI guidelines, streamlining the path from raw
+                        data ingestion to model ingestion.
+                    </p>
+                    <p>
+                        Previously, at <strong>ServiceNow</strong>, I spearheaded the revamp of their e-commerce
+                        storefront, leveraging React to drive significant improvements in SEO and web vitals. At
+                        <strong>Amazon</strong>, I led the development of React Native TV applications, introduced
+                        modern design patterns like MVVM, and developed custom turbomodules to optimize native device
+                        performance.
+                    </p>
+                    <p>
+                        During my tenure at <a class="cta" href="https://en.wikipedia.org/wiki/Furlenco"
+                            target="_blank">Furlenco</a>, I specialized in <span class="highlight">React JS</span>,
+                        and at <a class="cta" href="https://en.wikipedia.org/wiki/Flipkart"
+                            target="_blank">Flipkart</a>, I created a visual regression tool using <span
+                            class="highlight">Puppeteer</span> that automated the verification of complex app workflows,
+                        significantly improving deployment confidence.
+                    </p>
+                    <p>
+                        I have a passion for building apps from scratch and scaling them to serve millions of customers.
+                        I believe that technology should be used on a need basis and that it takes time to build
+                        high-quality
+                        apps. I have helped several friends kickstart their startup dreams by building native apps
+                        using <span class="highlight">Flutter</span> and
+                        <span class="highlight">React Native</span>.
+                    </p>
+                </section>
+            </div>
 
-            .theme-container {
-                position: absolute;
-                right: 5%;
-                top: 20px;
-            }
+            <div class="section passion-container">
+                <section class="container">
+                    <p class="mark">I have an insatiable curiosity and a passion for learning.</p>
+                    <p>
+                        Currently, I am tinkering with ESP32 and have successfully automated several peripherals in
+                        my home. My love for dogs is endless, and I take pleasure in training them whenever I can.
+                        Cooking is another hobby of mine, which I have mastered through YouTube videos.
+                    </p>
+                    <p>
+                        I am also avidly looking out for building projects on
+                        <span class="highlight">Raspberry Pi</span>.
+                    </p>
+                    <p>
+                        For my daily cardio routine, I enjoy listening podcasts on a variety of topics. During
+                        weekends, I take a break from work and play video games to unwind and relax. My interests
+                        are varied, and I am always seeking out new opportunities to expand my knowledge and skills.
+                    </p>
+                    <p class="text-center">I am always open to exploring new opportunities or professional consultation.
+                    </p>
+                </section>
+            </div>
 
-            .theme-button {
-                font-size: 32px;
-                cursor: pointer;
-                user-select: none;
-            }
-
-            @media (min-width: 768px) and (max-width: 1024px) {
-                #app {
-                    width: 80vw;
-                }
-            }
-
-            @media (max-width: 767px) {
-                #jatintiwari {
-                    padding: 1em;
-                    display: block;
-                    height: auto;
-                }
-
-                #app {
-                    width: 100%;
-                    padding: 0;
-                    box-shadow: none;
-                }
-
-                .contacts {
-                    font-size: 0.8em;
-                }
-
-                .hello-hand {
-                    font-size: 2em;
-                }
-
-                .theme-container {
-                    visibility: hidden;
-                }
-            }
-
-            @media (min-width: 320px) and (max-width: 480px) {
-                #app {
-                    width: 100%;
-                }
-
-                .introduction {
-                    font-size: 16px;
-                    text-align: left;
-                }
-            }
-        </style>
-    </head>
-
-    <body class="dark-mode">
-        <div id="jatintiwari">
-            <main id="app">
-                <div class="section">
-                    <div class="introduction">
-                        <div class="about-me">
-                            <span class="hello-hand">👋</span>
-                            <span>
-                                <span class="hello-text">Hello! I am Jatin Tiwari</span>
-                                <br />
-                                <span>Senior Software Engineer</span>,
-                                <a class="cta" target="_blank" href="https://www.google.com/search?q=google"
-                                    >Google</a
-                                >, India.
-                            </span>
-                        </div>
-                    </div>
+            <footer class="footer-line">
+                <div class="contacts">
+                    <a target="_blank" href="https://www.linkedin.com/in/jatin-tiwari-3783aa50/">LinkedIn</a>
+                    <a href="mailto:mail@jatintiwari.com">Email</a>
                 </div>
+            </footer>
+        </main>
+    </div>
+    <script>
+        (function () {
+            function calculateYearsExperience() {
+                const now = new Date();
+                const startDate = new Date("July 21, 2014");
+                let years = now.getFullYear() - startDate.getFullYear();
+                if (now.getMonth() < startDate.getMonth() || (now.getMonth() === startDate.getMonth() && now.getDate() < startDate.getDate())) {
+                    years--;
+                }
+                return years;
+            }
+            const experienceSpan = document.getElementById("experience-years");
+            if (experienceSpan) {
+                experienceSpan.textContent = calculateYearsExperience();
+            }
+        })();
+    </script>
+</body>
 
-                <div class="section">
-                    <section class="container">
-                        <p>
-                            With over 10 years of experience in front-end development, I have had the privilege to work
-                            with small to very large-scale e-commerce companies for approximately 9 years. My expertise
-                            lies in Web and App development with advanced knowledge in Javascript.
-                        </p>
-                        <p>
-                            During my tenure at<a
-                                class="cta"
-                                href="https://en.wikipedia.org/wiki/Furlenco"
-                                target="_blank"
-                                >Furlenco</a
-                            >, I started working with <span class="highlight">React JS</span>, which quickly became my
-                            favorite framework. I have prior experience with
-                            <span class="highlight">Angular JS</span> and
-                            <span class="highlight">Backbone JS</span>
-                            as well.
-                        </p>
-                        <p>
-                            In addition to my proficiency in Javascript, I am enthusiastic about
-                            <span class="highlight">Puppeteer JS</span> and can quickly build a scalable API in
-                            <span class="highlight">NodeJS</span>. During my time at
-                            <a class="cta" href="https://en.wikipedia.org/wiki/Flipkart" target="_blank">Flipkart</a>, I
-                            created a Visual Regression tool that automated the process of taking screenshots of all the
-                            app workflows and comparing them to baseline checkpoint images. This tool eliminated manual
-                            testing and improved the efficiency of the testing process.
-                        </p>
-                        <p>
-                            I ❤️ building apps from scratch and scaling them to serve millions of customers. I believe
-                            that technology should be used on a need basis and that it takes time to build high-quality
-                            apps. I have helped several friends kickstart their startup dreams by building native apps
-                            using <span class="highlight">Flutter</span> and
-                            <span class="highlight">React Native</span>.
-                        </p>
-                    </section>
-                </div>
-
-                <div class="section passion-container">
-                    <section class="container">
-                        <p class="mark">I have an insatiable curiosity and a passion for learning.</p>
-                        <p>
-                            Currently, I am tinkering with ESP32 and have successfully automated several peripherals in
-                            my home. My love for dogs is endless, and I take pleasure in training them whenever I can.
-                            Cooking is another hobby of mine, which I have mastered through YouTube videos.
-                        </p>
-                        <p>
-                            I am also avidly looking out for building projects on
-                            <span class="highlight">Raspberry Pi</span>.
-                        </p>
-                        <p>
-                            For my daily cardio routine, I enjoy listening podcasts on a variety of topics. During
-                            weekends, I take a break from work and play video games to unwind and relax. My interests
-                            are varied, and I am always seeking out new opportunities to expand my knowledge and skills.
-                        </p>
-                        <p class="text-center">I will be happy to connect for new opportunities or consultation✌🏽</p>
-                    </section>
-                </div>
-
-                <div class="section sticky-bottom">
-                    <div class="container contacts">
-                        <span
-                            ><a class="cta" target="_blank" href="https://www.linkedin.com/in/jatin-tiwari-3783aa50/"
-                                >LINKEDIN</a
-                            ></span
-                        >
-                        <span><a class="cta" target="_blank" href="mailto:mail@jatintiwari.com">EMAIL</a></span>
-                    </div>
-                </div>
-            </main>
-        </div>
-    </body>
 </html>
