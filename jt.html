@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <meta charset="utf-8" />
   <title>Resume - Jatin Tiwari | Senior Software Engineer</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -18,200 +19,384 @@
   <meta property="og:image" itemprop="image" content="https://www.jatintiwari.com/dist/images/jt.JPG" />
 
   <link rel="manifest" href="/site.webmanifest" />
-  <script src="/dist/jt-lit.js" defer></script>
   <link rel="stylesheet" href="/dist/knowMore.css" />
+  <style>
+    .know-more-app.is-concise .full-only {
+      display: none;
+    }
+
+    .know-more-app:not(.is-concise) .concise-only {
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
-  <resume-app>
-    <!-- ATS-Friendly Semantic Fallback -->
-    <main style="display:none;">
-      <header>
-        <h1>Jatin Tiwari</h1>
-        <p>Email: <a href="mailto:mail@jatintiwari.com">mail@jatintiwari.com</a> | Phone: <a
-            href="tel:+917675807450">+91-7675807450</a> | Website: <a
-            href="https://www.jatintiwari.com">www.jatintiwari.com</a></p>
-        <p>Senior Software Engineer with 11+ years of experience leading frontend architecture and high-scale
-          applications across Google, ServiceNow, Amazon, Atlassian, and Flipkart. Expert in JavaScript, TypeScript,
-          React, React Native, and distributed systems.</p>
-      </header>
+  <main id="resume-root" class="know-more-app is-concise">
+    <!-- Action controls hidden in print & ATS -->
+    <div class="hide-print action-bar">
+      <div id="updated">Last updated in November 2026</div>
+      <div>
+        <button id="print" type="button" onclick="window.print()" style="margin-right: 8px;">Print / Save PDF</button>
+        <button id="toggle-concise" type="button">Show Full Mode</button>
+      </div>
+    </div>
 
-      <section>
-        <h2>WORK EXPERIENCE</h2>
-        <article>
-          <h3>Senior Software Engineer - Google</h3>
-          <p>April 2025 - Present</p>
-          <h4>AI Data and Infrastructure</h4>
-          <ul>
-            <li>
-              A2UI & MCP in Antigravity: Moving the complete org's charter towards interactive A2UI application for Antigravity IDE
-              and Chat using the MCP. This new UX paves the way to enable Google DeepMind to
-              transition away from rudimentary interfaces toward seamless, interactive collaboration with remote
-              generative agents while maintaining strict UI consistency.
+    <!-- ATS-friendly Single Column Stacked Header -->
+    <header class="heading-container">
+      <h1 class="heading">JATIN TIWARI</h1>
+      <div class="subheading-container">
+        <div class="subheading">
+          <a href="mailto:mail@jatintiwari.com">mail@jatintiwari.com</a>
+        </div>
+        <span class="separator">•</span>
+        <div class="subheading">
+          <a href="tel:+917675807450">+91-7675807450</a>
+        </div>
+        <span class="separator">•</span>
+        <div class="subheading">
+          <a href="https://www.jatintiwari.com" target="_blank" rel="noopener noreferrer">www.jatintiwari.com</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <div class="summary-container">
+      <p class="summary-text">
+        Senior Software Engineer with <span id="experience-years">11</span>+ years of experience leading frontend
+        architecture and high-scale applications across Google, ServiceNow, Amazon, Atlassian, and Flipkart. Expert in
+        JavaScript, TypeScript, React, React Native, and distributed systems.
+      </p>
+    </div>
+
+    <div class="content-container">
+      <section class="section">
+        <h2 class="section-heading">WORK EXPERIENCE</h2>
+
+        <article class="job-article">
+          <div class="job-header">
+            <h3 class="job-company">Google</h3>
+            <div class="period-badge">April 2025 - Present</div>
+          </div>
+          <div class="job-position">Senior Software Engineer</div>
+          <ul class="responsibilities-list">
+            <li class="project-title">AI Data and Infrastructure</li>
+            <li class="responsibility-item">
+              A2UI &amp; MCP in Antigravity: Moving the complete org's charter towards interactive A2UI application for
+              Antigravity IDE and Chat using the MCP. This new UX paves the way to enable Google DeepMind to transition
+              away from rudimentary interfaces toward seamless, interactive collaboration with remote generative agents
+              while maintaining strict UI consistency.
             </li>
-            <li>
-              End-to-End Compliance Applications: Spearheaded the development for a core
-              compliance application that detects, analyzes, and remediates underlying asset discrepancies, unblocking
-              non-compliant datasets for model ingestion and training.
+            <li class="responsibility-item">
+              End-to-End Compliance Applications: Spearheaded the development for a core compliance application that
+              detects, analyzes, and remediates underlying asset discrepancies, unblocking non-compliant datasets for
+              model ingestion and training.
             </li>
-            <li>
-              Enterprise Dataset & Model Catalog: Leading the design and technical development of Google's asset
+            <li class="responsibility-item">
+              Enterprise Dataset &amp; Model Catalog: Leading the design and technical development of Google's asset
               catalog platform for registering datasets and AI models with metadata attribute support—utilized daily by
               TPMs, engineers, and researchers across Google.
             </li>
-            <li>
-              Cross-Functional DeepMind & Legal Alignment: Partnered closely with Google DeepMind and Google Legal
+            <li class="responsibility-item">
+              Cross-Functional DeepMind &amp; Legal Alignment: Partnered closely with Google DeepMind and Google Legal
               teams to facilitate compliance approvals, enabling pre-training datasets to meet top-tier global AI
               governance and safety benchmarks.
             </li>
-            <li>
-              Data Provenance & Automated Remediation: Architected dataset lineage infrastructure for large-scale AI
+            <li class="responsibility-item">
+              Data Provenance &amp; Automated Remediation: Architected dataset lineage infrastructure for large-scale AI
               pre-training pipelines, enabling end-to-end data provenance tracking and automated discrepancy
               remediation.
             </li>
           </ul>
         </article>
 
-        <article>
-          <h3>Senior Staff Software Engineer - ServiceNow</h3>
-          <p>August 2024 - March 2025</p>
-          <h4>Application Platform</h4>
-          <ul>
-            <li>Revamped ServiceNow e-commerce store (https://store.servicenow.com) using React, optimizing SEO, UX, and
-              Core Web Vitals to boost conversions and decrease bounce rates.</li>
-            <li>Drove substantial improvements in system efficiency by optimizing slow database queries, which reduced
-              average response time by approximately 60%.</li>
-            <li>Led frontend performance audits and resolved critical information discovery issues, significantly
-              decreasing related support ticket volumes.</li>
-          </ul>
-        </article>
-
-        <article>
-          <h3>Frontend Engineer II - Amazon</h3>
-          <p>July 2022 - August 2024</p>
-          <h4>Fire TV Devices (Stealth Mode)</h4>
-          <ul>
-            <li>Served as sole frontend engineer, providing technical leadership and mentoring cross-functional teams in
-              JavaScript and modern frontend practices.</li>
-            <li>Led end-to-end development of a React Native TV application using Amazon's Vega Script; architected
-              Network and Onboarding apps with shared reusable core modules.</li>
-            <li>Introduced MVVM design pattern for maintainability, and implemented proxy patterns enabling seamless
-              compatibility between Kepler Script and Vanilla React Native.</li>
-            <li>Developed custom turbomodules offloading heavy tasks from JavaScript thread, delivering critical
-              performance optimization for memory-constrained TV devices (1GB RAM).</li>
-            <li>Implemented proxy patterns for common libraries, enabling seamless compatibility between Kepler Script
-              and Vanilla React Native, enhancing code flexibility and reusability.</li>
-            <li>Developed monotonic timers to prevent time synchronization issues while executing deferred functions in
-              JavaScript.</li>
-          </ul>
-          <h4>Internal Tools & Optimization (YATO)</h4>
-          <ul>
-            <li>Developed YATO (Yet Another Tool for Optimization) consolidating on-call handovers, team cost
-              implications, ticket trends, and S3/ECS utilization across AWS accounts into a single dashboard.</li>
-            <li>Optimized on-call handover workflows across 47 engineering teams.</li>
-          </ul>
-        </article>
-
-        <article>
-          <h3>Software Development Engineer II - Atlassian</h3>
-          <p>December 2021 - July 2022</p>
-          <h4>Atlassian Help</h4>
-          <ul>
-            <li>Built an Atlassian initiative from scratch: an interface connecting help providers and seekers. Owned
-              GraphQL implementation using Relay.</li>
-            <li>Mentored a summer intern for 6 months, guiding the implementation of visual diffing for E2E test cases,
-              evolving from a Hackday project.</li>
-          </ul>
-        </article>
-
-        <article>
-          <h3>Frontend Engineer II - Flipkart</h3>
-          <p>April 2018 - November 2021</p>
-          <h4>Ease of Order Discovery & CX</h4>
-          <ul>
-            <li>Completely revamped the My Orders module to add Search, Filters, and recommendations.</li>
-            <li>Delivered a 15% increase in click-throughs from My Orders to Order Details, with total search
-              interaction events exceeding 10 Million in the first month post-launch.</li>
-            <li>Introduced nudges to assist users during reason-based cancellations, achieving ~25% user retention and
-              action on orders instead of cancellation.</li>
-            <li>Completed migration from order-level item grouping to unit/item level for My Orders and Order Details
-              Page for Desktop.</li>
-            <li>Migrated web apps to use Brotli compression, reducing over-the-network payload transfer size by ~20%.
+        <article class="job-article">
+          <div class="job-header">
+            <h3 class="job-company">ServiceNow</h3>
+            <div class="period-badge">August 2024 - March 2025</div>
+          </div>
+          <div class="job-position">Senior Staff Software Engineer</div>
+          <ul class="responsibilities-list">
+            <li class="project-title">Application Platform</li>
+            <li class="responsibility-item">
+              Revamped ServiceNow e-commerce store (https://store.servicenow.com) using React, optimizing SEO, UX, and
+              Core Web Vitals to boost conversions and decrease bounce rates.
             </li>
-            <li>Created internal automation chatbots integrating JIRA, GitHub, and Jenkins.</li>
-          </ul>
-          <h4>Automated Regression & Sanity Testing</h4>
-          <ul>
-            <li>Automated regression and sanity testing for Android, iOS, and Mobile Web apps using Appium with a single
-              shared codebase, authoring ~1,200 test cases.</li>
-            <li>Onboarded QA engineers and removed manual verification processes, reducing turnaround time from 2 hours
-              to a few minutes.</li>
-            <li>Set up VM infrastructure and execution dashboards to execute test cases on the fly with single-click
-              triggers.</li>
-            <li>Created multiple Puppeteer automation tools for User interaction events (simulating GA/Omniture events)
-              and Visual GUI verification (comparing baseline screenshots against post-deployment UI).</li>
-          </ul>
-          <h4>Self-Serve CX & Customer Engagement</h4>
-          <ul>
-            <li>Added capability to change order address and add alternate phone numbers, contributing to 15% fewer
-              order cancellations.</li>
-            <li>Developed Order in-transit widget for native Android (React Native), iOS (AsyncDisplayKit), and Mobile
-              Web homepages, driving ~15% increase in customer awareness and self-serve effectiveness.</li>
-            <li>Developed consoles for monitoring customer experience agent status.</li>
-            <li>Converted single-tenant Smart Assist app to multi-tenant architecture and extended support to Myntra,
-              trimming annual expenses by over $750K (6 Cr INR).</li>
-            <li>Developed return and refund flows on flipkart.com, accelerating adoption for fast refund methods (NEFT
-              and EGV).</li>
-            <li>Introduced Pull to Refresh in webview pages across Native and Mobile Web apps, reducing order-status
-              support tickets by 6%.</li>
-            <li>Standardized React components across platforms, enabling 2gud.com client components to replicate and
-              reuse Flipkart components.</li>
-            <li>Developed a tool to mimic user app state (My Orders, Order Details, Help Centre) using account IDs,
-              reducing customer support query resolution time.</li>
-            <li>Optimized Jenkins Groovy build scripts and precompiled dependencies with custom Docker images to reduce
-              deployment man-hours.</li>
-            <li>Developed client-side flows for delivery slot rescheduling, address modifications, and callback
-              scheduling within user-preferred timeframes.</li>
+            <li class="responsibility-item">
+              Drove substantial improvements in system efficiency by optimizing slow database queries, which reduced
+              average response time by approximately 60%.
+            </li>
+            <li class="responsibility-item">
+              Led frontend performance audits and resolved critical information discovery issues, significantly
+              decreasing related support ticket volumes.
+            </li>
           </ul>
         </article>
 
-        <article>
-          <h3>Senior Software Engineer - Furlenco</h3>
-          <p>October 2015 - April 2018</p>
-          <ul>
-            <li>Responsible for developing and maintaining the company's core e-commerce portal (www.furlenco.com)
-              utilizing React and modern JavaScript.</li>
+        <article class="job-article">
+          <div class="job-header">
+            <h3 class="job-company">Amazon</h3>
+            <div class="period-badge">July 2022 - August 2024</div>
+          </div>
+          <div class="job-position">Frontend Engineer II</div>
+          <ul class="responsibilities-list">
+            <li class="project-title">Fire TV Devices (Stealth Mode)</li>
+            <li class="responsibility-item">
+              Served as sole frontend engineer, providing technical leadership and mentoring cross-functional teams in
+              JavaScript and modern frontend practices.
+            </li>
+            <li class="responsibility-item">
+              Led end-to-end development of a React Native TV application using Amazon's Vega Script; architected
+              Network and Onboarding apps with shared reusable core modules.
+            </li>
+            <li class="responsibility-item">
+              Introduced MVVM design pattern for maintainability, and implemented proxy patterns enabling seamless
+              compatibility between Kepler Script and Vanilla React Native.
+            </li>
+            <li class="responsibility-item">
+              Developed custom turbomodules offloading heavy tasks from JavaScript thread, delivering critical
+              performance optimization for memory-constrained TV devices (1GB RAM).
+            </li>
+            <li class="responsibility-item full-only">
+              Implemented proxy patterns for common libraries, enabling seamless compatibility between Kepler Script
+              and Vanilla React Native, enhancing code flexibility and reusability.
+            </li>
+            <li class="responsibility-item full-only">
+              Developed monotonic timers to prevent time synchronization issues while executing deferred functions in
+              JavaScript.
+            </li>
+            <li class="project-title full-only">Internal Tools &amp; Optimization (YATO)</li>
+            <li class="responsibility-item full-only">
+              Developed YATO (Yet Another Tool for Optimization) consolidating on-call handovers, team cost
+              implications, ticket trends, and S3/ECS utilization across AWS accounts into a single dashboard.
+            </li>
+            <li class="responsibility-item full-only">
+              Optimized on-call handover workflows across 47 engineering teams.
+            </li>
           </ul>
         </article>
 
-        <article>
-          <h3>Junior Programmer Analyst - Lexnimble Solutions</h3>
-          <p>July 2014 - October 2015</p>
-          <ul>
-            <li>Designed and developed full-duplex chat mechanisms using Spring WebSockets, SockJS, and STOMP.</li>
-            <li>Developed and maintained law practice management platform (www.simplelaw.com).</li>
+        <article class="job-article full-only">
+          <div class="job-header">
+            <h3 class="job-company">Atlassian</h3>
+            <div class="period-badge">December 2021 - July 2022</div>
+          </div>
+          <div class="job-position">Software Development Engineer II</div>
+          <ul class="responsibilities-list">
+            <li class="project-title">Atlassian Help</li>
+            <li class="responsibility-item">
+              Built an Atlassian initiative from scratch: an interface connecting help providers and seekers. Owned
+              GraphQL implementation using Relay.
+            </li>
+            <li class="responsibility-item">
+              Mentored a summer intern for 6 months, guiding the implementation of visual diffing for E2E test cases,
+              evolving from a Hackday project.
+            </li>
+          </ul>
+        </article>
+
+        <article class="job-article full-only">
+          <div class="job-header">
+            <h3 class="job-company">Flipkart</h3>
+            <div class="period-badge">April 2018 - November 2021</div>
+          </div>
+          <div class="job-position">Frontend Engineer II</div>
+          <ul class="responsibilities-list">
+            <li class="project-title">Ease of Order Discovery &amp; CX</li>
+            <li class="responsibility-item">
+              Completely revamped the My Orders module to add Search, Filters, and recommendations.
+            </li>
+            <li class="responsibility-item">
+              Delivered a 15% increase in click-throughs from My Orders to Order Details, with total search interaction
+              events exceeding 10 Million in the first month post-launch.
+            </li>
+            <li class="responsibility-item">
+              Introduced nudges to assist users during reason-based cancellations, achieving ~25% user retention and
+              action on orders instead of cancellation.
+            </li>
+            <li class="responsibility-item">
+              Completed migration from order-level item grouping to unit/item level for My Orders and Order Details Page
+              for Desktop.
+            </li>
+            <li class="responsibility-item">
+              Migrated web apps to use Brotli compression, reducing over-the-network payload transfer size by ~20%.
+            </li>
+            <li class="responsibility-item">
+              Created internal automation chatbots integrating JIRA, GitHub, and Jenkins.
+            </li>
+            <li class="project-title">Automated Regression &amp; Sanity Testing</li>
+            <li class="responsibility-item">
+              Automated regression and sanity testing for Android, iOS, and Mobile Web apps using Appium with a single
+              shared codebase, authoring ~1,200 test cases.
+            </li>
+            <li class="responsibility-item">
+              Onboarded QA engineers and removed manual verification processes, reducing turnaround time from 2 hours to
+              a few minutes.
+            </li>
+            <li class="responsibility-item">
+              Set up VM infrastructure and execution dashboards to execute test cases on the fly with single-click
+              triggers.
+            </li>
+            <li class="responsibility-item">
+              Created multiple Puppeteer automation tools for User interaction events (simulating GA/Omniture events)
+              and Visual GUI verification (comparing baseline screenshots against post-deployment UI).
+            </li>
+            <li class="project-title">Self-Serve CX &amp; Customer Engagement</li>
+            <li class="responsibility-item">
+              Added capability to change order address and add alternate phone numbers, contributing to 15% fewer order
+              cancellations.
+            </li>
+            <li class="responsibility-item">
+              Developed Order in-transit widget for native Android (React Native), iOS (AsyncDisplayKit), and Mobile Web
+              homepages, driving ~15% increase in customer awareness and self-serve effectiveness.
+            </li>
+            <li class="responsibility-item">
+              Developed consoles for monitoring customer experience agent status.
+            </li>
+            <li class="responsibility-item">
+              Converted single-tenant Smart Assist app to multi-tenant architecture and extended support to Myntra,
+              trimming annual expenses by over $750K (6 Cr INR).
+            </li>
+            <li class="responsibility-item">
+              Developed return and refund flows on flipkart.com, accelerating adoption for fast refund methods (NEFT and
+              EGV).
+            </li>
+            <li class="responsibility-item">
+              Introduced Pull to Refresh in webview pages across Native and Mobile Web apps, reducing order-status
+              support tickets by 6%.
+            </li>
+            <li class="responsibility-item">
+              Standardized React components across platforms, enabling 2gud.com client components to replicate and reuse
+              Flipkart components.
+            </li>
+            <li class="responsibility-item">
+              Developed a tool to mimic user app state (My Orders, Order Details, Help Centre) using account IDs,
+              reducing customer support query resolution time.
+            </li>
+            <li class="responsibility-item">
+              Optimized Jenkins Groovy build scripts and precompiled dependencies with custom Docker images to reduce
+              deployment man-hours.
+            </li>
+            <li class="responsibility-item">
+              Developed client-side flows for delivery slot rescheduling, address modifications, and callback scheduling
+              within user-preferred timeframes.
+            </li>
+          </ul>
+        </article>
+
+        <article class="job-article full-only">
+          <div class="job-header">
+            <h3 class="job-company">Furlenco</h3>
+            <div class="period-badge">October 2015 - April 2018</div>
+          </div>
+          <div class="job-position">Senior Software Engineer</div>
+          <ul class="responsibilities-list">
+            <li class="responsibility-item">
+              Responsible for developing and maintaining the company's core e-commerce portal (www.furlenco.com)
+              utilizing React and modern JavaScript.
+            </li>
+          </ul>
+        </article>
+
+        <article class="job-article full-only">
+          <div class="job-header">
+            <h3 class="job-company">Lexnimble Solutions</h3>
+            <div class="period-badge">July 2014 - October 2015</div>
+          </div>
+          <div class="job-position">Junior Programmer Analyst</div>
+          <ul class="responsibilities-list">
+            <li class="responsibility-item">
+              Designed and developed full-duplex chat mechanisms using Spring WebSockets, SockJS, and STOMP.
+            </li>
+            <li class="responsibility-item">
+              Developed and maintained law practice management platform (www.simplelaw.com).
+            </li>
           </ul>
         </article>
       </section>
 
-      <section>
-        <h2>SKILLS</h2>
-        <ul>
-          <li><strong>Languages:</strong> JavaScript (ES6+), TypeScript</li>
-          <li><strong>Frontend & Mobile:</strong> A2UI, React, React Native, Next.js, AngularJS</li>
-          <li><strong>Web Services & APIs:</strong> REST, GraphQL, WebSockets, Service Workers, Core Web Vitals</li>
-          <li><strong>Build & Automation:</strong> Webpack, Rollup, Appium, Puppeteer, Docker, Jenkins, Git</li>
-          <li><strong>Backend & Runtime:</strong> Node.js, Express.js</li>
-        </ul>
+      <section class="section">
+        <h2 class="section-heading">SKILLS</h2>
+        <div class="skills-list">
+          <div class="skill-item">
+            <strong>Languages:</strong>
+            <span>JavaScript (ES6+), TypeScript</span>
+          </div>
+          <div class="skill-item">
+            <strong>Frontend &amp; Mobile:</strong>
+            <span>A2UI, React, React Native, Next.js, AngularJS</span>
+          </div>
+          <div class="skill-item">
+            <strong>Web Services &amp; APIs:</strong>
+            <span>REST, GraphQL, WebSockets, Service Workers, Core Web Vitals</span>
+          </div>
+          <div class="skill-item">
+            <strong>Build &amp; Automation:</strong>
+            <span>Webpack, Rollup, Appium, Puppeteer, Docker, Jenkins, Git</span>
+          </div>
+          <div class="skill-item">
+            <strong>Backend &amp; Runtime:</strong>
+            <span>Node.js, Express.js</span>
+          </div>
+        </div>
       </section>
 
-      <section>
-        <h2>EDUCATION</h2>
-        <p><strong>B.E. - Electronics and Communication Engineering (ECE)</strong>, Chitkara University, HP | 2009 -
-          2013</p>
+      <section class="section">
+        <h2 class="section-heading">EDUCATION</h2>
+        <div class="education-item">
+          <div><strong>B.E. - Electronics and Communication Engineering (ECE)</strong>, Chitkara University, HP</div>
+          <div class="period-badge">2009 - 2013</div>
+        </div>
       </section>
-    </main>
-  </resume-app>
+
+      <section class="section concise-only">
+        <h2 class="section-heading">PREVIOUS EXPERIENCE</h2>
+        <div class="previous-exp-list">
+          <span class="prev-job-item">
+            <a href="https://www.atlassian.com" target="_blank" rel="noopener noreferrer"><strong>Atlassian</strong></a>
+            (Software Development Engineer II, <em>Dec 2021 - Jul 2022</em>) •
+          </span>
+          <span class="prev-job-item">
+            <a href="https://www.flipkart.com" target="_blank" rel="noopener noreferrer"><strong>Flipkart</strong></a>
+            (Frontend Engineer II, <em>Apr 2018 - Dec 2021</em>) •
+          </span>
+          <span class="prev-job-item">
+            <a href="https://www.furlenco.com" target="_blank" rel="noopener noreferrer"><strong>Furlenco</strong></a>
+            (Senior Software Engineer, <em>Oct 2015 - Apr 2018</em>) •
+          </span>
+          <span class="prev-job-item">
+            <a href="https://simplelaw.com" target="_blank" rel="noopener noreferrer"><strong>LexNimble Solutions</strong></a>
+            (Junior Programmer Analyst, <em>Jul 2014 - Oct 2015</em>)
+          </span>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      const currentDate = new Date();
+      const dateStartedWorking = new Date('July 21, 2014');
+      const yearsExp =
+        currentDate.getFullYear() -
+        dateStartedWorking.getFullYear() -
+        (currentDate.getMonth() >= dateStartedWorking.getMonth() ? 0 : 1);
+
+      const expEl = document.getElementById('experience-years');
+      if (expEl) {
+        expEl.textContent = yearsExp;
+      }
+
+      const root = document.getElementById('resume-root');
+      const toggleBtn = document.getElementById('toggle-concise');
+      if (root && toggleBtn) {
+        toggleBtn.addEventListener('click', function () {
+          const isConcise = root.classList.toggle('is-concise');
+          toggleBtn.textContent = isConcise ? 'Show Full Mode' : 'Concise (1-Page Mode)';
+        });
+      }
+    })();
+  </script>
 </body>
 
 </html>
