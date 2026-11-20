@@ -28,6 +28,124 @@
     .know-more-app:not(.is-concise) .concise-only {
       display: none;
     }
+
+    .action-bar-buttons {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .action-bar-buttons button.secondary-btn {
+      background-color: #f1f5f9;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+      box-shadow: none;
+    }
+
+    .action-bar-buttons button.secondary-btn:hover {
+      background-color: #e2e8f0;
+      color: #0f172a;
+    }
+
+    /* Interactive page-break controls (Full Mode only, hidden in print) */
+    .know-more-app.is-concise .page-break-control {
+      display: none;
+    }
+
+    .page-break-control {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 16px;
+      margin: 2px 0;
+      list-style-type: none;
+      user-select: none;
+    }
+
+    ul.responsibilities-list > .page-break-control {
+      margin-left: -18px;
+    }
+
+    .page-break-control::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      border-top: 1px dashed #cbd5e1;
+      opacity: 0;
+      transition: opacity 0.15s ease, border-color 0.15s ease;
+    }
+
+    .page-break-control:hover::before,
+    .page-break-control:focus-within::before {
+      opacity: 1;
+    }
+
+    .page-break-control .page-break-btn {
+      position: relative;
+      z-index: 1;
+      background-color: #ffffff;
+      color: #64748b;
+      border: 1px dashed #cbd5e1;
+      border-radius: 999px;
+      padding: 1px 10px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      line-height: 1.4;
+      box-shadow: none;
+      opacity: 0.35;
+      transition: opacity 0.15s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .page-break-control:hover .page-break-btn,
+    .page-break-control:focus-within .page-break-btn {
+      opacity: 1;
+      background-color: #f8fafc;
+      color: #2563eb;
+      border-color: #93c5fd;
+    }
+
+    /* Active page break preview */
+    .page-break-control.is-active {
+      height: 24px;
+      margin: 8px 0;
+    }
+
+    .page-break-control.is-active::before {
+      border-top: 2px dashed #2563eb;
+      opacity: 0.85;
+    }
+
+    .page-break-control.is-active .page-break-btn {
+      opacity: 1;
+      background-color: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #93c5fd;
+      font-weight: 600;
+    }
+
+    .page-break-control.is-active .page-break-btn:hover {
+      background-color: #fef2f2;
+      color: #b91c1c;
+      border-color: #fca5a5;
+    }
+
+    @media print {
+      .know-more-app:not(.is-concise) .has-page-break {
+        break-before: page !important;
+        page-break-before: always !important;
+      }
+
+      .know-more-app .section-heading,
+      .know-more-app .job-header,
+      .know-more-app .project-title {
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+    }
   </style>
 </head>
 
@@ -36,8 +154,9 @@
     <!-- Action controls hidden in print & ATS -->
     <div class="hide-print action-bar">
       <div id="updated">Last updated in November 2026</div>
-      <div>
-        <button id="print" type="button" onclick="window.print()" style="margin-right: 8px;">Print / Save PDF</button>
+      <div class="action-bar-buttons">
+        <button id="clear-breaks" type="button" class="secondary-btn full-only">Clear Page Breaks</button>
+        <button id="print" type="button" onclick="window.print()">Print / Save PDF</button>
         <button id="toggle-concise" type="button">Show Full Mode</button>
       </div>
     </div>
@@ -195,7 +314,7 @@
           </ul>
         </article>
 
-        <article class="job-article full-only" style="break-before:always">
+        <article class="job-article full-only has-page-break">
           <div class="job-header">
             <h3 class="job-company">Flipkart</h3>
             <div class="period-badge">April 2018 - November 2021</div>
@@ -394,6 +513,93 @@
           const isConcise = root.classList.toggle('is-concise');
           toggleBtn.textContent = isConcise ? 'Show Full Mode' : 'Concise (1-Page Mode)';
         });
+      }
+
+      // Interactive page-break toggles for Full Mode
+      if (root) {
+        const breakTargets = [];
+
+        // Between jobs (all jobs after the first)
+        const jobs = root.querySelectorAll('.job-article');
+        jobs.forEach(function (job, idx) {
+          if (idx > 0) {
+            breakTargets.push({ el: job, tag: 'div' });
+          }
+
+          // Between projects inside a job (2nd+ project title)
+          const projectTitles = job.querySelectorAll('.responsibilities-list > .project-title');
+          projectTitles.forEach(function (title, pIdx) {
+            if (pIdx > 0) {
+              breakTargets.push({ el: title, tag: 'li' });
+            }
+          });
+        });
+
+        // Between sections (all non-concise-only sections after the first)
+        const sections = root.querySelectorAll('.content-container > .section:not(.concise-only)');
+        sections.forEach(function (section, idx) {
+          if (idx > 0) {
+            breakTargets.push({ el: section, tag: 'div' });
+          }
+        });
+
+        const clearBreaksBtn = document.getElementById('clear-breaks');
+        const controls = [];
+
+        function updateClearButton() {
+          if (!clearBreaksBtn) return;
+          const activeCount = controls.filter(function (c) {
+            return c.target.classList.contains('has-page-break');
+          }).length;
+          clearBreaksBtn.disabled = activeCount === 0;
+          clearBreaksBtn.style.opacity = activeCount === 0 ? '0.5' : '1';
+          clearBreaksBtn.style.cursor = activeCount === 0 ? 'default' : 'pointer';
+          clearBreaksBtn.textContent = activeCount > 0 ? 'Clear Page Breaks (' + activeCount + ')' : 'Clear Page Breaks';
+        }
+
+        function syncControl(controlEl, btn, targetEl) {
+          const isActive = targetEl.classList.contains('has-page-break');
+          controlEl.classList.toggle('is-active', isActive);
+          btn.setAttribute('aria-pressed', String(isActive));
+          btn.textContent = isActive ? 'Page Break ×' : '+ Page Break';
+          btn.title = isActive ? 'Click to remove page break' : 'Click to insert a page break here in print';
+        }
+
+        breakTargets.forEach(function (item) {
+          const controlEl = document.createElement(item.tag);
+          controlEl.className = 'page-break-control hide-print';
+          if (item.tag === 'li') {
+            controlEl.setAttribute('role', 'presentation');
+          }
+
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'page-break-btn';
+
+          syncControl(controlEl, btn, item.el);
+
+          btn.addEventListener('click', function () {
+            item.el.classList.toggle('has-page-break');
+            syncControl(controlEl, btn, item.el);
+            updateClearButton();
+          });
+
+          controlEl.appendChild(btn);
+          item.el.parentNode.insertBefore(controlEl, item.el);
+          controls.push({ controlEl: controlEl, btn: btn, target: item.el });
+        });
+
+        if (clearBreaksBtn) {
+          clearBreaksBtn.addEventListener('click', function () {
+            controls.forEach(function (c) {
+              c.target.classList.remove('has-page-break');
+              syncControl(c.controlEl, c.btn, c.target);
+            });
+            updateClearButton();
+          });
+        }
+
+        updateClearButton();
       }
     })();
   </script>
